@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+frontPage/min/
+frontPage/css/
+js/plugin_modules/zr/css/
+js/cdn/zr/css/
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

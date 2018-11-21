@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DatePicker</title>
+    <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css?11" />
+    <link type="text/css" rel="stylesheet" href="/js/plugin_modules/zr/css/zr.min.css" />
+    <!--}-->
+    <script type="text/javascript" src="/js/zr.js"></script>
+
+</head>
+
+<body>
+<input type="text" value="" id="ss" />
+<script type="text/javascript">
+    Zr.ready(function(){
+        Zr.use("./datePicker/",function(zr,p){
+            p.init({
+                target:"#ss",
+                type:"week"
+            })
+        })
+    })
+</script>
+<div class="zr-datepicker-wrap zr-datepicker-range">
+    <div class="zr-datepicker">
+        <div class="zr-datepicker-tabs">
+            <div class="zr-datepicker-tab zr-datepicker-tab-selected">日期</div>
+            <div class="zr-datepicker-tab">时间</div>
+        </div>
+        <div class="zr-datepicker-content-range">
+        <div class="zr-datepicker-header zr-datepicker-header-date" style="display: block">
+            <div class="zr-datepicker-inline zr-datepicker-prev-year"><i class="zricon-previous-empty"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-prev-month"><i class="zricon-arrow-left"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-date-title">2018 2月</div>
+            <div class="zr-datepicker-inline zr-datepicker-next-month"><i class="zricon-arrow-right"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-next-year"><i class="zricon-next-empty"></i></div>
+        </div>
+        <div class="zr-datepicker-header zr-datepicker-header-month ">
+            <div class="zr-datepicker-inline zr-datepicker-prev-year"><i class="zricon-previous-empty"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-month-title">2018 2月</div>
+            <div class="zr-datepicker-inline zr-datepicker-next-year"><i class="zricon-next-empty"></i></div>
+        </div>
+        <div class="zr-datepicker-header zr-datepicker-header-year">
+            <div class="zr-datepicker-inline zr-datepicker-prev-year"><i class="zricon-previous-empty"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-year-title">2010—2019</div>
+            <div class="zr-datepicker-inline zr-datepicker-next-year"><i class="zricon-next-empty"></i></div>
+        </div>
+        <div class="zr-datepicker-header zr-datepicker-header-time">
+            <div class="zr-datepicker-inline zr-datepicker-time-title">10:10:11</div>
+        </div>
+        <div class="zr-datepicker-content zr-datepicker-content-date">
+            <div class="zr-datepicker-content-header zr-datepicker-row">
+                <div class="zr-datepicker-col">日</div>
+                <div class="zr-datepicker-col">一</div>
+                <div class="zr-datepicker-col">二</div>
+                <div class="zr-datepicker-col">三</div>
+                <div class="zr-datepicker-col">四</div>
+                <div class="zr-datepicker-col">五</div>
+                <div class="zr-datepicker-col">六</div>
+            </div>
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col zr-datepicker-default">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col zr-datepicker-choose">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row zr-datepicker-line-default">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row zr-datepicker-line-choose">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-content zr-datepicker-content-month">
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row-month">
+                    <div class="zr-datepicker-col-month">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>2</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>3</span>
+                    </div>
+                    <div class="zr-datepicker-col-month">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col-month">
+                        <span>7</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>8</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>9</span>
+                    </div>
+                    <div class="zr-datepicker-col-month">
+                        <span>10</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>11</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-content zr-datepicker-content-year">
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row-year">
+                    <div class="zr-datepicker-col-year">
+                        <span>2009</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-default">
+                        <span>2010</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-choose">
+                        <span>2011</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>20012</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>2009</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-default">
+                        <span>2010</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-choose">
+                        <span>2011</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>20012</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>2009</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-default">
+                        <span>2010</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-choose">
+                        <span>2011</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>20012</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-content zr-datepicker-content-time">
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row-time zr-datepicker-row-time-hour">
+                    <div class="zr-datepicker-col-time zr-datepicker-col-time-choose">01</div>
+                    <div class="zr-datepicker-col-time">02</div>
+                    <div class="zr-datepicker-col-time">03</div>
+                    <div class="zr-datepicker-col-time">04</div>
+                    <div class="zr-datepicker-col-time">05</div>
+                    <div class="zr-datepicker-col-time">06</div>
+                    <div class="zr-datepicker-col-time">07</div>
+                    <div class="zr-datepicker-col-time">08</div>
+                    <div class="zr-datepicker-col-time">09</div>
+                    <div class="zr-datepicker-col-time">20</div>
+                    <div class="zr-datepicker-col-time">22</div>
+                    <div class="zr-datepicker-col-time">23</div>
+                </div>
+                <div class="zr-datepicker-row-time zr-datepicker-row-time-minute">
+                    <div class="zr-datepicker-col-time zr-datepicker-col-time-choose">01</div>
+                    <div class="zr-datepicker-col-time">02</div>
+                    <div class="zr-datepicker-col-time">03</div>
+                    <div class="zr-datepicker-col-time">04</div>
+                    <div class="zr-datepicker-col-time">05</div>
+                    <div class="zr-datepicker-col-time">06</div>
+                    <div class="zr-datepicker-col-time">07</div>
+                    <div class="zr-datepicker-col-time">08</div>
+                    <div class="zr-datepicker-col-time">09</div>
+                    <div class="zr-datepicker-col-time">20</div>
+                    <div class="zr-datepicker-col-time">22</div>
+                    <div class="zr-datepicker-col-time">23</div>
+                </div>
+                <div class="zr-datepicker-row-time zr-datepicker-row-time-second">
+                    <div class="zr-datepicker-col-time zr-datepicker-col-time-choose">01</div>
+                    <div class="zr-datepicker-col-time">02</div>
+                    <div class="zr-datepicker-col-time">03</div>
+                    <div class="zr-datepicker-col-time">04</div>
+                    <div class="zr-datepicker-col-time">05</div>
+                    <div class="zr-datepicker-col-time">06</div>
+                    <div class="zr-datepicker-col-time">07</div>
+                    <div class="zr-datepicker-col-time">08</div>
+                    <div class="zr-datepicker-col-time">09</div>
+                    <div class="zr-datepicker-col-time">20</div>
+                    <div class="zr-datepicker-col-time">22</div>
+                    <div class="zr-datepicker-col-time">23</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="zr-datepicker-footer">
+            <a href="javascript:void(0);" class="zr-datepicker-btn-clear">清空</a>
+            <div class="zr-datepicker-btn-tools">
+                <a href="javascript:void(0);" class="zr-datepicker-btn zr-datepicker-btn-now">现在</a>
+                <a href="javascript:void(0);" class="zr-datepicker-btn zr-datepicker-btn-ok">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="zr-datepicker-wrap" style="position: static;display: none">
+    <div class="zr-datepicker">
+        <div class="zr-datepicker-tabs">
+            <div class="zr-datepicker-tab zr-datepicker-tab-selected">日期</div>
+            <div class="zr-datepicker-tab">时间</div>
+        </div>
+        <div class="zr-datepicker-header-date" style="display: block">
+            <div class="zr-datepicker-inline zr-datepicker-prev-year"><i class="zricon-previous-empty"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-prev-month"><i class="zricon-arrow-left"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-date-title">2018 2月</div>
+            <div class="zr-datepicker-inline zr-datepicker-next-month"><i class="zricon-arrow-right"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-next-year"><i class="zricon-next-empty"></i></div>
+        </div>
+        <div class="zr-datepicker-header-month">
+            <div class="zr-datepicker-inline zr-datepicker-prev-year"><i class="zricon-previous-empty"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-month-title">2018 2月</div>
+            <div class="zr-datepicker-inline zr-datepicker-next-year"><i class="zricon-next-empty"></i></div>
+        </div>
+        <div class="zr-datepicker-header-year">
+            <div class="zr-datepicker-inline zr-datepicker-prev-year"><i class="zricon-previous-empty"></i></div>
+            <div class="zr-datepicker-inline zr-datepicker-year-title">2010—2019</div>
+            <div class="zr-datepicker-inline zr-datepicker-next-year"><i class="zricon-next-empty"></i></div>
+        </div>
+        <div class="zr-datepicker-header-time">
+            <div class="zr-datepicker-inline zr-datepicker-time-title">10:10:11</div>
+        </div>
+        <div class="zr-datepicker-content-date">
+            <div class="zr-datepicker-content-header zr-datepicker-row">
+                <div class="zr-datepicker-col">日</div>
+                <div class="zr-datepicker-col">一</div>
+                <div class="zr-datepicker-col">二</div>
+                <div class="zr-datepicker-col">三</div>
+                <div class="zr-datepicker-col">四</div>
+                <div class="zr-datepicker-col">五</div>
+                <div class="zr-datepicker-col">六</div>
+            </div>
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col zr-datepicker-default">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col zr-datepicker-choose">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row zr-datepicker-line-default">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row zr-datepicker-line-choose">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+                <div class="zr-datepicker-row">
+                    <div class="zr-datepicker-col">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>22</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>13</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col">
+                        <span>7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-content-month">
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row-month">
+                    <div class="zr-datepicker-col-month">
+                        <span>1</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>2</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>3</span>
+                    </div>
+                    <div class="zr-datepicker-col-month">
+                        <span>4</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>5</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>6</span>
+                    </div>
+                    <div class="zr-datepicker-col-month">
+                        <span>7</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>8</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>9</span>
+                    </div>
+                    <div class="zr-datepicker-col-month">
+                        <span>10</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-default">
+                        <span>11</span>
+                    </div>
+                    <div class="zr-datepicker-col-month zr-datepicker-choose">
+                        <span>12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-content-year">
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row-year">
+                    <div class="zr-datepicker-col-year">
+                        <span>2009</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-default">
+                        <span>2010</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-choose">
+                        <span>2011</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>20012</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>2009</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-default">
+                        <span>2010</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-choose">
+                        <span>2011</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>20012</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>2009</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-default">
+                        <span>2010</span>
+                    </div>
+                    <div class="zr-datepicker-col-year zr-datepicker-choose">
+                        <span>2011</span>
+                    </div>
+                    <div class="zr-datepicker-col-year">
+                        <span>20012</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-content-time">
+            <div class="zr-datepicker-content-number">
+                <div class="zr-datepicker-row-time zr-datepicker-row-time-hour">
+                    <div class="zr-datepicker-col-time zr-datepicker-col-time-choose">01</div>
+                    <div class="zr-datepicker-col-time">02</div>
+                    <div class="zr-datepicker-col-time">03</div>
+                    <div class="zr-datepicker-col-time">04</div>
+                    <div class="zr-datepicker-col-time">05</div>
+                    <div class="zr-datepicker-col-time">06</div>
+                    <div class="zr-datepicker-col-time">07</div>
+                    <div class="zr-datepicker-col-time">08</div>
+                    <div class="zr-datepicker-col-time">09</div>
+                    <div class="zr-datepicker-col-time">20</div>
+                    <div class="zr-datepicker-col-time">22</div>
+                    <div class="zr-datepicker-col-time">23</div>
+                </div>
+                <div class="zr-datepicker-row-time zr-datepicker-row-time-minute">
+                    <div class="zr-datepicker-col-time zr-datepicker-col-time-choose">01</div>
+                    <div class="zr-datepicker-col-time">02</div>
+                    <div class="zr-datepicker-col-time">03</div>
+                    <div class="zr-datepicker-col-time">04</div>
+                    <div class="zr-datepicker-col-time">05</div>
+                    <div class="zr-datepicker-col-time">06</div>
+                    <div class="zr-datepicker-col-time">07</div>
+                    <div class="zr-datepicker-col-time">08</div>
+                    <div class="zr-datepicker-col-time">09</div>
+                    <div class="zr-datepicker-col-time">20</div>
+                    <div class="zr-datepicker-col-time">22</div>
+                    <div class="zr-datepicker-col-time">23</div>
+                </div>
+                <div class="zr-datepicker-row-time zr-datepicker-row-time-second">
+                    <div class="zr-datepicker-col-time zr-datepicker-col-time-choose">01</div>
+                    <div class="zr-datepicker-col-time">02</div>
+                    <div class="zr-datepicker-col-time">03</div>
+                    <div class="zr-datepicker-col-time">04</div>
+                    <div class="zr-datepicker-col-time">05</div>
+                    <div class="zr-datepicker-col-time">06</div>
+                    <div class="zr-datepicker-col-time">07</div>
+                    <div class="zr-datepicker-col-time">08</div>
+                    <div class="zr-datepicker-col-time">09</div>
+                    <div class="zr-datepicker-col-time">20</div>
+                    <div class="zr-datepicker-col-time">22</div>
+                    <div class="zr-datepicker-col-time">23</div>
+                </div>
+            </div>
+        </div>
+        <div class="zr-datepicker-footer">
+            <a href="javascript:void(0);" class="zr-datepicker-btn-now">清空</a>
+            <div class="zr-datepicker-btn-tools">
+                <a href="javascript:void(0);" class="zr-datepicker-btn zr-datepicker-btn-cancel">取消</a>
+                <a href="javascript:void(0);" class="zr-datepicker-btn zr-datepicker-btn-ok">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+<article class="c-content">
+    <section class="c-title">
+        <p>DatePicker 日期控件</p>
+        <span>输入或选择日期的控件，支持年、月、日期等类型。</span>
+    </section>
+    <div class="c-line"></div>
+    <section class="c-sub-title">
+        <p>使用方法 <a href="#">#</a></p>
+        <ul class="c-introduce-ul">
+            <li>该控件由两部分组成，日期输入字段和日期选择器，用户可以分别输入开始和结束日期或选择连续的一段日期。</li>
+        </ul>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>基础样式 <a href="#">#</a></p>
+        <span>最基础的日期选择框</span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div style="width:240px">
+                <div class="zr-input-group">
+                    <input type="text" placeholder="Select Date" class="zr-input">
+                    <span class="zr-input-addon">
+                      <i class="zricon-calendar-empty"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="c-block-10"></div>
+            <div style="width:240px">
+                <div class="zr-input-group">
+                    <input type="text" placeholder="Select Month" class="zr-input">
+                    <span class="zr-input-addon">
+                      <i class="zricon-calendar-empty"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="c-block-10"></div>
+            <div style="width:240px">
+                <div class="zr-input-group">
+                    <input type="text" placeholder="Select Week" class="zr-input">
+                    <span class="zr-input-addon">
+                      <i class="zricon-calendar-empty"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="c-block-10"></div>
+            <div style="width:240px">
+                <div class="zr-input-group">
+                    <input type="text" placeholder="Please input text" class="zr-input">
+                    <span class="zr-input-addon">
+                      <i class="zricon-calendar-empty"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="c-code-inner c-code-hide">
+            <div class="zr-alert zr-alert-info">
+                <span class="zr-alert-message">Info Text</span>
+            </div>
+            <div class="zr-alert zr-alert-success">
+                <span class="zr-alert-message">Success Text</span>
+            </div>
+            <div class="zr-alert zr-alert-error">
+                <span class="zr-alert-message">Error Text</span>
+            </div>
+            <div class="zr-alert zr-alert-warning">
+                <span class="zr-alert-message">Warning Text</span>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>含有描述信息 <a href="#">#</a></p>
+        <span>含有辅助性文字介绍的警告提示，需添加 <i class="c-block-inline">zr-alert-with-description</i> </span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div class="c-demo-w-640">
+                <div class="zr-alert zr-alert-info zr-alert-with-description">
+                    <span class="zr-alert-message">Info</span>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+                <div class="zr-alert zr-alert-success zr-alert-with-description">
+                    <span class="zr-alert-message">Success</span>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+                <div class="zr-alert zr-alert-error zr-alert-with-description">
+                    <span class="zr-alert-message">Error</span>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+                <div class="zr-alert zr-alert-warning zr-alert-with-description">
+                    <span class="zr-alert-message">Warning</span>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+            </div>
+        </div>
+        <div class="c-code-inner c-code-hide">
+    <div class="zr-alert zr-alert-info zr-alert-with-description">
+        <span class="zr-alert-message">Info</span>
+        <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+    </div>
+    <div class="zr-alert zr-alert-success zr-alert-with-description">
+        <span class="zr-alert-message">Success</span>
+        <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+    </div>
+    <div class="zr-alert zr-alert-error zr-alert-with-description">
+        <span class="zr-alert-message">Error</span>
+        <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+    </div>
+    <div class="zr-alert zr-alert-warning zr-alert-with-description">
+        <span class="zr-alert-message">Warning</span>
+        <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+    </div>
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>可关闭的提示 <a href="#">#</a></p>
+        <span>显示关闭按钮，点击可关闭警告提示；添加关闭标签，并给标签添加相应class <i class="c-block-inline">zr-alert-close</i></span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div class="c-demo-w-640">
+                <div class="zr-alert zr-alert-error">
+                    <a class="zr-alert-close" href="javascript:void(0);">
+                        <i class="zricon-close"></i>
+                    </a>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+                <div class="zr-alert zr-alert-error zr-alert-with-description">
+                    <a class="zr-alert-close" href="javascript:void(0);">
+                        <i class="zricon-close"></i>
+                    </a>
+                    <span class="zr-alert-message">Error</span>
+                    <span class="zr-alert-description">Error Description Error Description Error Description Error Description</span>
+                </div>
+            </div>
+        </div>
+        <div class="c-code-inner c-code-hide">
+            <div class="zr-alert zr-alert-error">
+                <a class="zr-alert-close" href="javascript:void(0);">
+                    <i class="zricon-close"></i>
+                </a>
+                <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+            </div>
+            <div class="zr-alert zr-alert-error zr-alert-with-description">
+                <a class="zr-alert-close" href="javascript:void(0);">
+                    <i class="zricon-close"></i>
+                </a>
+                <span class="zr-alert-message">Error</span>
+                <span class="zr-alert-description">Error Description Error Description Error Description Error Description</span>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>带图标的提示 <a href="#">#</a></p>
+        <span>图标可以让提示更醒目，则添加 <i class="c-block-inline">zr-alert-with-icon</i></span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div class="c-demo-w-360">
+                <div class="zr-alert zr-alert-info zr-alert-with-icon">
+                    <i class="zricon-info"></i>
+                    <span class="zr-alert-message">Info Text</span>
+                </div>
+                <div class="zr-alert zr-alert-success zr-alert-with-icon">
+                    <i class="zricon-ok-circle"></i>
+                    <span class="zr-alert-message">Success Text</span>
+                </div>
+                <div class="zr-alert zr-alert-error zr-alert-with-icon">
+                    <i class="zricon-close-circle"></i>
+                    <span class="zr-alert-message">Error Text</span>
+                </div>
+                <div class="zr-alert zr-alert-warning zr-alert-with-icon">
+                    <i class="zricon-warning"></i>
+                    <span class="zr-alert-message">Warning Text</span>
+                </div>
+            </div>
+            <div class="c-demo-w-640">
+                <div class="zr-alert zr-alert-info zr-alert-with-description zr-alert-with-icon">
+                    <i class="zricon-info"></i>
+                    <span class="zr-alert-message">Info</span>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+                <div class="zr-alert zr-alert-success zr-alert-with-description zr-alert-with-icon">
+                    <i class="zricon-ok-circle"></i>
+                    <span class="zr-alert-message">Success</span>
+                    <span class="zr-alert-description">Success Description Success Description Success Description Success Description</span>
+                </div>
+                <div class="zr-alert zr-alert-error zr-alert-with-description zr-alert-with-icon">
+                    <i class="zricon-close-circle"></i>
+                    <span class="zr-alert-message">Error</span>
+                    <span class="zr-alert-description">Error Description Error Description Error Description Error Description</span>
+                </div>
+                <div class="zr-alert zr-alert-warning zr-alert-with-description zr-alert-with-icon">
+                    <i class="zricon-close-circle"></i>
+                    <span class="zr-alert-message">Warning</span>
+                    <span class="zr-alert-description">Warning Description Warning Description Warning Description Warning Description</span>
+                </div>
+            </div>
+        </div>
+        <div class="c-code-inner c-code-hide">
+    <div class="zr-alert zr-alert-info zr-alert-with-icon">
+        <i class="zricon-info"></i>
+        <span class="zr-alert-message">Info Text</span>
+    </div>
+    <div class="zr-alert zr-alert-success zr-alert-with-icon">
+        <i class="zricon-ok-circle"></i>
+        <span class="zr-alert-message">Success Text</span>
+    </div>
+    <div class="zr-alert zr-alert-error zr-alert-with-icon">
+        <i class="zricon-close-circle"></i>
+        <span class="zr-alert-message">Error Text</span>
+    </div>
+    <div class="zr-alert zr-alert-warning zr-alert-with-icon">
+        <i class="zricon-warning"></i>
+        <span class="zr-alert-message">Warning Text</span>
+    </div>
+    <div class="zr-alert zr-alert-info zr-alert-with-description zr-alert-with-icon">
+        <i class="zricon-info"></i>
+        <span class="zr-alert-message">Info</span>
+        <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+    </div>
+    <div class="zr-alert zr-alert-success zr-alert-with-description zr-alert-with-icon">
+        <i class="zricon-ok-circle"></i>
+        <span class="zr-alert-message">Success</span>
+        <span class="zr-alert-description">Success Description Success Description Success Description Success Description</span>
+    </div>
+    <div class="zr-alert zr-alert-error zr-alert-with-description zr-alert-with-icon">
+        <i class="zricon-close-circle"></i>
+        <span class="zr-alert-message">Error</span>
+        <span class="zr-alert-description">Error Description Error Description Error Description Error Description</span>
+    </div>
+    <div class="zr-alert zr-alert-warning zr-alert-with-description zr-alert-with-icon">
+        <i class="zricon-warning"></i>
+        <span class="zr-alert-message">Warning</span>
+        <span class="zr-alert-description">Warning Description Warning Description Warning Description Warning Description</span>
+    </div>
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>自定义关闭按钮 <a href="#">#</a></p>
+        <span>自定义关闭按钮为文字或其他符号</span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div class="c-demo-w-360">
+                <div class="zr-alert zr-alert-info zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-info"></i>
+                    <span class="zr-alert-message">Info Text</span>
+                </div>
+                <div class="zr-alert zr-alert-success zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-ok-circle"></i>
+                    <span class="zr-alert-message">Success Text</span>
+                </div>
+                <div class="zr-alert zr-alert-error zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-close-circle"></i>
+                    <span class="zr-alert-message">Error Text</span>
+                </div>
+                <div class="zr-alert zr-alert-warning zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-warning"></i>
+                    <span class="zr-alert-message">Warning Text</span>
+                </div>
+            </div>
+            <div class="c-demo-w-640">
+                <div class="zr-alert zr-alert-info zr-alert-with-description zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-info"></i>
+                    <span class="zr-alert-message">Info</span>
+                    <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+                </div>
+                <div class="zr-alert zr-alert-success zr-alert-with-description zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-ok-circle"></i>
+                    <span class="zr-alert-message">Success</span>
+                    <span class="zr-alert-description">Success Description Success Description Success Description Success Description</span>
+                </div>
+                <div class="zr-alert zr-alert-error zr-alert-with-description zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-close-circle"></i>
+                    <span class="zr-alert-message">Error</span>
+                    <span class="zr-alert-description">Error Description Error Description Error Description Error Description</span>
+                </div>
+                <div class="zr-alert zr-alert-warning zr-alert-with-description zr-alert-with-icon">
+                    <a class="zr-alert-close" href="javascript:void(0);">close</a>
+                    <i class="zricon-warning"></i>
+                    <span class="zr-alert-message">Warning</span>
+                    <span class="zr-alert-description">Warning Description Warning Description Warning Description Warning Description</span>
+                </div>
+            </div>
+        </div>
+        <div class="c-code-inner c-code-hide">
+    <div class="zr-alert zr-alert-info zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-info"></i>
+        <span class="zr-alert-message">Info Text</span>
+    </div>
+    <div class="zr-alert zr-alert-success zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-ok-circle"></i>
+        <span class="zr-alert-message">Success Text</span>
+    </div>
+    <div class="zr-alert zr-alert-error zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-close-circle"></i>
+        <span class="zr-alert-message">Error Text</span>
+    </div>
+    <div class="zr-alert zr-alert-warning zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-warning"></i>
+        <span class="zr-alert-message">Warning Text</span>
+    </div>
+    <div class="zr-alert zr-alert-info zr-alert-with-description zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-info"></i>
+        <span class="zr-alert-message">Info</span>
+        <span class="zr-alert-description">Info Description Info Description Info Description Info Description</span>
+    </div>
+    <div class="zr-alert zr-alert-success zr-alert-with-description zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-ok-circle"></i>
+        <span class="zr-alert-message">Success</span>
+        <span class="zr-alert-description">Success Description Success Description Success Description Success Description</span>
+    </div>
+    <div class="zr-alert zr-alert-error zr-alert-with-description zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-close-circle"></i>
+        <span class="zr-alert-message">Error</span>
+        <span class="zr-alert-description">Error Description Error Description Error Description Error Description</span>
+    </div>
+    <div class="zr-alert zr-alert-warning zr-alert-with-description zr-alert-with-icon">
+        <a class="zr-alert-close" href="javascript:void(0);">close</a>
+        <i class="zricon-warning"></i>
+        <span class="zr-alert-message">Warning</span>
+        <span class="zr-alert-description">Warning Description Warning Description Warning Description Warning Description</span>
+    </div>
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+
+
+</article>
+<input id="test" value="2018-07-29 12:20:39" readonly />
+<div id="text" style="border:1px solid #ccc;width:100px;height:30px;margin: 10px 20px;">1999-09-20</div>
+<script type="text/javascript">
+    Zr.config({
+        baseUrl:"/js/plugin_modules/",
+        cdnUrl:"/js/cdn/",
+        requestTime:true
+    })
+    Zr.ready(function(){
+        Zr.use("./datePicker/index","./js/quickMenu","./js/code",function(zr,picker){
+            picker.init({
+                target:"#test"
+            });
+            picker.init({
+                target:"#text",
+            });
+        })
+    })
+</script>
+
+</body>
+</html>

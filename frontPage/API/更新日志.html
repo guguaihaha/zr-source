@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新日志</title>
+    <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css?11" />
+    <!--注意此段js必须第一引入在开发模式下{-->
+    <!--}-->
+    <script type="text/javascript" src="/js/zr.min.js?1"></script>
+    <script type="text/javascript">
+        Zr.config({
+            baseUrl:"/js/plugin_modules/",
+            requestTime:true
+        })
+        Zr.ready(function(){
+            Zr.use("./js/quickMenu","./js/code")
+        })
+    </script>
+</head>
+
+<body>
+<article class="c-content">
+    <section class="c-title">
+        <p>更新日志</p>
+        <span>严格遵循 <a target="_blank" href="https://semver.org/lang/zh-CN/">Semantic Versioning 2.0.0</a> 语义化版本规范</span>
+    </section>
+    <div class="c-line"></div>
+    <section class="c-sub-title">
+        <p>发布周期 <a href="#">#</a></p>
+        <span>
+            版本格式：主版本号.次版本号.修订号，先行版本号及版本编译信息可以加到“主版本号.次版本号.修订号”的后面，作为延伸。
+            <ul>
+                <li><div>主版本号：当你做了不兼容的 API 修改</div></li>
+                <li><div>次版本号：当你做了向下兼容的功能性新增</div></li>
+                <li><div>修订号：当你做了向下兼容的问题修正</div></li>
+            </ul>
+        </span>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>更新时间轴 <a href="#">#</a></p>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div class="c-demo-w-360">
+                <ul class="zr-timeline">
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>1.3.3</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-08-01</h3>
+                                <p>因为改动较多，所以本次更新周期较长，因为新增或者修改了原有的方法，所以小版本进行了升级</p>
+                                <p>　~优化组件UI</p>
+                                <p>　~优化了PRO的flex布局已知问题</p>
+                                <p>　~日期控件新增区间选择双日历控件，日期根据页面位置自动定位</p>
+                                <p>　~修复了table没有border的问题，同时针对依赖第三方datatables样式进行了调整</p>
+                                <p>　~nav进行了结构性调整，变化较大，导致layout和PRO都进行了相应的改动，请知晓</p>
+                                <p>　~模态框新增可拖拽</p>
+                                <p>　~radio、checkbox、select去掉了自动监听变化，新增zrchange自定义方法</p>
+                                <p>　~dropdown根据页面位置自动定位</p>
+                                <p>　~修复了form表单不对齐问题</p>
+                                <p>　~新增jqueryForm、fixedColumns、mock第三方插件,<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=f19b3b980bd440d59e6baedfc46c8e88&directoryName=常见组件列表">详情查看</a></p>
+                                <p>　~更新了API文档</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>1.2.2</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-06-26</h3>
+                                <p>618节后上线调整版本</p>
+                                <p>　~合并1.1.3的版本内容</p>
+                                <p>　~新增内置组件<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=d6e4df5700e440ecbac5a3717b46c709&directoryName=Badge%20徽标">徽标</a></p>
+                                <p>　~新增外置组件<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=832911e4ff924e7a81b366b22f65ba78&directoryName=Affix%20固钉">Affix 固钉</a>、<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=832911e4ff924e7a81b366b22f65ba78&directoryName=Affix%20固钉">Popover 气泡卡片、<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=4d8c578f5af749198b4695ca1d65adb3&directoryName=Tag%20标签">Tag 标签</a>、<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=26af4cc7b43e4d0f9b7b2b9a57d20f3e&directoryName=Progress%20进度条">Progress 进度条</a></a></p>
+                                <p>　~优化文档与样式文件</p>
+                                <p>　~录制了视频教学内容<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=a19bb2a947224ea6a8587987ac183280&directoryName=Javascript版本">详情查看</a>Javascript版本中视频集合</p>
+                                <p>　~重写了tabs组件、重写了nav组件、重新排版layout布局</p>
+                                <p>　~更新了axure库、sketch库、table文档</p>
+                                <p>　~修复了input初始化等若干已知问题</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>1.1.3</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-06-11</h3>
+                                <p>紧急修复版本</p>
+                                <p>　~修复了css重复加载问题</p>
+                                <p>　~新增外置组件<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=d723dc14260b4aeebc5ef79623f26d20&directoryName=DatePicker%20日期控件">DatePicker 日期控件</a>的周类型，同时增加了周选中事件回调</p>
+                                <p>　~优化文档与样式文件</p>
+                                <p>　~更新了axure库与sketch库，详情见首页入口</p>
+                                <p>　~重写了部分组件样式</p>
+                                <p>　~修复了若干已知问题</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>1.0.9</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-05-24</h3>
+                                <p>稳定版本</p>
+                                <p>　~增加补丁修复了引擎在模块深度依赖状态下路径解析问题，下一个版本将优化底层流程</p>
+                                <p>　~新增内置组件<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=23260981f8a3491db4b8fc2915c9df3f&directoryName=Tooltip%20文字提示">Tooltip提示</a>、<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=3e833ad5d7f343e29d8f9f356cc4f7dd&directoryName=Top%20返回顶部">Top返回顶部</a>内置组件</p>
+                                <p>　~新增外置组件<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=d723dc14260b4aeebc5ef79623f26d20&directoryName=DatePicker%20日期控件">DatePicker 日期控件</a></p>
+                                <p>　~优化文档与样式文件</p>
+                                <p>　~优化PRO工程，目前是Flex版本，<a href="http://git.jd.com/PRO/flex">详情点击查看</a></p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>0.2.1</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-04-14</h3>
+                                <p>新增与修复功能</p>
+                                <p>　~message外置模块增加alert、confirm提示框<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=636a839e110e44c5b8551de4ada1593b&directoryName=Message%20全局提示">message提示框</a></p>
+                                <p>　~message修改为外部样式文件引入</p>
+                                <p>　~将样式文件改为手动加载，防止页面初始化显示异常</p>
+                                <p>　~新增分割线、卡片、基本Form表单样式</p>
+                                <p>　~更新了echarts为4.0的版本</p>
+                                <p>　~新增PRO工程，目前是Flex版本，<a href="http://git.jd.com/PRO/flex">详情点击查看</a></p>
+                                <p>　此版本为测试发布版，暂用0.0.1的公共资源版本，路径暂不更新，依旧是："//storage.jd.com/0.0.1/zr.min.js"</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>0.1.0</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-04-03</h3>
+                                <p>发布Beta版本</p>
+                                <p>　~增加版本线上配置，详情点击查看<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=aed4199658924584a1b674ad05c3e2ec&directoryName=快速上手#zrq_6">config配置</a></p>
+                                <p>　~公共组件放置到云端，业务逻辑可以自行配置路径，实现公共与私有分离</p>
+                                <p>　~新增table表格基本布局</p>
+                                <p>　~新增datatables、compress外置组件，详情点击查看<a href="/docs?languageCode=CN&columnUid=40ad19be535e477596a033f9fea2bf7d&directoryUid=f19b3b980bd440d59e6baedfc46c8e88&directoryName=常见组件列表" target="_self">常见组件列表</a></p>
+                                <p>　~更新了echarts为4.0的版本</p>
+                                <p>　此版本为测试发布版，暂用0.0.1的公共资源版本，路径暂不更新，依旧是："//storage.jd.com/0.0.1/zr.min.js"</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="zr-timeline-item">
+                        <i class="zr-timeline-icon"></i>
+                        <div class="zr-timeline-content">
+                            <h2>0.0.1</h2>
+                            <div class="c-block-10"></div>
+                            <span>
+                                <h3>2018-03-31</h3>
+                                <p>小范围Beta版本,新增模块如下：</p>
+                                <p>　~工具类库</p>
+                                <p>　~内置模块</p>
+                                <p>　~外置模块</p>
+                                <p>　~中台系统自适应布局</p>
+                                <p>　~完善的脚手架工程</p>
+                                <p>　此版本非正式版本号，暂不遵循起始版本号：0.1.0的官方建议</p>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</article>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Create direction</title>
+
+</head>
+<body>
+<div id="warp" class="warp" style="width:100%;height:500px;"></div>
+</body>
+</html>
+<script type="text/javascript" src="../dist/js/gmap.min.js"></script>
+<script type="text/javascript">
+    var elem = document.getElementById("warp");
+    var mapname = new gmap({
+        target:elem,
+        center:"39.9388838,116.3974589",
+        zoom:12
+    });
+    mapname.onMapLoad = function(){
+        mapname.setMarker([{
+            position:"39.9388838,116.3974589"
+        },{
+            position:"39.1388838,116.3974589"
+        }])
+        mapname.direction({
+            origin:"39.9388838,116.3974589",//required
+            destination:"39.1388838,116.3974589",//required
+            travelMode:"driving",//required
+            suppressMarkers:true,
+            strokeColor:"#194D7B",
+            success:function(array){
+//                array.each(function(n){
+//                   //每个n是个对象
+//                   /**
+//                    * {
+//                            duration:<string>,
+//                            distance:<string>,
+//                            step:<array>,
+//                            route:<object>,
+//                            type:<string>
+//                    * }
+//                    * **/
+//                })
+            }
+        });
+    }
+</script>

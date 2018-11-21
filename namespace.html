@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件平台显示内容</title>
+    <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css" />
+    <script type="text/javascript" src="/js/zr.min.js"></script>
+    <script type="text/javascript">
+        Zr.config({
+            baseUrl:"/js/plugin_modules/"
+        })
+    </script>
+    <script type="text/javascript">
+        Zr.config({
+            baseUrl:"/js/plugin_modules/"
+        })
+        Zr.ready(function(){
+            Zr.use("./js/quickMenu")
+        })
+    </script>
+</head>
+<body>
+<article class="c-content">
+    <section class="c-title">
+        <p>约定</p>
+        <span>请严格按照约定制作组件与模版</span>
+    </section>
+    <div class="c-line"></div>
+    <section class="c-sub-title">
+        <p>更新内容 <a href="#">#</a></p>
+        <span>
+            1.本次只更新切图样式css名称的统一，关于javascript与各个模块的设计还在构思中，请先进行页面切图构造<br/>
+            2.每个分类都有起始ID,每个模块都有唯一的ID，ID是标记所有模块的唯一身份，每种业务场景都可以继续再往下进行分类，通用与产品、交互设计、前端和服务端开发<br/><br/>
+            <section class="c-table">
+                <div class="c-table-body">
+            <table>
+                <tbody>
+                    <tr style="border-top:1px solid #e6e6e6">
+                        <td colspan="5" style="font-weight: bold;color: #5bc0de">
+                            <div class="c-cell">ID序号（10000000）规则定义</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="c-cell c-table-w-125">1</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-125">00</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">00</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">00</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-125">0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="c-cell c-table-w-125">大模块起始类别</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-125">模块分类</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">业务模块（00）代表公共类</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">效果分类（00）代表默认效果</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-125">其他标记</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            </section><br/><br/>
+            3.内置模块以"_"开始，写法上注意使用对象方法:<br/>
+            <div>
+                var _dropdown = {<br/>
+                  uid:20300000,<br/>
+                    version:"1.0.0",<br/>
+                    init:function(){},<br/>
+                    options:{},<br/>
+                    events:{},<br/>
+                    eventFn:{},<br/>
+                    ajax:{}<br/>
+                }<br/>
+                其中每个对象都有init的方法，入参是一个对象，结构如下:<br/>
+                {<br/>
+                        selector:_selector,//选择器模块<br/>
+                        module:_module,//公共模块名称<br/>
+                        options:_options,//所有该模块的公共附加对象<br/>
+                        array:_retSelector//传入的新模块对象<br/>
+                }<br/>
+                具体DEMO请参照文件:"frontPage/js/alert.js"<br/>
+                开发模式下请将各自的js文件手动引入到页面头部第一个，可以参考"frontPage/alert.html"中的头部第一个js引入的例子<br/>
+            </div><br/>
+            4.外置模块就采用Zr.add语法进行书写，路径是"./zr/*"<br/>
+            <div>
+                Zr.add("./zr/*",function(zr){<br/>
+                      //todo something<br/>
+                },{requires:[]})<br/>
+            </div><br/>
+            5.尽量不要更改公共模块：template.less、default.less、zr/index.js和其他公共属性，如果更改请在群内主动通知<br/>
+            6.CSS样式命名使用常见单词：show、hide、block、inner、outer。并且命名方式采用下划线命名方法：zr-dropdown-top-left,统一小写<br/>
+            7.浮层样式最高是9999,最小是100,其中警告提示信息类最高(9999)，下拉菜单等（2000）<br/>
+             ~下拉菜单(zr-dropdown)：100~199<br/>
+             ~导航菜单(zr-nav)：200~299<br/>
+             ~下拉选择器(zr-select)：300~399<br/>
+             ~模态框(zr-modal)：900~999<br/>
+             ~通知提醒(zr-notification)：8100~8150<br/>
+             ~全局提示(zr-message)：8050~8099<br/>
+
+            8.图片样式地址："//storage.jd.com/zrstatic/images/demo1.jpg"，"//storage.jd.com/zrstatic/images/demo2.jpg"，"//storage.jd.com/zrstatic/images/demo3.jpg"<br/>
+             ——（更新时间：2018-03-15）
+        </span>
+    </section>
+    <div class="c-options-title">各个模块规范定义</div>
+    <section class="c-table">
+        <div class="c-table-header">
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        <div class="c-cell c-table-w-125">模块名称</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-150">CSS样式命名</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-175">JS模块名称</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-200">注意事项</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-300">其他</div>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="c-table-body">
+            <table>
+                <tbody>
+                <tr>
+                    <td colspan="5" style="font-weight: bold;color: #5bc0de">
+                        <div class="c-cell">基础类别 —JS模块唯一ID序号（10000000）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">按钮</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-btn</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_btn </div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">郭晓芳</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:10100000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">图标</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zricon</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">无</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300" style="font-size: 12px">[zricon]-[图标名]-[图标状态*]-[方向*]-[附加区分状态*]</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">栅格</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-row-* | zr-col-*</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">无</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">一行24栅格 ID:10200000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line-wait">
+                    <td>
+                        <div class="c-cell c-table-w-125">布局</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-layout</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_layout</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">一行24栅格 ID:10300000 （内置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="font-weight: bold;color: #5bc0de">
+                        <div class="c-cell ">导航条目—JS模块唯一ID序号（20000000）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">面包屑</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-breadcrumb</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_breadcrumb</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">庄莹</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:20100000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">导航和导航菜单</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-nav | zr-nav-*</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_nav</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：庄莹，交互：郭明</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">参考值：-item、-group、-menu等 ID:20200000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">下拉菜单（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-dropdown</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_dropdown</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">庄莹、张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:20300000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">步骤条</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-step</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_step</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">徐红</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:20400000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">分页</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-page</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">page</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:20500000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">标签页</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-tab</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">tab</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：徐红，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:20600000 （外置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="font-weight: bold;color: #5bc0de">
+                        <div class="c-cell">表单元素—JS模块唯一ID序号（30000000）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">输入框（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-input</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_input</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">郭明</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30100000 （内置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125">数字输入框</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-number</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_number</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30200000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">单选框（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-radio</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_radio</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30300000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">多选框（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-checkbox</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_checkbox</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30400000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">下拉选择器</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-select</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_select</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">郭明</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30500000 （内置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125">级联选择</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-cascade</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">cascade</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30600000 （外置）</div>
+                    </td>
+                </tr>
+                <tr style="text-decoration:line-through">
+                    <td>
+                        <div class="c-cell c-table-w-125">树形控件</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-tree</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">tree</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">无</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30700000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">日期选择</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-datepicker</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">datePicker</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30800000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">上传（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-upload</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_upload</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">郭晓芳</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:30900000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">进度条</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-progress</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">progress</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">王美霞</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:31000000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line-wait">
+                    <td>
+                        <div class="c-cell c-table-w-125">表单</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-form</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_form</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:31100000 （内置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="font-weight: bold;color: #5bc0de">
+                        <div class="c-cell ">信息展示—JS模块唯一ID序号（40000000）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">警告提示</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-alert</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_alert</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：郭晓芳，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40100000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">全局提示</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-message</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">message</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：郭晓芳，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40200000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">通知提醒</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-notification</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">notification</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：庄莹，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40300000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">模态框与提示框</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-modal</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">modal</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文韬</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40400000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">文字提示气泡</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-tip-*</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_tip</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">庄莹</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">参考值：-text、-info、-other等 ID:40500000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">气泡卡片</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-popover</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">popover</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">王美霞</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40600000 （外置）</div>
+                    </td>
+                </tr>
+                <tr style="text-decoration:line-through">
+                    <td>
+                        <div class="c-cell c-table-w-125">气泡确认框(重复不做)</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-pop-*</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">pop</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">庄莹</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">参考值：-confirm、-warn、-alert等ID:40700000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">徽标数</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-badge</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_badge</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">李伟</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40800000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line-doing">
+                    <td>
+                        <div class="c-cell c-table-w-125">折叠面板</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-collapse</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">collapse</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：庄莹，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:40900000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">卡片</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-card</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_card</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">郭明</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41000000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">头像</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-photo</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_photo</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">徐红</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41100000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">标签</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-tag</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">tag</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">李伟</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41200000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">时间轴</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-timeline</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_timeline</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41300000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line-wait">
+                    <td>
+                        <div class="c-cell c-table-w-125">表格（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-table</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">table</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">徐红</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41400000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">list（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-list</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_list</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">郭晓芳</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41500000 （外置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125">autoComplete（*）</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-autocomplete</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">autoComplete</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">喻文涛</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:41600000 （外置）</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="font-weight: bold;color: #5bc0de">
+                        <div class="c-cell ">其他—JS模块唯一ID序号（50000000）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">固钉</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-affix</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">affix</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：庄莹，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:50100000 （外置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">返回顶部</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-back-top</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_top</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">切图：庄莹，交互：张京林</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:50200000 （内置）</div>
+                    </td>
+                </tr>
+                <tr class="through-line">
+                    <td>
+                        <div class="c-cell c-table-w-125">分割线</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-150">zr-divide</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-175">_divide</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">庄莹</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-300">ID:50300000 （内置）</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</article>
+</body>
+</html>

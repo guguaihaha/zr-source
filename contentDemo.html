@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件平台显示内容</title>
+    <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css" />
+    <script type="text/javascript" src="/js/zr.min.js?1"></script>
+    <script type="text/javascript">
+        Zr.config({
+            baseUrl:"/js/plugin_modules/"
+        })
+        Zr.ready(function(){
+            Zr.use("./js/quickMenu","./js/code")
+        })
+    </script>
+</head>
+<body>
+<article class="c-content">
+    <section class="c-title">
+        <p>Button 按钮</p>
+        <span>基础空间，当用户奠基石出发一个操作</span>
+    </section>
+    <div class="c-line"></div>
+    <section class="c-thin-title">
+        <p>使用方法</p>
+        <span>
+            <ul>
+                <li><span>网站层级较多</span></li>
+                <li><span>用户对网站不熟悉</span></li>
+                <li><span>用户返回上级需求</span></li>
+            </ul>
+        </span>
+    </section>
+    <div class="c-block-50"></div>
+    <section>
+        <ul class="zr-row-flex">
+            <li class="zr-col-4">不限制最大宽度</li>
+            <li class="zr-col-4">1</li>
+            <li class="zr-col-4">2</li>
+            <li class="zr-col-4">3</li>
+            <li class="zr-col-4">4</li>
+            <li class="zr-col-4">5</li>
+        </ul>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="mw">
+        <ul class="zr-row-flex">
+            <li class="zr-col-4">限制最大宽度</li>
+            <li class="zr-col-4">1</li>
+            <li class="zr-col-4">2</li>
+            <li class="zr-col-4">3</li>
+            <li class="zr-col-4">4</li>
+            <li class="zr-col-4">5</li>
+        </ul>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>图标命名规范 <a href="#">#</a></p>
+        <span>
+            图标有一定的命名规则，规则如下：
+            <ul>
+                <li><div>只允许出现字母、数字并且字母为小写</div></li>
+                <li><div>实现和描线图标保持同命名，用-e来区分，例如：zricon-search(实心)和zricon-search-e(空心)</div></li>
+                <li><div>命名顺序：[zricon]-[图标名]-[图标状态*]-[方向*]-[附加区分状态*]</div></li>
+            </ul>
+        </span>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>标准按钮 <a href="#">#</a></p>
+        <span>标准按钮有四种类型：主要按钮、次要按钮</span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-demo">
+            这里放置书写好的DEMO
+        </div>
+        <div class="c-code-inner c-code-hide">
+            这里放置对应书写好的HTML
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>按钮尺寸 <a href="#">#</a></p>
+        <span><i class="c-block-inline">样式一</i> > <i class="c-block-inline">样式二</i></span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-demo">
+            这里放置书写好的DEMO
+        </div>
+        <div class="c-code-inner">
+            这里放置对应书写好的HTML
+        </div>
+    </section>
+    <div class="c-options-title">Method</div>
+    <section class="c-table">
+        <div class="c-table-header">
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        <div class="c-cell c-table-w-125">宽度125</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-150">宽度150</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-175">宽度175</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-200">宽度200</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-300">宽度300</div>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="c-table-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="c-cell c-table-w-125">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-150">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-175">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-200">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">mywordnumber</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="c-cell c-table-w-125">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-150">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-175">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-200">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">mywordnumber</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="c-cell c-table-w-125">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-150">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-175">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-200">mywordnumber</div>
+                        </td>
+                        <td>
+                            <div class="c-cell c-table-w-300">mywordnumber</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+    <div class="c-block-16"></div>
+    <div class="c-options-title">资源链接</div>
+    <section class="c-link">
+        <ul>
+            <li><a href="#">资源地址A</a></li>
+            <li><a href="#">资源地址B</a></li>
+            <li><a href="#">资源地址C</a></li>
+            <li><a href="#">资源地址D</a></li>
+        </ul>
+    </section>
+</article>
+</body>
+</html>

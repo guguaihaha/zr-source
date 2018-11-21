@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件平台首页</title>
+</head>
+<body style="font-size: 100px;">
+
+<div id="demo">
+    <ul id="test" class="ztree">
+
+    </ul>
+</div>
+
+<script type="text/javascript" src="//storage.jd.com/0.0.1/zr.min.js"></script>
+<script type="text/javascript">
+    Zr.config({
+        baseUrl:"/js/plugin_modules/",
+        requestTime:true
+    })
+    Zr.ready(function(){
+        Zr.use("jquery","ztree",function(zr,$,ztree){
+            var setting = {
+                view: {
+                    selectedMulti: false
+                },
+                async: {
+                    enable: true,
+                    url:"/test/getNodes.json",
+                    type:"get",
+                    autoParam:["id", "name=n", "level=lv"],
+                    otherParam:{"otherParam":"zTreeAsyncTest"}
+                }
+            };
+            $.fn.zTree.init($("#test"), setting);
+
+
+        })
+    })
+</script>
+</body>
+
+</html>

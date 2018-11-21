@@ -1,0 +1,101 @@
+@import "../../less/theme/default";
+
+.@{zr-prefix}-notification-wrap{
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 8100;
+  padding-top: 24px;
+}
+/*
+ * notification 通知提醒
+ */
+.@{zr-prefix}-notification {
+  margin-bottom: @padding-md;
+  margin-right: @notification-position-right;
+  background: @component-background;
+  box-shadow: @notification-shadow-base;
+  border-radius: @border-radius-base;
+  color: @text-color;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  width: 360px;
+  position: relative;
+  z-index: 8100;
+  .@{zr-prefix}-notification-close {
+    position: absolute;
+    top: @padding-xs - 2px;
+    right: @padding-sm;
+    font-size: @font-size-base;
+    color: @text-color-secondary;
+    &:hover {
+      color: @text-color;
+    }
+  }
+}
+
+
+.@{zr-prefix}-notification-with-description {
+  padding: @padding-lg;
+  .@{zr-prefix}-notification-message {
+    display: block;
+    margin-bottom: @notification-padding-bottom;
+    font-weight: @font-weight;
+  }
+}
+
+/*
+ notification-message
+*/
+.@{zr-prefix}-notification-with-message {
+  padding: @notification-padding-base;
+  .@{zr-prefix}-notification-message {
+    display: block;
+    font-weight: @font-weight;
+  }
+  .@{zr-prefix}-notification-close {
+    top: @padding-sm - 2px;
+    right: @padding-md;
+  }
+}
+
+/*
+ notification-icon
+*/
+
+.@{zr-prefix}-notification-with-icon {
+  padding-left: @padding-lg + 14px;
+}
+
+.@{zr-prefix}-notification-with-icon > [class^="zricon-"] {
+  position: absolute;
+  top: @padding-xs - 2px;
+  left: @padding-sm;
+  font-size: @font-size-base;
+}
+
+.@{zr-prefix}-notification-with-description.@{zr-prefix}-notification-with-icon {
+  padding-left: @padding-lg *2 - 3px;
+}
+
+.@{zr-prefix}-notification-with-description > [class^="zricon-"] {
+  top: @padding-lg;
+  left: @padding-lg - 2px;
+  font-size: @font-size-base;
+}
+
+.@{zr-prefix}-notification-info > [class^="zricon-"] {
+  color: @info-6;
+}
+
+.@{zr-prefix}-notification-success > [class^="zricon-"] {
+  color: @success-6;
+}
+
+.@{zr-prefix}-notification-error > [class^="zricon-"] {
+  color: @error-6;
+}
+
+.@{zr-prefix}-notification-warning > [class^="zricon-"] {
+  color: @warning-6;
+}

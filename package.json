@@ -1,0 +1,31 @@
+{
+  "name": "zrwebsite",
+  "version": "1.0.0",
+  "description": "pc production",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://source.jd.com/app/mrd-pc-zrwebsite.git"
+  },
+  "keywords": [
+    "zr",
+    "zrwebsite"
+  ],
+  "author": "zhangjinglin",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-less": "^3.4.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^5.0.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {}
+}

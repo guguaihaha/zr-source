@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript版本</title>
+    <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css?11" />
+    <!--注意此段js必须第一引入在开发模式下{-->
+    <!--}-->
+    <script type="text/javascript" src="//storage.jd.com/1.3.3/zr.min.js"></script>
+
+</head>
+
+<body>
+<article class="c-content">
+
+    <section class="c-title">
+        <p>Zr Core of Javascript</p>
+        <span>你只要会使用javascript就会使用Zr UI。里面封装了一些工具类，方便且实用</span>
+    </section>
+    <div class="c-line"></div>
+    <section class="c-sub-title">
+        <p>特征 <a href="#">#</a></p>
+        <span>
+            <ul>
+                <li><div>严格按照企业级提供的设计与交互规范</div></li>
+                <li><div>内置常用工具类库，jQuery、tmpl等</div></li>
+                <li><div>学习门槛低，会javascript就会使用</div></li>
+                <li><div>开箱即用</div></li>
+                <li><div>兼容IE9级以上</div></li>
+                <li><div>完好的Blank工程，不用配置，简单且直接开发</div></li>
+            </ul>
+        </span>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>视频集合 <a href="#">#</a></p>
+        <span>
+            <ul>
+                <li><div><a href="http://v.jd.com/linfo/toPlay/5589" target="_blank">需求分析&风险规避&未来规划</a></div></li>
+                <li><div><a href="http://v.jd.com/linfo/toPlay/5589" target="_blank">如何实现的技术细节</a></div></li>
+                <li><div>如何配置开发环境（更新中）</div></li>
+                <li><div><a href="http://v.jd.com/linfo/toPlay/5589" target="_blank">Zr快速入门方法</a></div></li>
+                <li><div><a href="http://v.jd.com/linfo/toPlay/5589" target="_blank">PRO的使用方法</a></div></li>
+                <li><div>目前应用项目与意见反馈（更新中）</div></li>
+            </ul>
+        </span>
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>引入方法 <a href="#">#</a></p>
+        <span class="c-title-3">最传统的引入方式，直接头部放css，底部放脚本即可</span><br/>
+        <span class="c-title-3">HTML 代码:</span>
+    </section>
+    <section class="c-code">
+        <div class="c-code-inner" style="border-top:0;">
+            <!--css样式请放在head标签内部-->
+            <!--<link type="text/css" rel="stylesheet" href="//storage.360buyimg.com/1.3.3/zr/css/cdn_zr.min.css" />-->
+            <!--以下script请放到</body>前-->
+            <!--<script type="text/javascript" language="javascript" src="//storage.360buyimg.com/1.3.3/zr.min.js"></script>-->
+            <!--<script type="text/javascript">-->
+                //配置方法；
+                Zr.config({
+                    //配置plugin_modules的目录；
+                    baseUrl:"/js/plugin_modules/",
+                    //开发模式，默认关闭；
+                    requestTime:true
+                })
+                //初始入口，Zr各个模块准备就绪后调用；
+                Zr.ready(function(){
+                    //使用相应的模块；
+                    Zr.use("jquery","./js/code",function(zr,$,code){
+                        //自动注入了jquery组件；
+                        //自动注入了./js/code组件；
+                    })
+                })
+             <!--</script>-->
+    </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>Flex版本的PRO工程<a href="#">#</a></p>
+
+        <span class="c-title-3">（IE10+）以及其他主流浏览器</span>
+        <span class="c-title-3">使用npm安装  (推荐使用)</span>
+    </section>
+    <section class="c-code">
+        <div class="c-code-inner" style="border-top:0;">
+            $ git clone http://git.jd.com/PRO/flex.git --depth=1
+            $ cd zr-pro-flex
+            $ npm install
+            $ gulp DEV # 启动后，请选择index.html。如果未启动，请打开浏览器访问 http://localhost:9696/index.html
+
+        </div>
+    </section>
+    <span class="c-title-3" style="display: block;padding-top: 20px;">其他服务：Apache、Nginx、Forever、pm2等</span>
+    <section class="c-code">
+        <div class="c-code-inner" style="border-top:0;">
+            <!--@注意还是从git上clone，目前只能从git.jd.com进行下载，其他用户暂时无法使用-->
+            步骤一：$ git clone http://git.jd.com/PRO/flex.git --depth=1
+            步骤二：切换到对应的目录，然后将目录移动到对应的服务（Apache、Nginx、Forever、pm2等）指定的启动位置
+            步骤三：启动服务，然后就可以直接预览了<br/>
+            当然过程中有任何问题可以及时联系：咚咚群：7141716。或者发送邮件到:zr_team@jd.com<br/>
+            我们会全力支持~~
+
+        </div>
+    </section>
+    <div class="c-block-20"></div>
+    <section class="c-sub-title">
+        <p>Float版本的PRO工程<a href="#">#</a></p>
+
+        <span class="c-title-3">（IE8+）以及其他主流浏览器</span>
+        <span class="c-title-3">使用npm安装  (推荐使用)</span>
+    </section>
+    <section class="c-code">
+        <div class="c-code-inner" style="border-top:0;">
+         目前正在测试阶段，敬请期待......
+        </div>
+    </section>
+    <div class="c-block-20"></div>
+</article>
+</body>
+</html>
+<script type="text/javascript">
+    Zr.config({
+        baseUrl:"/js/plugin_modules/",
+        requestTime:true
+    })
+    Zr.ready(function(){
+        Zr.use("./js/quickMenu","./js/code")
+    })
+</script>

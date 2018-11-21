@@ -1,0 +1,66 @@
+@import "../../less/theme/default";
+/*
+ * tag
+*/
+.@{zr-prefix}-tag-normal,.@{zr-prefix}-tag-closable,.@{zr-prefix}-tag-addable{
+  display: inline-block;
+  background-color: #F0F5FF;
+  color: @primary-color;
+  font-size: @font-size-sm;
+  border-radius: 4px;
+  padding: 0 12px;
+  line-height: 24px;
+}
+.@{zr-prefix}-tag-closable i{
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 200ms;
+}
+.@{zr-prefix}-tag-closable i:hover{
+  transform: scale(1.5);
+}
+.@{zr-prefix}-tag-addable{
+  cursor: pointer;
+}
+
+.@{zr-prefix}-tag-input{
+  border: 1px solid @grey-5;
+  border-radius: 4px;
+  margin-left: 6px;
+  height: 24px;
+  padding: 0 3px;
+  display: none;
+}
+
+.zr-tag-red{
+  background-color: @red-6;
+  color:@grey-1;
+}
+.zr-tag-orange{
+  background-color: @orange-6;
+  color:@grey-1;
+}
+.zr-tag-yellow{
+  background-color: @yellow-6;
+  color:@grey-1;
+}
+.zr-tag-green{
+  background-color: #6CC902;
+  color:@grey-1;
+}
+.zr-tag-cyan{
+  background-color: @cyan-6;
+  color:@grey-1;
+}
+.zr-tag-geekblue{
+  background-color: @geekblue-6;
+  color:@grey-1;
+}
+.zr-tag-blue{
+  background-color: @blue-6;
+  color:@grey-1;
+}
+.zr-tag-purple{
+  background-color: @purple-6;
+  color:@grey-1;
+}
