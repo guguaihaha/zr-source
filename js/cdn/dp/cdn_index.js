@@ -57,7 +57,7 @@ Zr.add("./dp/cdn_index",function(zr){
     }
     //通过伪装成Image对象，请求后台
     var img = new Image(1, 1);
-    var src = 'http://zr.jd.com/dataCollection/log.gif?args=' + encodeURIComponent(args);
+    var src = 'http://gtp-zr.jd.com/dataCollection/log.gif?args=' + encodeURIComponent(args);
     img.src = src;
     //
     return{}

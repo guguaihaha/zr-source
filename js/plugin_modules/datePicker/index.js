@@ -473,7 +473,11 @@ Zr.add("./datePicker/index",function(zr,$,moment,c){
                     $(this).addClass("zr-datepicker-choose");
                     //
                     //调取onSelect方法
-                    options.onSelect.call(options,_moment.format("YYYY-MM-DD HH:mm:ss"));
+                    var rets = [],prefix = _moment.format("YYYY-MM")
+                    for(var i = 1; i <= _moment.daysInMonth();i++){
+                        rets.push(moment(prefix+"-"+i));
+                    }
+                    options.onSelect.call(options,_moment.format("YYYY-MM-DD HH:mm:ss"),rets);
                     //
                     if(options.type == "datetime" || options.type == "normal"){
                         //切回原状态
@@ -882,7 +886,8 @@ Zr.add("./datePicker/index",function(zr,$,moment,c){
                     if($(this).hasClass("zr-datepicker-unchoose")){
                         return false;
                     }
-                    var $col = $(this).find(".zr-datepicker-col").eq(1),
+                    var $cols = $(this).find(".zr-datepicker-col");
+                    var $col = $cols.eq(1),
                         _index = $col.attr("data-index"),
                         _time = $col.attr("data-time");
                     var $picker = $(this).closest(".zr-datepicker-wrap"),
@@ -897,8 +902,19 @@ Zr.add("./datePicker/index",function(zr,$,moment,c){
                     if(options.autoClose){
                         datePicker.eventsFn.hidePickerEvent($picker[0]);
                     }
+                    //
+                    var rets = [];
+                   $cols.each(function(i){
+                       if(i>0){
+                           var $col = $cols.eq(i),
+                               _index = $col.attr("data-index"),
+                               _time = $col.attr("data-time");
+                           var weekMoment = zr.fn.datePicker.month[_time][_index];
+                           rets.push(weekMoment.moment)
+                       }
+                   })
                     //调取onSelect方法
-                    options.onSelect.call(options,weekMoment.format(options.format));
+                    options.onSelect.call(options,weekMoment.format(options.format),rets);
                 })
                 datePicker.events.init(dom);
 
