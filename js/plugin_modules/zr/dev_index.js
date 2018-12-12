@@ -108,6 +108,7 @@
         {
             selectorName:"."+prefix+"-dropdown",
             moduleName:"_dropdown",
+            prefix:prefix,
             options:{
                 showMenuClassName:prefix+"-dropdown-show",//显示下拉菜单
                 centerClassName:prefix+"-dropdown-center",//居中名称
@@ -119,6 +120,7 @@
         {
             selectorName:"."+prefix+"-alert",
             moduleName:"_alert",
+            prefix:prefix,
             options:{
                 closeSelector:"."+prefix+"-alert-close",//关闭的样式名称
                 isRemove:true,//关闭后，是否是移除，默认是移除,否则是隐藏
@@ -127,6 +129,7 @@
         {
             selectorName:"."+prefix+"-input",
             moduleName:"_input",
+            prefix:prefix,
             options:{
                 clearSelector:"."+prefix+"-input-clear",
                 clearClassName:prefix+"-input-clear",
@@ -136,6 +139,7 @@
         {
             selectorName:"."+prefix+"-textarea",
             moduleName:"_input",
+            prefix:prefix,
             options:{
                 txtNumSelector:"."+prefix+"-input-num",
                 groupSelector:"."+prefix+"-input-group",
@@ -144,6 +148,7 @@
         {
             selectorName:"."+prefix+"-radio",
             moduleName:"_radio",
+            prefix:prefix,
             options:{
                 radioedClassName:prefix+"-radio-radioed",//选中的radio
                 disabledClassName:prefix+"-radio-disable",//禁用的radio
@@ -153,6 +158,7 @@
         {
             selectorName:"."+prefix+"-checkbox",
             moduleName:"_checkbox",
+            prefix:prefix,
             options:{
                 checkedAllClassName:prefix+"-checkbox-all",//全选
                 checkedClassName:prefix+"-checkbox-checked",//选中
@@ -166,6 +172,7 @@
         {
             selectorName:"."+prefix+"-select",
             moduleName:"_select",
+            prefix:prefix,
             options:{
                 hideClassName:prefix + "-select-hide",//隐藏
                 disableClassName:prefix + "-select-disable",//禁用样式
@@ -186,6 +193,7 @@
         {
             selectorName:"."+prefix+"-nav",
             moduleName:"_nav",
+            prefix:prefix,
             options:{
                 itemClassName:"."+prefix + "-nav-item", //item项
                 treeClassName:prefix + "-nav-tree", //侧边导航
@@ -200,6 +208,7 @@
         {
             selectorName: "." + prefix + "-upload",
             moduleName: "_upload",
+            prefix:prefix,
             options: {
                 moduleClassName: prefix + "-upload-module",
                 explainClassName: prefix + "-upload-explain", //带说明文字
@@ -218,6 +227,7 @@
         {
             selectorName:"."+prefix+"-layout",
             moduleName:"_layout",
+            prefix:prefix,
             options:{
                 sideTriggerClassName:prefix + "-layout-side-trigger",
                 sideClassName:prefix + "-layout-side",
@@ -231,18 +241,21 @@
         {
             selectorName:"."+prefix+"-tooltip",
             moduleName:"_tip",
+            prefix:prefix,
             options:{
             }
         },
         {
             selectorName:"."+prefix+"-top",
             moduleName:"_top",
+            prefix:prefix,
             options:{
             }
         },
         {
             selectorName:"."+prefix+"-badge",
             moduleName:"_badge",
+            prefix:prefix,
             options:{
                 normalClassName:"."+prefix+"-badge-normal"
             }
@@ -357,12 +370,14 @@ Zr.add("./zr/dev_index",function(zr,$){
             _retSelector = [],
             _selector = "",
             _options = "",
+            _prefix = "",
             _module = "";
         //
         $.each(_ms,function(i,n){
             _selector = n.selectorName;
             _options = n.options;
             _module = n.moduleName;
+            _prefix = n.prefix;
             _retSelector = _find(_selector,type);
             _q = [];
             if(_retSelector.length > 0){
@@ -370,6 +385,7 @@ Zr.add("./zr/dev_index",function(zr,$){
                 _q = {
                     selector:_selector,
                     module:_module,
+                    prefix:_prefix,
                     options:_options,
                     array:_retSelector
                 }

@@ -2,6 +2,7 @@ var _input = {
         uid:30100000,
         version:"1.0.0",
         init:function(domObject){
+			console.log(domObject)
             this.options._obj = domObject;
             this.events.bindEvent(domObject);
 	        // this.events.showIconEvent(domObject);
