@@ -1114,14 +1114,21 @@ Zr.add("./datePicker/index",function(zr,$,moment,c){
 
                 var $w = $(window),
                     _wh = parseFloat($w.height());
-                if((pst + _th) > _wh){
+                //
+                var _wpst = parseFloat($w.scrollTop());
+                //
+                //
+
+                if(_wh - (pst - _wpst) < _th){
                     //自动向上
                     $t.css({
+                        display:"block",
                         left:psl + options.autoOffset.x,
                         top:pst - _th - h/2 + options.autoOffset.y
                     })
                 }else{
                     $t.css({
+                        display:"block",
                         left:psl + options.autoOffset.x,
                         top:pst + h + options.autoOffset.y
                     })
