@@ -29,6 +29,12 @@ Zr-source
     <link rel="stylesheet" href="//storage.360buyimg.com/v1.0.0/zr/css/cdn_zr.min.css" />
 </head>
 <body>
+<div id="app">
+
+<!-- 我的业务逻辑 -->
+
+</div>
+
 <script type="text/javascript"  src="//storage.360buyimg.com/v1.0.0/zr.min.js"></script>
 <script>
     //全局配置
