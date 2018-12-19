@@ -5,9 +5,18 @@ Zr-source
 
 下载后运行npm install，如果安装失败，请使用淘宝镜像安装cnpm install。 安装完毕后运行命令 gulp 即可
 
-> 如何开发组件
+<br/>
+<br/>
+<br/>
+
+> 如何贡献组件
 
 很简单，直接fork `zr-source` 这个项目到你的GitHub账号下即可。然后开发完了可以push到你的账号下同时发送pull通知给我
+同时表明组件的用途，最好还有一个不错的文档哦。
+
+<br/>
+<br/>
+<br/>
 
 > 如何引用Zr
 
