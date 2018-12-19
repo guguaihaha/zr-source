@@ -31,7 +31,7 @@ Zr-source
 <body>
 <div id="app">
 
-<!-- 我的业务逻辑 -->
+<!-- 其他页面Dom结构 -->
 
 </div>
 
