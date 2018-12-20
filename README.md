@@ -13,9 +13,9 @@ Zr-source
 
 + [设计规范](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=54abb41d5af74c34b1878cd8646a3552&directoryUid=)
 
-+ [Zr-UI的组件](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
++ [Zr-UI的组件示例](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
 
-+ [Zr UI的详细API](/docs/index.md)
++ [Zr-UI的详细API](/docs/index.md)
 
 + [Zr-pro的展示地址](//gtp-zr.jd.com/static/tmpl/dashboard/workboard.html)
 
