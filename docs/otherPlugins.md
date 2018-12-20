@@ -35,7 +35,7 @@
 | swiper        | 版本号：4.0   |   [API地址](https://www.swiper.com.cn/api/index.html) [官网地址](https://www.swiper.com.cn/demo/index.html)  |
 | echarts        | 版本号：4.0.4 ,包含所有图表组件，大约是706KB左右    |   [API地址](http://echarts.baidu.com/api.html#echarts) [官网地址](http://echarts.baidu.com/)  |
 | echartsSimple        | 版本号：4.0.4，只包含基础图表：折、柱、饼，大约是283KB左右   |   [API地址](http://echarts.baidu.com/api.html#echarts) [官网地址](http://echarts.baidu.com/)  |
-| echartsNormal        | 版本号为：4.0.4,包含常用图表：折、柱、饼、散点、图例、工具栏、标注/线/域、数据区域缩放，大约是444KB左右  |   [API地址](http://echarts.baidu.com/api.html#echarts) [官网地址](http://echarts.baidu.com/)  |
+| echartsNormal        | 版本号为：4.0.4,包含常用图表：折、柱、饼、散点、图例等大约是444KB左右  |   [API地址](http://echarts.baidu.com/api.html#echarts) [官网地址](http://echarts.baidu.com/)  |
 | compress        | 图片压缩  |   [API地址](//github.com/guguaihaha/compress) |
 
 
