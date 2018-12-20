@@ -11,13 +11,13 @@ Zr-source
 
 > 快速了解Zr
 
-+ [设计规范](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=54abb41d5af74c34b1878cd8646a3552&directoryUid=)
++ [设计规范](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=54abb41d5af74c34b1878cd8646a3552&directoryUid=)
 
-+ [Zr-UI的组件示例](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
++ [Zr-UI的组件示例](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
 
 + [Zr-UI的详细API](/docs/index.md)
 
-+ [Zr-pro的展示地址](//gtp-zr.jd.com/static/tmpl/dashboard/workboard.html)
++ [Zr-pro的展示地址](http://gtp-zr.jd.com/static/tmpl/dashboard/workboard.html)
 
 + [使用Zr-pro](//github.com/guguaihaha/zr-pro-flex)
 
