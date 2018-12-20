@@ -9,4 +9,4 @@
 | 组件封装技巧  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-add)    | [讨论](//github.com/guguaihaha/zr-engine/issues/5) |
 | PRO的使用  |    | [API](//github.com/guguaihaha/zr-pro-flex)    | [讨论](//github.com/guguaihaha/zr-pro-flex/issues) |
 |   |    |    |  |
-| button 按钮  | [Demo](./inner/button.md)   | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-add)    | [讨论](//github.com/guguaihaha/zr-engine/issues/5) |
+| button 按钮  | [Demo](/docs/inner/button.md)   | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-add)    | [讨论](//github.com/guguaihaha/zr-engine/issues/5) |
