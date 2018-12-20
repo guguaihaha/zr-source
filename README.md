@@ -9,6 +9,22 @@ Zr-source
 <br/>
 <br/>
 
+> 快速了解Zr
+
++ [设计规范](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=54abb41d5af74c34b1878cd8646a3552&directoryUid=)
+
++ [Zr-UI的组件](//gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
+
++ [Zr UI的详细API](/docs/index.md)
+
++ [Zr-pro的展示地址](//gtp-zr.jd.com/static/tmpl/dashboard/workboard.html)
+
++ [使用Zr-pro](//github.com/guguaihaha/zr-pro-flex)
+
+<br/>
+<br/>
+<br/>
+
 > 如何贡献组件
 
 很简单，直接fork `zr-source` 这个项目到你的GitHub账号下即可。然后开发完了可以push到你的账号下同时发送pull通知给我
@@ -67,3 +83,5 @@ Zr-source
 </html>
 
 ```
+
+
