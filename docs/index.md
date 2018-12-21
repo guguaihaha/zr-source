@@ -13,8 +13,12 @@
 ```
 
    可以看到，添加了zr-tooltip 的className即可将按钮变成了文字提示，提示位置`data-ip-position`和内容`data-tip-text`又是自定义的属性来控制。
+   
    当然如果需要控制具体回调事件的操作，每个内置组件基本都会在文档中说明是否嵌入了onzrchange，具体详细参考各个内置模块的api[了解更多](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
-   当然还有更多[内置组件讨论和改进意见](//github.com/guguaihaha/zr-source/issues/36)
+   
+   [内置组件讨论和改进意见](//github.com/guguaihaha/zr-source/issues/36)
+   
+   
 
 + 外置组件
 
