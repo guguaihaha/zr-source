@@ -4,7 +4,7 @@
 
 ---
 
-###使用方法
+### 使用方法
 
 + 按钮触发应用的功能，存在于页面的许多地方。按钮可以是“图标按钮”，也可以是“文字按钮”，也可以“图文结合”。
 
@@ -22,17 +22,59 @@
 
 + 标准按钮
 
+标准按钮有四种类型：主按钮 zr-btn-primary 、次按钮 zr-btn-default 、危险按钮 zr-btn-danger 、不可点按钮 zr-btn-disable 。
+
 ```html
     <button type="button" class="zr-btn zr-btn-primary">Primary</button>
 ```
 
 <br/>
 
-+ 多种标签
++ 多种标签都是支持的
+
+可以很好的支持button标签与A标签
 
 ```html
     <a href="#" class="zr-btn zr-btn-default">A target</a>
     <button type="button" class="zr-btn zr-btn-default">Button target</button>
-    <a href="#" type="button" class="zr-btn zr-btn-danger">A target</a>
-    <button type="button" class="zr-btn zr-btn-danger">Button target</button>
 ```
+<br/>
+
++ 按钮尺寸
+
+按钮有大 zr-btn-lg 、中(默认)、小 zr-btn-sm 三种尺寸，在这里我们只定义三种高度（24px,32px,40px）,宽度随内容自适应
+
+```html
+    <!--大、中、小-->
+    <button type="button" class="zr-btn zr-btn-primary zr-btn-sm">Small</button>
+    <button type="button" class="zr-btn zr-btn-primary">Default</button>
+    <button type="button" class="zr-btn zr-btn-primary zr-btn-lg">Large</button>
+```
+<br/>
+
++ 图标按钮
+
+```html
+    <button type="button" class="zr-btn zr-btn-primary zr-btn-circle"><i class="zricon-search-empty"></i></button>
+    <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-search-empty"></i>search</button>
+```
+
++ 组合按钮
+
+```html
+    <div class="zr-btn-group">
+        <button type="button" class="zr-btn zr-btn-primary">text1</button>
+        <button type="button" class="zr-btn zr-btn-primary">text2</button>
+        <button type="button" class="zr-btn zr-btn-primary">text3</button>
+    </div>
+    <div class="zr-btn-group">
+        <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-arrow-left"></i>text1</button>
+        <button type="button" class="zr-btn zr-btn-primary">text2<i class="zricon-arrow-right"></i></button>
+    </div>
+    <div class="zr-btn-group">
+        <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-arrow-left"></i></button>
+        <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-arrow-right"></i></button>
+    </div>
+```
+
+    
