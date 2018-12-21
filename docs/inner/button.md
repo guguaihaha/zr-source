@@ -55,8 +55,12 @@
 + 图标按钮
 
 ```html
-    <button type="button" class="zr-btn zr-btn-primary zr-btn-circle"><i class="zricon-search-empty"></i></button>
-    <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-search-empty"></i>search</button>
+    <button type="button" class="zr-btn zr-btn-primary zr-btn-circle">
+        <i class="zricon-search-empty"></i>
+    </button>
+    <button type="button" class="zr-btn zr-btn-primary">
+        <i class="zricon-search-empty"></i>search
+    </button>
 ```
 
 + 组合按钮
@@ -68,12 +72,20 @@
         <button type="button" class="zr-btn zr-btn-primary">text3</button>
     </div>
     <div class="zr-btn-group">
-        <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-arrow-left"></i>text1</button>
-        <button type="button" class="zr-btn zr-btn-primary">text2<i class="zricon-arrow-right"></i></button>
+        <button type="button" class="zr-btn zr-btn-primary">
+            <i class="zricon-arrow-left"></i>text1
+        </button>
+        <button type="button" class="zr-btn zr-btn-primary">
+            text2<i class="zricon-arrow-right"></i>
+        </button>
     </div>
     <div class="zr-btn-group">
-        <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-arrow-left"></i></button>
-        <button type="button" class="zr-btn zr-btn-primary"><i class="zricon-arrow-right"></i></button>
+        <button type="button" class="zr-btn zr-btn-primary">
+            <i class="zricon-arrow-left"></i>
+        </button>
+        <button type="button" class="zr-btn zr-btn-primary">
+            <i class="zricon-arrow-right"></i>
+        </button>
     </div>
 ```
 
