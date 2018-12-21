@@ -7,7 +7,9 @@
    内置组件的特点就是只需要在实际Dom节点上添加className或者添加自定义属性，如下:
    
 ```html
-   <button type="button" class="zr-tooltip" data-tip-text="tip position tl" data-ip-position="tl"><span>show me</span></button>
+   <button type="button" class="zr-tooltip" data-tip-text="tip position tl" data-ip-position="tl">
+     <span>show me</span>
+   </button>
 ```
 
    可以看到，添加了zr-tooltip 的className即可将按钮变成了文字提示，提示位置`data-ip-position`和内容`data-tip-text`又是自定义的属性来控制。
