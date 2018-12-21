@@ -1,10 +1,45 @@
 ### Zr API 导航
 
+> 名词解释
+
++ 内置组件
+
+   内置组件的特点就是只需要在实际Dom节点上添加className或者添加自定义属性，如下:
+   
+```html
+   <button type="button" class="zr-tooltip" data-tip-text="tip position tl" data-ip-position="tl"><span>show me</span></button>
+```
+
+   可以看到，添加了zr-tooltip 的className即可将按钮变成了文字提示，提示位置`data-ip-position`和内容`data-tip-text`又是自定义的属性来控制。
+   当然如果需要控制具体回调事件的操作，每个内置组件基本都会在文档中说明是否嵌入了onzrchange，具体详细参考各个内置模块的api[了解更多](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=)
+   当然还有更多[内置组件讨论和改进意见](//github.com/guguaihaha/zr-source/issues/36)
+
++ 外置组件
+
+   外置组件的特点就是要是用[Zr.use](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-use)是用插件和[Zr.add](://github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-add )封装插件了
+   外置组件是用灵活，扩展性强，当然如果再外置组件有问题，可以在[外置组件讨论和改进意见](//github.com/guguaihaha/zr-source/issues/37)，
+   同时外置组件分为以下两点：
+  
+  * 外置平台间
+  
+    通常是指Zr的team研发的组件，负责修改和更新。比如`message`,`modal`等
+  
+  * 外置第三方组件
+  
+    通常指封装的第三方组件，文档和内容都是外链的。比如`jquery`,`swiper`等
+  
+   <br/> 
+   <br/>
+   <br/>
+
+
+> 导航树
+
 ---
 
 | 组件名称     | Demo地址   |  API地址  |  讨论地址  |
 | --------    | :----- | :----:  | :----:  |
-| Zr的API  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.mdd)    |  |
+| Zr的API  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md)    |  |
 | 快速使用  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/quick.md)    | [讨论](//github.com/guguaihaha/zr-engine/issues/3) |
 | 组件封装技巧  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-add)    | [讨论](//github.com/guguaihaha/zr-engine/issues/5) |
 | PRO的使用  |    | [API](//github.com/guguaihaha/zr-pro-flex)    | [讨论](//github.com/guguaihaha/zr-pro-flex/issues) |
