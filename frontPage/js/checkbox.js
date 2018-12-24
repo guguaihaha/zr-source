@@ -73,7 +73,7 @@ var _checkbox = {
                         }
                     };
                 }
-                if(opt.beforeFn) opt.beforeFn();
+                if(opt.beforeFn) opt.beforeFn.call(this);
                 //选中
                 if ($input.prop('checked')) {
                     $parent.addClass('zr-checkbox-checked');
@@ -92,7 +92,7 @@ var _checkbox = {
                     $label.removeClass('zr-checkbox-wrapper-disabled');
                 }
     
-                if(opt.afterFn) opt.afterFn();
+                if(opt.afterFn) opt.afterFn.call(this);
             }
         }
     },
