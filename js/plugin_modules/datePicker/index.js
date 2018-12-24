@@ -6,6 +6,7 @@ Zr.add("./datePicker/index",function(zr,$,moment,c){
             month:{}
         }
     }
+    console.log(language);
     //
     var datePicker = {
         init:function(config){
