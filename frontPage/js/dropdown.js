@@ -85,11 +85,11 @@ var _dropdown = {
 
                 })
                 //点击其他地方取消相关样式
-                zr.dom.clickQueen.push(function(){
-                    $.each(array,function(i,n){
-                        $(this).removeClass(_dropdown.options._obj.options.showMenuClassName);
-                    })
-                })
+                // zr.dom.clickQueen.push(function(){
+                //     $.each(array,function(i,n){
+                //         $(this).removeClass(_dropdown.options._obj.options.showMenuClassName);
+                //     })
+                // })
             }
         },
         eventFn:{

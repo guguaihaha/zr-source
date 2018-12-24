@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>组件平台显示内容</title>
     <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css?4"/>
-    <!--<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
     <!--注意此段js必须第一引入在开发模式下{-->
-    <!--<script type="text/javascript" src="js/dropdown.js"></script>-->
-    <script type="text/javascript" src="/js/zr.min.js?3"></script>
+    <script type="text/javascript" src="js/dropdown.js"></script>
+    <!-- <script type="text/javascript" src="/js/zr.min.js?3"></script> -->
+    <script type="text/javascript" src="//storage.jd.com/1.2.2/zr.dev.min.js"></script>
     <script type="text/javascript">
         Zr.config({
             baseUrl: "/js/plugin_modules/"
         })
         Zr.ready(function () {
-            Zr.use("./js/quickMenu", "./js/code");
+            // Zr.use("./js/quickMenu", "./js/code");
         })
     </script>
     <style type="text/css">
