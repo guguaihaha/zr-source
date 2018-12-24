@@ -100,7 +100,7 @@
 
 ### 间隔布局
 
-间隔布局需要在在`zr-row`的样式上添加`zr-row-space`
+间隔布局需要在在 `zr-row` 的样式上添加 `zr-row-space`
 
 代码结构如下：
 
@@ -116,7 +116,7 @@
 
 ### 栅格偏移
 
-栅格中需要间隔布局，`zr-col`的样式上添加`zr-col-offset-1` 至 `zr-col-offset-24`，当然相加大于24会折行
+栅格中需要间隔布局，`zr-col` 的样式上添加 `zr-col-offset-1` 至 `zr-col-offset-24`，当然相加大于24会折行
 
 代码结构如下：
 
@@ -145,7 +145,7 @@
 
 ### Flex 横向位置布局
 
-可以在zr-row-flex上添加`zr-row-flex-start`整行居左、`zr-row-flex-center`整行居中、`zr-row-flex-end`整行居右、`zr-row-flex-between`整行两边对齐、`zr-row-flex-around`整行左右均等对齐
+可以在zr-row-flex上添加 `zr-row-flex-start` 整行居左、`zr-row-flex-center` 整行居中、`zr-row-flex-end` 整行居右、`zr-row-flex-between` 整行两边对齐、`zr-row-flex-around` 整行左右均等对齐
 
 代码结构如下：
 
@@ -190,7 +190,7 @@
 
 ### Flex对齐
 
-垂直布局同横向布局，在`zr-row-flex`基础上增加额外样式`zr-row-flex-top`垂直顶部、`zr-row-flex-middle`垂直居中、`zr-row-flex-end`垂直底部
+垂直布局同横向布局，在 `zr-row-flex` 基础上增加额外样式 `zr-row-flex-top` 垂直顶部、`zr-row-flex-middle` 垂直居中、`zr-row-flex-end` 垂直底部
 
 代码结构如下：
 
@@ -221,7 +221,7 @@
 
 ### Flex单元格垂直位置
 
-垂直布局可以单独控制一个单元格位置，优势不言直表。在`zr-row-flex`中的`zr-col`上面添加`zr-col-flex-top`列居上 、 `zr-col-flex-middle`列居中 、`zr-col-flex-bottom`列局底、`zr-col-flex-stretch`列垂直占满
+垂直布局可以单独控制一个单元格位置，优势不言直表。在 `zr-row-flex` 中的 `zr-col` 上面添加 `zr-col-flex-top` 列居上 、 `zr-col-flex-middle` 列居中 、`zr-col-flex-bottom` 列局底、`zr-col-flex-stretch` 列垂直占满
 
 代码结构如下：
 
@@ -260,7 +260,7 @@
 
 ### Flex排序
 
-flex排序是根据1—24序号顺序进行排序，在`zr-row-flex`中的`zr-col`上面添加`zr-col-flex-order-1` 至 `zr-col-flex-order-24`
+flex排序是根据1—24序号顺序进行排序，在 `zr-row-flex` 中的 `zr-col` 上面添加 `zr-col-flex-order-1` 至  `zr-col-flex-order-24`
 
 代码结构如下：
 
