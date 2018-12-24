@@ -204,10 +204,10 @@
     })
     Zr.ready(function(){
         Zr.use("jquery","./js/quickMenu","./js/code",function(zr,$){
-            document.getElementById("ckeckbox-demo1").zrChange({
+            document.getElementById("ckeckbox-demo1").onzrchange({
                 checked:true
             })
-            document.getElementById("ckeckbox-demo2").zrChange({
+            document.getElementById("ckeckbox-demo2").onzrchange({
                 disabled:true
             })
         })
