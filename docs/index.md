@@ -54,7 +54,7 @@
 | icon 图标  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=8fd3459c5ba04cf681494941b2db31e2&directoryName=Icon%20%E5%9B%BE%E6%A0%87)   | [API](./inner/icon.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/3) |
 | grid 栅格  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=211290909d2f484ab834218f3cc7830f&directoryName=Grid%20%E6%A0%85%E6%A0%BC)   | [API](./inner/grid.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/4) |
 | layout 布局  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=f709304e0f6d4333ad6ccd11f87b7918&directoryName=Layout%20%E5%B8%83%E5%B1%80)   | [API](./inner/layout.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/5) |
-| breadcrumb 面包屑  | [Demo]()   | [API](./inner/breadcrumb.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/6) |
+| breadcrumb 面包屑  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=1ef74d93a52d4ae8b58dd8489db71393&directoryName=Breadcrumb%20%E9%9D%A2%E5%8C%85%E5%B1%91)   | [API](./inner/breadcrumb.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/6) |
 | dropdown 下拉菜单  | [Demo]()   | [API](./inner/dropdown.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/7) |
 | nav 导航和导航菜单  | [Demo]()   | [API](./inner/nav.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/8) |
 | step 步骤条  | [Demo]()   | [API](./inner/step.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/9) |
