@@ -37,8 +37,12 @@
 }
 .@{zr-prefix}-input-group{
   position: relative;
-  .@{zr-prefix}-input{
+  .@{zr-prefix}-input:first-child{
     padding-right: 30px;
+  }
+  .@{zr-prefix}-input:last-child{
+    padding-left: 30px;
+    padding-right: 0px;
   }
   [class=zricon-close-circle]{
     display: none;
@@ -52,6 +56,7 @@
     }
   }
 }
+// default right
 .@{zr-prefix}-input-addon{
   position: absolute;
   display: inline-block;
@@ -61,6 +66,10 @@
   opacity: .45;
   line-height: @input-height-base;
 }
+.@{zr-prefix}-input-addon:first-child{
+  left: 8px;
+  width: 14px;
+}
 .@{zr-prefix}-input-addon.@{zr-prefix}-input-sm{
   height: @input-height-sm;
   line-height: @input-height-sm;
@@ -68,16 +77,6 @@
 .@{zr-prefix}-input-addon.@{zr-prefix}-input-lg{
   height: @input-height-lg;
   line-height: @input-height-lg;
-}
-.@{zr-prefix}-input-left{
-  .@{zr-prefix}-input{
-    padding-left: 30px;
-    padding-right: 0px;
-  }
-  .@{zr-prefix}-input-addon{
-    left: 8px;
-    width: 14px;
-  }
 }
 .@{zr-prefix}-textarea{
   width: 100%;
@@ -98,6 +97,7 @@
   bottom: 8px;
   color: @normal-color;
 }
+// todo 完成select组件后重写
 .@{zr-prefix}-input-wapper{
   .@{zr-prefix}-unselect{
     width: 20%;
@@ -169,7 +169,7 @@
   >.@{zr-prefix}-input{
     width: 79%;
     margin-right: -4px;
-    margin-left: 0px;
+    margin-left: 0;
     border-right: @border-width-base @border-style-base rgba(255, 255, 255, 0);
     border-left: @border-width-base @border-style-base @border-color-base;
     border-radius: 4px;
@@ -194,9 +194,6 @@
     .placeholder(@disabled-color,@font-size-base);
   }
 }
-
-
-
 
 .mixin(@name,@type) when (@name = @xs-name) and (@type = @screen-name-input) {
   //默认手机
