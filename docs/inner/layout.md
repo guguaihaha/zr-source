@@ -80,4 +80,5 @@
 <br/>
 
 [点击了解更多Demo和案例](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=f709304e0f6d4333ad6ccd11f87b7918&directoryName=Layout%20%E5%B8%83%E5%B1%80)
-  [留言和讨论](https://github.com/guguaihaha/zr-source/issues/5)
+
+[留言和讨论](https://github.com/guguaihaha/zr-source/issues/5)

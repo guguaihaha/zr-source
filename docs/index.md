@@ -55,9 +55,9 @@
 | grid 栅格  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=211290909d2f484ab834218f3cc7830f&directoryName=Grid%20%E6%A0%85%E6%A0%BC)   | [API](./inner/grid.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/4) |
 | layout 布局  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=f709304e0f6d4333ad6ccd11f87b7918&directoryName=Layout%20%E5%B8%83%E5%B1%80)   | [API](./inner/layout.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/5) |
 | breadcrumb 面包屑  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=1ef74d93a52d4ae8b58dd8489db71393&directoryName=Breadcrumb%20%E9%9D%A2%E5%8C%85%E5%B1%91)   | [API](./inner/breadcrumb.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/6) |
-| dropdown 下拉菜单  | [Demo]()   | [API](./inner/dropdown.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/7) |
-| nav 导航和导航菜单  | [Demo]()   | [API](./inner/nav.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/8) |
-| step 步骤条  | [Demo]()   | [API](./inner/step.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/9) |
+| dropdown 下拉菜单  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=70d1b00b35aa46b4844eaf44bce48182&directoryName=Dropdown%20%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95)   | [API](./inner/dropdown.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/7) |
+| nav 导航和导航菜单  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=7915ee1a3cf147a6b193513bba302b4b&directoryName=Nav%20%E5%AF%BC%E8%88%AA%E5%92%8C%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95)   | [API](./inner/nav.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/8) |
+| step 步骤条  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=a200ec6480234568bcce5253e72bf7b1&directoryName=Step%20%E6%AD%A5%E9%AA%A4%E6%9D%A1)   | [API](./inner/step.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/9) |
 | input 输入框  | [Demo]()   | [API](./inner/input.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/10) |
 | radio 单选框  | [Demo]()   | [API](./inner/radio.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/11) |
 | checkbox 复选框  | [Demo]()   | [API](./inner/checkbox.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/12) |
