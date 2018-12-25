@@ -20,7 +20,7 @@
 
 因为是内置组件，所以就是采用基本用法。此内置组件不含有任何事件。
 
-+ 标准按钮
+### 标准按钮
 
 标准按钮有四种类型：主按钮 `zr-btn-primary` 、次按钮 `zr-btn-default` 、危险按钮 `zr-btn-danger` 、不可点按钮 `zr-btn-disable` 。
 
@@ -30,7 +30,7 @@
 
 <br/>
 
-+ 多种标签都是支持的
+### 多种标签都是支持的
 
 可以很好的支持button标签与A标签
 
@@ -40,7 +40,7 @@
 ```
 <br/>
 
-+ 按钮尺寸
+### 按钮尺寸
 
 按钮有大 `zr-btn-lg` 、中(默认)、小 `zr-btn-sm` 三种尺寸，在这里我们只定义三种高度（24px,32px,40px）,宽度随内容自适应
 
@@ -52,7 +52,7 @@
 ```
 <br/>
 
-+ 图标按钮
+### 图标按钮
 
 ```html
     <button type="button" class="zr-btn zr-btn-primary zr-btn-circle">
@@ -63,7 +63,7 @@
     </button>
 ```
 
-+ 组合按钮
+### 组合按钮
 
 ```html
     <div class="zr-btn-group">

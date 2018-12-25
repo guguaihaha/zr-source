@@ -14,7 +14,7 @@
 
 <br/>
 
-+ 基础类型
+### 基础类型
 
 最基础简单的步骤条,默认状态加 `zr-step-item` 即为初始状态，表示全未完成， `zr-step-finish` 表示已经完成， `zr-step-progress` 表示正在进行
 
@@ -59,7 +59,7 @@
 
 <br/>
 
-+ 纵向排版样式
+### 纵向排版样式
 
 基于基础样式之上，在 `zr-step` 后面加 `zr-step-vertical` 属性即可纵向显示步骤条
 
@@ -102,7 +102,7 @@
 ```
 <br/>
 
-+ Mini 样式
+### Mini 样式
 
 基于基础样式之上，在  `zr-step` 后面加 `zr-step-small` 属性即可展示Mini版样式
 
@@ -142,7 +142,7 @@
 ```
 <br/>
 
-+ 带图标的步骤条
+### 带图标的步骤条
 
 基于基础样式之上，在 zr-step 后面加 `zr-step-icons` 属性即可展示图标版本的步骤条， icon 使用方法详情见Icon 图标
 
@@ -181,7 +181,7 @@
     </p>
 ```
 
-+ 步骤运行错误
+### 步骤运行错误
 
 基于基础样式之上，在 `zr-step` 后面加 `zr-step-error` 属性即可，在 `zr-step-error` 下， `zr-step-finish` 表示已完成， `zr-step-progress` 表示出错状态
 
