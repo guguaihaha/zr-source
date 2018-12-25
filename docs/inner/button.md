@@ -22,7 +22,7 @@
 
 + 标准按钮
 
-标准按钮有四种类型：主按钮 zr-btn-primary 、次按钮 zr-btn-default 、危险按钮 zr-btn-danger 、不可点按钮 zr-btn-disable 。
+标准按钮有四种类型：主按钮 `zr-btn-primary` 、次按钮 `zr-btn-default` 、危险按钮 `zr-btn-danger` 、不可点按钮 `zr-btn-disable` 。
 
 ```html
     <button type="button" class="zr-btn zr-btn-primary">Primary</button>
@@ -42,7 +42,7 @@
 
 + 按钮尺寸
 
-按钮有大 zr-btn-lg 、中(默认)、小 zr-btn-sm 三种尺寸，在这里我们只定义三种高度（24px,32px,40px）,宽度随内容自适应
+按钮有大 `zr-btn-lg` 、中(默认)、小 `zr-btn-sm` 三种尺寸，在这里我们只定义三种高度（24px,32px,40px）,宽度随内容自适应
 
 ```html
     <!--大、中、小-->
