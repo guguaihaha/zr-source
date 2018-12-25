@@ -49,6 +49,7 @@
 | 快速使用  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/quick.md)    | [讨论](//github.com/guguaihaha/zr-engine/issues/3) |
 | 组件封装技巧  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/API.md#user-content-add)    | [讨论](//github.com/guguaihaha/zr-engine/issues/5) |
 | PRO的使用  |    | [API](//github.com/guguaihaha/zr-pro-flex)    | [讨论](//github.com/guguaihaha/zr-pro-flex/issues) |
+| 主题修改  |    | [API](//github.com/guguaihaha/zr-engine/blob/master/docs/theme.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/38) |
 |   |    |    |  |
 | button 按钮  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=d6ffabab29694e338a2e9aba2e3ea3d0&directoryName=Button%20%E6%8C%89%E9%92%AE)   | [API](./inner/button.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/2) |
 | icon 图标  | [Demo](http://gtp-zr.jd.com/docs?languageCode=CN&columnUid=41c513f9dd334a1ebb0fbbd76d71e973&directoryUid=8fd3459c5ba04cf681494941b2db31e2&directoryName=Icon%20%E5%9B%BE%E6%A0%87)   | [API](./inner/icon.md)    | [讨论](//github.com/guguaihaha/zr-source/issues/3) |
