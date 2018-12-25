@@ -55,44 +55,44 @@
 
 ```html
     <ul class="zr-timeline">
-    <li class="zr-timeline-item zr-timeline-green">
-        <i class="zr-timeline-icon"></i>
-        <div class="zr-timeline-content">
-            <h3>2018-01-21</h3>
-            <span>
-                    <p>Approve and initiate a project</p>
-                    <p>project description</p>
-                </span>
-        </div>
-    </li>
-    <li class="zr-timeline-item zr-timeline-warning">
-        <i class="zr-timeline-icon"></i>
-        <div class="zr-timeline-content">
-            <h3>2018-01-13</h3>
-            <span>
-                    <p>Require review</p>
-                </span>
-        </div>
-    </li>
-    <li class="zr-timeline-item zr-timeline-error">
-        <i class="zr-timeline-icon"></i>
-        <div class="zr-timeline-content">
-            <h3>2018-01-11</h3>
-            <span>
-                    <p>UE&amp;UI design</p>
-                </span>
-        </div>
-    </li>
-    <li class="zr-timeline-item">
-        <i class="zr-timeline-icon"></i>
-        <div class="zr-timeline-content">
-            <h3>2018-01-01</h3>
-            <span>
-                    <p>Front-end development</p>
-                </span>
-        </div>
-    </li>
-</ul>
+        <li class="zr-timeline-item zr-timeline-green">
+            <i class="zr-timeline-icon"></i>
+            <div class="zr-timeline-content">
+                <h3>2018-01-21</h3>
+                <span>
+                        <p>Approve and initiate a project</p>
+                        <p>project description</p>
+                    </span>
+            </div>
+        </li>
+        <li class="zr-timeline-item zr-timeline-warning">
+            <i class="zr-timeline-icon"></i>
+            <div class="zr-timeline-content">
+                <h3>2018-01-13</h3>
+                <span>
+                        <p>Require review</p>
+                    </span>
+            </div>
+        </li>
+        <li class="zr-timeline-item zr-timeline-error">
+            <i class="zr-timeline-icon"></i>
+            <div class="zr-timeline-content">
+                <h3>2018-01-11</h3>
+                <span>
+                        <p>UE&amp;UI design</p>
+                    </span>
+            </div>
+        </li>
+        <li class="zr-timeline-item">
+            <i class="zr-timeline-icon"></i>
+            <div class="zr-timeline-content">
+                <h3>2018-01-01</h3>
+                <span>
+                        <p>Front-end development</p>
+                    </span>
+            </div>
+        </li>
+    </ul>
 ```
 <br/>
 
