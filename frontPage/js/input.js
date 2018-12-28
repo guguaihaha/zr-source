@@ -12,30 +12,34 @@ var _input = {
     },
     events: {
         bindEvent: function (opt) {
+            // $(n) 缓存
             $.each(opt.array, function (i, n) {
                 //缓存_obj'
                 $(n).data(_input.options.cacheName, _input.options._obj);
 
-                if (opt.selector === ".zr-textarea") {
-                    $(n).wrap('<div class="zr-input-group"></div>');
+                if (opt.selector === opt.options.textareaClassName) {
+                    // todo 原生带文字
+                    $(n).wrap('<div class="' + opt.options.groupClassName + '"></div>');
                     $(n).after(
-                        '<div class="zr-input-num">' +
+                        '<div class="' + opt.options.txtNumClassName + '">' +
                         '<span>' + n.value.length + '</span>' +
                         '<span>/</span>' +
                         '<span>' + n.maxLength || 100 + '</span>' +
                         '</div>'
                     );
+                    // todo keyup外的触发 鼠标、js赋值、初始化
                     $(n).off("keyup").on("keyup", _input.eventFn.inputNumFn);
                 } else {
                     // 初始化删除按钮
                     if ($(n).hasClass(opt.options.clearClassName)) {
-                        $(n).wrap('<div class="zr-input-group"></div>');    // add group element
-                        $(n).after('<i class="zricon-close-circle"></i>');  // add clean icon
+                        $(n).wrap('<div class="' + opt.options.groupClassName + '"></div>');    // add group element
+                        $(n).after('<i class="' + opt.options.iconCloseCircle + '"></i>');  // add clean icon
 
-                        var selscter = $(n).closest(opt.options.groupSelector).children(".zricon-close-circle");
+                        var selscter = $(n).closest(opt.options.groupSelector).children("." + opt.options.iconCloseCircle);
                         selscter.data(_input.options.cacheName, _input.options._obj);
 
-                        $(n).off("input").on("input", _input.eventFn.showIconFn);
+                        // todo change
+                        $(n).off("input change").on("input change", _input.eventFn.showIconFn);
                         if (selscter.length > 0) {
                             selscter.off("click").on("click", _input.eventFn.clearFn);
                         }
@@ -51,8 +55,9 @@ var _input = {
             $(this).hide();
         },
         showIconFn: function () {
+            console.log(1);
             var _obj = $(this).data(_input.options.cacheName);
-            var Selector = $(this).closest(_obj.options.groupSelector).children(".zricon-close-circle");
+            var Selector = $(this).closest(_obj.options.groupSelector).children('.' + _obj.options.iconCloseCircle);
 
             if ($(this).val().length > 0) {
                 Selector.show();

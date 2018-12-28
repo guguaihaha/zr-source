@@ -6,6 +6,7 @@
     <!--开发阶段引用jq-->
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css?1" />
+    <link type="text/css" rel="stylesheet" href="/js/plugin_modules/zr/css/zr.min.css"/>
 </head>
 <body>
 <article class="c-content">
@@ -364,8 +365,13 @@
 <script type="text/javascript">
     Zr.config({
         baseUrl: "/js/plugin_modules/",
-        requestTime:true
-    })
+        requestTime:true,
+        module: {
+            zr: {
+                path: './zr/dev_index'
+            }
+        }
+    });
     Zr.ready(function(){
         Zr.use("./js/quickMenu","./js/code")
 	    Zr.use("jquery",function (zr,$) {

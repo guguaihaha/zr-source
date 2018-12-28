@@ -134,6 +134,8 @@
                 clearSelector:"."+prefix+"-input-clear",
                 clearClassName:prefix+"-input-clear",
                 groupSelector:"."+prefix+"-input-group",
+                groupClassName: prefix + '-input-group', // 多个组件外层盒子
+                iconCloseCircle: prefix + 'icon-close-circle', // 关闭图标
             }
         },
         {
@@ -143,6 +145,9 @@
             options:{
                 txtNumSelector:"."+prefix+"-input-num",
                 groupSelector:"."+prefix+"-input-group",
+                groupClassName: prefix + '-input-group', // 多个组件外层盒子
+                textareaClassName: "." + prefix + '-textarea', // 区分input和textarea
+                txtNumClassName: prefix + '-input-num', // textarea输入字数显示
             }
         },
         {
@@ -180,8 +185,11 @@
                 lgClassName:prefix + "-select-lg",//lg
                 titleClassName:"."+prefix + "-select-title",//显示选择项内容
                 contentClassName:"."+prefix + "-select-content",//下拉选择项列表
-                unselectClassName:"."+prefix + "-unselect"
-
+                unselectClassName:"."+prefix + "-unselect",  // 模拟出的最外层盒子
+                iconArrowUp: prefix + "icon-arrow-up",    // 箭头向上的图标
+                iconArrowDown: '.' + prefix + "icon-arrow-down",    // 箭头向下的图标
+                iconClose: prefix + "icon-close",   // 关闭图标
+                selectValues: prefix + "-select-values", // 当模拟框有选中值时带的class
             }
         },
         // {
