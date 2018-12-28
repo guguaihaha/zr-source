@@ -37,8 +37,14 @@
         font-weight: 400;
         transition: border-color .3s ease;
         cursor: pointer;
+        .zr-dropdown-link {
+            color: rgba(0,0,0,0.65);
+        }
         &:hover {
             border-color: @dropdown-hover-color;
+            .zr-dropdown-link {
+                color: @dropdown-hover-color;
+            }
         }
         //向上展开&按钮样式
         &.zr-dropdown-up {
@@ -159,7 +165,15 @@
         transition: all .3s;
         z-index: 2;
         margin-bottom: 6px;
-
+        &:before {
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            right: 0;
+            bottom: -7px;
+            content: ' ';
+            opacity: .0001;
+        }
         .zr-dropdown-item {
             &:hover {
                 background-color: #e6f7ff;

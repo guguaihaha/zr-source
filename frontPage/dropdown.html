@@ -30,7 +30,7 @@
 <body>
     <article class="c-content">
         <section class="c-title">
-            <p>Drop down 下拉菜单</p>
+            <p>Dropdown 下拉菜单</p>
             <span>点击或移入操作区，会向下弹出一个菜单列表。</span>
         </section>
         <div class="c-line"></div>
@@ -46,7 +46,7 @@
         <div class="c-block-50"></div>
         <section class="c-sub-title">
             <p>基础样式 <a href="#">#</a></p>
-            <span>最简单的下拉样式</span>
+            <span>最简单的下拉样式 && 整体禁用</span>
         </section>
         <section class="c-code">
             <!--switch code show or hide-->
@@ -59,20 +59,45 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 3（normal）</a>
                         </li>
                         <li class="zr-dropdown-item-divider"></li>
                         <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 4（disabled）</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="zr-dropdown zr-dropdown-disabled">
+                    <a class="zr-dropdown-link" href="javascript:;">Hover
+                        <!---->
+                        <i class="zr-icon-angle zr-icon-down"></i>
+                    </a>
+                    <ul class="zr-dropdown-menu">
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 1</a>
+                        </li>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 2（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="c-code-inner c-code-hide">
-                <!--菜单默认是隐藏，如果默认显示，请添加样式"zr-dropdown-show"-->
+                <!--菜单默认是隐藏，如果默认显示，请添加样式"open"-->
                 <div class="zr-dropdown">
                     <a class="zr-dropdown-link" href="javascript:;">Hover
                         <!---->
@@ -80,13 +105,39 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--整体禁用请添加样式 "zr-dropdown-disabled"-->
+                <div class="zr-dropdown">
+                    <a class="zr-dropdown-link" href="javascript:;">Hover
+                        <!---->
+                        <i class="zr-icon-angle zr-icon-down"></i>
+                    </a>
+                    <ul class="zr-dropdown-menu">
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 1</a>
+                        </li>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 2（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -110,13 +161,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -128,13 +183,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -148,13 +207,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -166,13 +229,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -196,13 +263,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -214,13 +285,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -234,13 +309,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3（normal）</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -264,13 +343,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4</a>
                         </li>
                     </ul>
                 </div>
@@ -282,13 +365,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4</a>
                         </li>
                     </ul>
                 </div>
@@ -300,13 +387,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4</a>
                         </li>
                     </ul>
                 </div>
@@ -320,13 +411,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4</a>
                         </li>
                     </ul>
                 </div>
@@ -339,13 +434,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4</a>
                         </li>
                     </ul>
                 </div>
@@ -358,13 +457,17 @@
                     </a>
                     <ul class="zr-dropdown-menu">
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="#">Item 3</a>
+                        </li>
+                        <li class="zr-dropdown-item-divider"></li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 4</a>
                         </li>
                     </ul>
                 </div>
@@ -387,37 +490,34 @@
                         <i class="zr-icon-angle zr-icon-down"></i>
                     </a>
                     <ul class="zr-dropdown-menu">
-                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                            <a href="//zr.jd.com">Action</a>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
-                        </li>
-                        <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
-                            <ul class="zr-dropdown-child-menu">
-                                <li class="zr-dropdown-item">
-                                    <a href="javascript:;">Action</a>
-                                    <ul class="zr-dropdown-child-menu">
-                                        <li class="zr-dropdown-item">
-                                            <a href="javascript:;">Action</a>
-                                        </li>
-                                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                                            <a href="javascript:;">Action</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                                    <a href="javascript:;">Action</a>
-                                </li>
-                            </ul>
+                            <a href="#">Item 3（normal）</a>
                         </li>
                         <li class="zr-dropdown-item-divider"></li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="javascript:;">Item 4（multilevel）</a>
+                            <ul class="zr-dropdown-child-menu">
+                                <li class="zr-dropdown-item">
+                                    <a href="javascript:;">Item 4.1（multilevel）</a>
+                                    <ul class="zr-dropdown-child-menu">
+                                        <li class="zr-dropdown-item">
+                                            <a href="javascript:;">Item 4.1.1（normal）</a>
+                                        </li>
+                                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                                            <a href="javascript:;">Item 4.1.2（disabled）</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 5（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -429,37 +529,34 @@
                         <i class="zr-icon-angle zr-icon-down"></i>
                     </a>
                     <ul class="zr-dropdown-menu">
-                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                            <a href="//zr.jd.com">Action</a>
+                        <li class="zr-dropdown-item">
+                            <a href="#">Item 1</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="//zr.jd.com">Action</a>
+                            <a href="#">Item 2（normal）</a>
                         </li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
-                        </li>
-                        <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
-                            <ul class="zr-dropdown-child-menu">
-                                <li class="zr-dropdown-item">
-                                    <a href="javascript:;">Action</a>
-                                    <ul class="zr-dropdown-child-menu">
-                                        <li class="zr-dropdown-item">
-                                            <a href="javascript:;">Action</a>
-                                        </li>
-                                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                                            <a href="javascript:;">Action</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="zr-dropdown-item zr-dropdown-item-disabled">
-                                    <a href="javascript:;">Action</a>
-                                </li>
-                            </ul>
+                            <a href="#">Item 3（normal）</a>
                         </li>
                         <li class="zr-dropdown-item-divider"></li>
                         <li class="zr-dropdown-item">
-                            <a href="javascript:;">Action</a>
+                            <a href="javascript:;">Item 4（multilevel）</a>
+                            <ul class="zr-dropdown-child-menu">
+                                <li class="zr-dropdown-item">
+                                    <a href="javascript:;">Item 4.1（multilevel）</a>
+                                    <ul class="zr-dropdown-child-menu">
+                                        <li class="zr-dropdown-item">
+                                            <a href="javascript:;">Item 4.1.1（normal）</a>
+                                        </li>
+                                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                                            <a href="javascript:;">Item 4.1.2（disabled）</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="zr-dropdown-item zr-dropdown-item-disabled">
+                            <a href="#">Item 5（disabled）</a>
                         </li>
                     </ul>
                 </div>
@@ -504,7 +601,7 @@
                                 <div class="c-cell c-table-w-125">string (选填)</div>
                             </td>
                             <td>
-                                <div class="c-cell c-table-w-500">(默认hover) "click"</div>
+                                <div class="c-cell c-table-w-500">(默认hover,可选 "click") eg: data-type="click"</div>
                             </td>
                         </tr>
                         <tr>
@@ -515,7 +612,7 @@
                                 <div class="c-cell c-table-w-125">string (选填)</div>
                             </td>
                             <td>
-                                <div class="c-cell c-table-w-500">支持jquery css()方法属性值 eg: data-menuwidth="50px"</div>
+                                <div class="c-cell c-table-w-500">下拉菜单宽度 eg: data-menuwidth="50px"</div>
                             </td>
                         </tr>
                         <tr>
@@ -526,7 +623,7 @@
                                 <div class="c-cell c-table-w-125">string (选填)</div>
                             </td>
                             <td>
-                                <div class="c-cell c-table-w-500">支持jquery css()方法属性值 eg: data-menuheight="50px"</div>
+                                <div class="c-cell c-table-w-500">下拉菜单高度 eg: data-menuheight="50px"</div>
                             </td>
                         </tr>
                         <tr>
@@ -537,30 +634,7 @@
                                 <div class="c-cell c-table-w-125">Boolean (选填)</div>
                             </td>
                             <td>
-                                <div class="c-cell c-table-w-500">true 开启时将关闭,自动计算向上或向下翻折叠
-                                    注意:一旦开启,data-close-scroll,data-close-resize将失效</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="c-cell c-table-w-200">data-close-scroll</div>
-                            </td>
-                            <td>
-                                <div class="c-cell c-table-w-125">Boolean (选填)</div>
-                            </td>
-                            <td>
-                                <div class="c-cell c-table-w-500">true 开启时将关闭,由滚动事件触发的,自动计算向上或向下翻折叠</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="c-cell c-table-w-200">data-close-resize</div>
-                            </td>
-                            <td>
-                                <div class="c-cell c-table-w-125">Boolean (选填)</div>
-                            </td>
-                            <td>
-                                <div class="c-cell c-table-w-500">true 开启时将关闭,由重置事件触发的,自动计算向上或向下翻折叠</div>
+                                <div class="c-cell c-table-w-500">true 开启时将关闭,自动计算向上或向下翻折叠 eg: data-close-auto="true"</div>
                             </td>
                         </tr>
                     </tbody>
@@ -597,17 +671,6 @@
             <div class="c-table-body">
                 <table>
                     <tbody>
-                        <tr>
-                            <td>
-                                <div class="c-cell c-table-w-200">data-tip-text</div>
-                            </td>
-                            <td>
-                                <div class="c-cell c-table-w-125">string (必填)</div>
-                            </td>
-                            <td>
-                                <div class="c-cell c-table-w-500">提示信息内容</div>
-                            </td>
-                        </tr>
                         <tr>
                             <td>
                                 <div class="c-cell c-table-w-200">zr-dropdown-btn</div>
