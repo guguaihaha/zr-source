@@ -32,12 +32,12 @@
         <!--switch code show or hide-->
         <div class="c-code-switch">&lt;code&gt;</div>
         <div class="c-demo">
-            <input type="radio" name="max" class="zr-radio" value="0" title="radio1" checked="true">
-            <input type="radio" name="max" class="zr-radio" value="1" title="radio2">
+            <input type="radio" data-label="label1" name="max" class="zr-radio" value="0" checked="true" id="radio-demo1">
+            <input type="radio" data-label="label2" name="max" class="zr-radio" value="1" id="radio-demo2">
         </div>
         <div class="c-code-inner c-code-hide">
-            <input type="radio" name="max" class="zr-radio" value="0" title="radio1">
-            <input type="radio" name="max" class="zr-radio" value="1" title="radio2">
+            <input type="radio" data-label="label1" name="max1" class="zr-radio" value="0" checked="true">
+            <input type="radio" data-label="label2" name="max1" class="zr-radio" value="1">
         </div>
         <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
     </section>
@@ -50,12 +50,12 @@
         <!--switch code show or hide-->
         <div class="c-code-switch">&lt;code&gt;</div>
         <div class="c-demo">
-            <input type="radio" name="sex" class="zr-radio" value="0" title="radio1" disabled="disabled" checked="true">
-            <input type="radio" name="sex" class="zr-radio" value="1" title="radio2" disabled="disabled">
+            <input type="radio" data-label="label1" name="sex" class="zr-radio" value="0" disabled="disabled" checked="true">
+            <input type="radio" data-label="label2" name="sex" class="zr-radio" value="1" disabled="disabled">
         </div>
         <div class="c-code-inner c-code-hide">
-            <input type="radio" name="sex" class="zr-radio" value="0" title="radio1" disabled="disabled">
-            <input type="radio" name="sex" class="zr-radio" value="1" title="radio2" disabled="disabled">
+            <input type="radio" data-label="label1" name="sex1" class="zr-radio" value="0" disabled="disabled" checked="true">
+            <input type="radio" data-label="label2" name="sex1" class="zr-radio" value="1" disabled="disabled">
         </div>
         <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
     </section>
@@ -67,16 +67,16 @@
         <!--switch code show or hide-->
         <div class="c-code-switch">&lt;code&gt;</div>
         <div class="c-demo">
-            <input type="radio" name="demo" class="zr-radio" value="0" title="Radio1">
-            <input type="radio" name="demo" class="zr-radio" value="1" title="Radio2">
-            <input type="radio" name="demo" class="zr-radio" value="2" title="Radio3">
-            <input type="radio" name="demo" class="zr-radio" value="3" title="Radio4">
+            <input type="radio" name="demo" class="zr-radio" value="0" data-label="label1">
+            <input type="radio" name="demo" class="zr-radio" value="1" data-label="label2">
+            <input type="radio" name="demo" class="zr-radio" value="2" data-label="label3">
+            <input type="radio" name="demo" class="zr-radio" value="3" data-label="label4">
         </div>
         <div class="c-code-inner c-code-hide">
-            <input type="radio" name="demo" class="zr-radio" value="0" title="Radio1">
-            <input type="radio" name="demo" class="zr-radio" value="1" title="Radio2">
-            <input type="radio" name="demo" class="zr-radio" value="2" title="Radio3">
-            <input type="radio" name="demo" class="zr-radio" value="3" title="Radio4">
+            <input type="radio" name="demo1" class="zr-radio" value="0" data-label="label1">
+            <input type="radio" name="demo1" class="zr-radio" value="1" data-label="label2">
+            <input type="radio" name="demo1" class="zr-radio" value="2" data-label="label3">
+            <input type="radio" name="demo1" class="zr-radio" value="3" data-label="label4">
         </div>
         <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
     </section>
@@ -112,8 +112,8 @@
         <!--switch code show or hide-->
         <div class="c-code-switch">&lt;code&gt;</div>
         <div class="c-demo">
-            <input type="radio" name="" value="4444" title="radio11" class="zr-radio" id="radio-demo1">
-            <input type="radio" name="" value="4444" title="radio22" class="zr-radio" id="radio-demo2">
+            <input type="radio" name="" value="4444" title="radio11" class="zr-radio">
+            <input type="radio" name="" value="4444" title="radio22" class="zr-radio">
         </div>
         <div class="c-code-inner c-code-hide">
             <!--html代码-->
@@ -144,12 +144,12 @@
     })
     Zr.ready(function(){
         Zr.use("./js/quickMenu","./js/code",function(zr){
-            document.getElementById("radio-demo1").onzrchange({
-                checked:true
-            })
-            document.getElementById("radio-demo2").onzrchange({
-                disabled:true
-            })
+            // document.getElementById("radio-demo1").onzrchange({
+            //     checked:true
+            // })
+            // document.getElementById("radio-demo2").onzrchange({
+            //     disabled:true
+            // })
         })
     })
 </script>

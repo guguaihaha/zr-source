@@ -3,105 +3,135 @@ var _radio = {
     version:"1.0.0",
     init:function(domObject){
         this.options._obj = domObject;
-        this.events.init(domObject);
+        this.events.closeEvent(domObject);
     },
     options:{
         _obj:{},//公共变量，永远不会变
     },
     events:{
-        init: function(){
-            $('.zr-radio').each(function (index, element) {
-                var $original = $(element);
-                var _checked = $original.prop('checked'),
-                    _disabled = $original.prop('disabled'),
-                    _value = $original.prop('value');
-                   
-                var html = '<label class="zr-radio-wrapper">' +
-                    '<span class="zr-radio-clone">' +
-                    '<span class="zr-radio-inner"></span>' +
-                    '</span>' +
-                    '<span class="zr-radio-label">' + _value +
-                    '</span>' +
-                    '</label>';
-                var $shell = $(html);
-                $original.after($shell);
-                $shell.children('.zr-radio-clone').append(element);
-                $original.addClass('zr-radio-original');
-                $original.removeClass('zr-radio');
-        
-                var $parent = $original.parent(),
-                    $label = $original.closest('label');
-                
-                if(_value.length == 0){
-                    $parent.siblings('.zr-radio-label').css('display','none');
-                }else {
-                    $parent.siblings('.zr-radio-label').css('display','inline');
-                }
-                //已选中
-                if(_checked){
-                    $parent.addClass('zr-radio-checked');
-                    $label.addClass('zr-radio-wrapper-checked');
-                }
-                //已禁用
-                if(_disabled){
-                    $parent.addClass('zr-radio-disabled');
-                    $label.addClass('zr-radio-wrapper-disabled');
-                }
-                _radio.eventFn.addEvent(element) //绑定事件
-            })
+        closeEvent:function(opt){
+            if(opt.array.length>0){
+                $.each(opt.array,function (index, element) {
+                    var $original = $(element);
+                    var _checked = $original.prop('checked'),
+                        _disabled = $original.prop('disabled'),
+                        _id = $original.prop('id'),
+                        _label = $original.attr('data-label') || '';
+            
+                    var uuid = function () {
+                        var s = [];
+                        var hexDigits = "0123456789abcdef";
+                        for (var i = 0; i < 6; i++) {
+                            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+                        }
+                        var uuid = s.join("");
+                        return uuid;
+                    }
+                    var checkOnly = function () {
+                        var id = uuid();
+                        $(id).lenth > 0 ? checkOnly() : _id = id;
+                    }
+                    if (!_id) {
+                        checkOnly();
+                        $original.prop('id', _id);
+                    }
+                    var html = '<label class="zr-radio-wrapper" for="' + _id + '">' +
+                        '<span class="zr-radio-clone">' +
+                        '<span class="zr-radio-inner"></span>' +
+                        '</span>' +
+                        '<span class="zr-radio-label">' + _label +
+                        '</span>' +
+                        '</label>';
+                    var $label = $(html);
+                    $original.after($label);
+                    $original.css('display', 'none');
+                    
+                    var $clone = $label.children('.zr-radio-clone'),
+                        $text = $clone.siblings('.zr-radio-label');
+            
+                    if (_label.length == 0) {
+                        $text.css('display', 'none');
+                    } else {
+                        $text.css('display', 'inline');
+                    }
+                    //已选中
+                    if (_checked) {
+                        $clone.addClass('zr-radio-checked');
+                        $label.addClass('zr-radio-wrapper-checked');
+                    }
+                    //已禁用
+                    if (_disabled) {
+                        $clone.addClass('zr-radio-disabled');
+                        $label.addClass('zr-radio-wrapper-disabled');
+                    }
+                    
+                    _radio.eventFn.addClickEvent($label, element); //label绑定事件
+                    _radio.eventFn.addEvent(element); //绑定事件
+                })
+            }
+            
         }
     },
     eventFn:{
-        addEvent: function (dom) {
-            $(dom).on('change', function () {
-                this.onzrchange? this.onzrchange():'';
-            })
+        addEvent: function(dom) {
             dom.onzrchange = function (option) {
                 var $input = $(this),
+                    _id = $input.prop('id'),
+                    $label = $input.siblings('[for="' + _id + '"]'),
+                    $clone = $label.children('.zr-radio-clone'),
+                    $text = $clone.siblings('.zr-radio-label'),
                     original = this,
-                    $parent = $input.parent(),
-                    $label = $input.closest('label'),
                     inputName = $input.prop('name');
                 var opt = option || {};
     
-                for(var name in opt){
-                    if(name === 'checked') $input.prop('checked', opt[name]);
-                    if(name === 'disabled') $input.prop('disabled', opt[name]);
-                    if(name === 'value') {
-                        if(opt[name].length == 0){
-                            $parent.siblings('.zr-radio-label').css('display','none');
-                        }else {
-                            $parent.siblings('.zr-radio-label').css('display','inline').html(opt[name]);
+                for (var name in opt) {
+                    if (name === 'checked') $input.prop('checked', opt[name]);
+                    if (name === 'disabled') $input.prop('disabled', opt[name]);
+                    if (name === 'value') $input.prop('value', opt[name]);
+                    if (name === 'label') {
+                        if (opt[name].length == 0) {
+                            $text.css('display', 'none');
+                            $input.removeAttr('data-label');
+                        } else {
+                            $text.css('display', 'inline').html(opt[name]);
+                            $input.attr('data-label', opt[name]);
                         }
                     };
                 }
-                if(opt.beforeFn) opt.beforeFn.call(this);
+                if (opt.beforeFn) opt.beforeFn.call(this, opt);
                 //选中
                 if ($input.prop('checked')) {
-                    $parent.addClass('zr-radio-checked');
+                    $clone.addClass('zr-radio-checked');
                     $label.addClass('zr-radio-wrapper-checked');
                     //其他项目取消选中
                     var aInput = $('input[name=' + inputName + ']');
                     aInput.each(function (i, element) {
                         if (original !== element) {
-                            element.onzrchange? element.onzrchange(): '';
+                            element.onzrchange ? element.onzrchange() : '';
                         }
                     })
-                }else {
-                    $parent.removeClass('zr-radio-checked');
+                } else {
+                    $clone.removeClass('zr-radio-checked');
                     $label.removeClass('zr-radio-wrapper-checked');
                 }
                 //禁用
                 if ($input.prop('disabled')) {
-                    $parent.addClass('zr-radio-disabled');
+                    $clone.addClass('zr-radio-disabled');
                     $label.addClass('zr-radio-wrapper-disabled');
-                }else {
-                    $parent.removeClass('zr-radio-disabled');
+                } else {
+                    $clone.removeClass('zr-radio-disabled');
                     $label.removeClass('zr-radio-wrapper-disabled');
                 }
     
-                if(opt.afterFn) opt.afterFn.call(this);
+                if (opt.afterFn) opt.afterFn.call(this);
             }
+        },
+        addClickEvent: function($label, original){
+            $label.on('click', function () {
+                setTimeout(function(){
+                    original.onzrchange ? original.onzrchange() : '';
+                },30)
+            })
         }
     },
     ajax:{}
