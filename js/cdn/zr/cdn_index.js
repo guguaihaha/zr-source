@@ -275,7 +275,7 @@
      * @Date: Created in 2018/1/30 下午9:46
      * @Description:zr的继承方法
      */
-    Zr.config({
+    Zr._config({
         module:config,
         moduleSelectors:moduleSelectors,
         language:"zh-CN"

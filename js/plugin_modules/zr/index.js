@@ -1,5 +1,5 @@
 (function(){
-    /**
+   /**
      * @Author: zhangjinglin
      * @Email: zhangjinglin@jd.com
      * @Date: Created in 2018/1/28 下午9:00
@@ -59,6 +59,10 @@
         },
         "tmpl":{
             "path":"./tmpl/"
+        },
+        "test":{
+            version:"1.0.0",
+            path:"./test/@version/test"
         }
     }
     /**
@@ -216,9 +220,9 @@
      * @Author: zhangjinglin
      * @Email: zhangjinglin@jd.com
      * @Date: Created in 2018/1/30 下午9:46
-     * @Description:zr的继承方法
+     * @Description:zr的继承方法，忽略已经添加的配置选项，增加新属性
      */
-    Zr.config({
+    Zr._config({
         module:config,
         moduleSelectors:moduleSelectors,
         language:"zh-CN"
@@ -413,7 +417,7 @@ Zr.add("./zr/index",function(zr,$){
      */
     function _find(selector,type){
         var _s = $(selector),
-            _cacheName = "zralready_1001",
+            _cacheName = "data-zr-cache",
             _r1 = [],
             _r2 = [],
             _r3 = [];
@@ -425,12 +429,13 @@ Zr.add("./zr/index",function(zr,$){
                 if($(this).closest(".c-code-inner").length > 0){
                     return;
                 }
-                if($(this).data(_cacheName)){
+                if($(this).attr(_cacheName) == ""){
                     _r2.push(this);
                 }else{
                     _r1.push(this);
-                    $(this).data(_cacheName,_cacheName);
+                    $(this).attr(_cacheName,"");
                 }
+
                 _r3.push(this);
             })
             if(type == 2){
@@ -463,7 +468,7 @@ Zr.add("./zr/index",function(zr,$){
     // //手动触发一次
     $(function(){
         //页面初始化主动触发一次加载内置元素
-        _init_auto();
+        _init_observer();
     })
     /**
      * @Author: zhangjinglin
