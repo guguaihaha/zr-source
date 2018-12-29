@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>组件平台显示内容</title>
@@ -7,151 +8,175 @@
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="/frontPage/css/content.min.css?1" />
 </head>
+
 <body>
-<article class="c-content">
-    <section class="c-title">
-        <p>Radio 单选框</p>
-        <span>对一组选项进行单选，主要用于一组可选项单项选择，或者单独用于切换到选中状态。</span>
-    </section>
-    <div class="c-line"></div>
-    <section class="c-thin-title">
-        <p>使用方法</p>
-        <span>
-            <ul>
-                <li><span>用于在多个备选项中选中单个状态。</span></li>
-                <li><span>由于选项默认可见，不宜过多，若选项过多，建议使用下拉框组件。</span></li>
-            </ul>
-        </span>
-    </section>
-    <div class="c-block-50"></div>
-    <section class="c-sub-title">
-        <p>基础样式 <a href="#">#</a></p>
-        <span>最基础简单的单选框样式,只需要在input标签上添加class为 <i class="c-block-inline">zr-radio</i> 即可使用</span>
-    </section>
-    <section class="c-code">
-        <!--switch code show or hide-->
-        <div class="c-code-switch">&lt;code&gt;</div>
-        <div class="c-demo">
-            <input type="radio" data-label="label1" name="max" class="zr-radio" value="0" checked="true" id="radio-demo1">
-            <input type="radio" data-label="label2" name="max" class="zr-radio" value="1" id="radio-demo2">
-        </div>
-        <div class="c-code-inner c-code-hide">
-            <input type="radio" data-label="label1" name="max1" class="zr-radio" value="0" checked="true">
-            <input type="radio" data-label="label2" name="max1" class="zr-radio" value="1">
-        </div>
-        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
-    </section>
-    <div class="c-block-50"></div>
-    <section class="c-sub-title">
-        <p>禁选样式 <a href="#">#</a></p>
-        <span>单选框不可用状态：不可选、不可更改,标签上加上 <i class="c-block-inline">disabled="disabled"</i> 即为不可用状态</span>
-    </section>
-    <section class="c-code">
-        <!--switch code show or hide-->
-        <div class="c-code-switch">&lt;code&gt;</div>
-        <div class="c-demo">
-            <input type="radio" data-label="label1" name="sex" class="zr-radio" value="0" disabled="disabled" checked="true">
-            <input type="radio" data-label="label2" name="sex" class="zr-radio" value="1" disabled="disabled">
-        </div>
-        <div class="c-code-inner c-code-hide">
-            <input type="radio" data-label="label1" name="sex1" class="zr-radio" value="0" disabled="disabled" checked="true">
-            <input type="radio" data-label="label2" name="sex1" class="zr-radio" value="1" disabled="disabled">
-        </div>
-        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
-    </section>
-    <section class="c-sub-title">
-        <p>单选框组合 <a href="#">#</a></p>
-        <span>有多个互斥的RadioGroup</span>
-    </section>
-    <section class="c-code">
-        <!--switch code show or hide-->
-        <div class="c-code-switch">&lt;code&gt;</div>
-        <div class="c-demo">
-            <input type="radio" name="demo" class="zr-radio" value="0" data-label="label1">
-            <input type="radio" name="demo" class="zr-radio" value="1" data-label="label2">
-            <input type="radio" name="demo" class="zr-radio" value="2" data-label="label3">
-            <input type="radio" name="demo" class="zr-radio" value="3" data-label="label4">
-        </div>
-        <div class="c-code-inner c-code-hide">
-            <input type="radio" name="demo1" class="zr-radio" value="0" data-label="label1">
-            <input type="radio" name="demo1" class="zr-radio" value="1" data-label="label2">
-            <input type="radio" name="demo1" class="zr-radio" value="2" data-label="label3">
-            <input type="radio" name="demo1" class="zr-radio" value="3" data-label="label4">
-        </div>
-        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
-    </section>
-    <section class="c-sub-title">
-        <p>禁用样式<a href="#">#</a></p>
-        <span>单选框不可用状态：不可选、不可更改,标签上加上 <i class="c-block-inline">disabled="disabled"</i> 即为不可用状态</span>
-    </section>
-    <section class="c-code">
-        <!--switch code show or hide-->
-        <div class="c-code-switch">&lt;code&gt;</div>
-        <div class="c-demo">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="0" title="radio1" disabled="disabled">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="1" title="radio2" checked="checked">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="2" title="radio3">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="3" title="radio4">
-        </div>
-        <div class="c-code-inner c-code-hide">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="0" title="radio1">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="1" title="radio2">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="2" title="radio3">
-            <input type="radio" name="test" class="zr-radio zr-radio-vertical" value="3" title="radio4">
-        </div>
-        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
-    </section>
-    <div class="c-block-50"></div>
-    <section class="c-sub-title">
-        <p>自定义事件 <a href="#">#</a></p>
-        <span>
-            radio组件只需要调用该事件就可以动态配置radio的选中和禁用状态（主要用于渲染完成之后动态改变radio的选中和禁用状态）
-        </span>
-    </section>
-    <section class="c-code">
-        <!--switch code show or hide-->
-        <div class="c-code-switch">&lt;code&gt;</div>
-        <div class="c-demo">
-            <input type="radio" name="" value="4444" title="radio11" class="zr-radio">
-            <input type="radio" name="" value="4444" title="radio22" class="zr-radio">
-        </div>
-        <div class="c-code-inner c-code-hide">
-            <!--html代码-->
-            <input type="radio" name="" value="111" title="radio11" class="zr-radio" id="radio-demo3">
-            <!--javascript代码-->
-            <!--checked属性默认为false不选中，当他为true时会选中-->
-            document.getElementById("radio-demo3").zrChange({
-                checked:true
-            })
-            <!--html代码-->
-            <input type="radio" name="" value="111" title="radio22" class="zr-radio" id="radio-demo4">
-            <!--javascript代码-->
-            <!--disabled属性默认为false不选中，当他为true时会选中-->
-            document.getElementById("radio-demo4").zrChange({
-                disabled:true
-            })
-        </div>
-        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
-    </section>
-</article>
-<!--注意此段js必须第一引入在开发模式下{-->
-<script type="text/javascript" src="js/radio.js"></script>
-<script type="text/javascript" src="//storage.jd.com/1.2.2/zr.dev.min.js"></script>
-<script type="text/javascript">
-    Zr.config({
-        baseUrl: "/js/plugin_modules/",
-        requestTime:true
-    })
-    Zr.ready(function(){
-        Zr.use("./js/quickMenu","./js/code",function(zr){
-            // document.getElementById("radio-demo1").onzrchange({
-            //     checked:true
-            // })
-            // document.getElementById("radio-demo2").onzrchange({
-            //     disabled:true
-            // })
+    <article class="c-content">
+        <section class="c-title">
+            <p>Radio 单选框</p>
+            <span>对一组选项进行单选，主要用于一组可选项单项选择，或者单独用于切换到选中状态。</span>
+        </section>
+        <div class="c-line"></div>
+        <section class="c-thin-title">
+            <p>使用方法</p>
+            <span>
+                <ul>
+                    <li><span>用于在多个备选项中选中单个状态。</span></li>
+                    <li><span>由于选项默认可见，不宜过多，若选项过多，建议使用下拉框组件。</span></li>
+                </ul>
+            </span>
+        </section>
+        <div class="c-block-50"></div>
+        <section class="c-sub-title">
+            <p>基础样式 <a href="#">#</a></p>
+            <span>最基础简单的单选框样式,只需要在input标签上添加class为 <i class="c-block-inline">zr-radio</i> 即可使用</span>
+        </section>
+        <section class="c-code">
+            <!--switch code show or hide-->
+            <div class="c-code-switch">&lt;code&gt;</div>
+            <div class="c-demo">
+                <input type="radio" data-label="label1" name="max" class="zr-radio" value="0" checked="true">
+                <input type="radio" data-label="label2" name="max" class="zr-radio" value="1">
+            </div>
+            <div class="c-code-inner c-code-hide">
+                <input type="radio" data-label="label1" name="max1" class="zr-radio" value="0" checked="true">
+                <input type="radio" data-label="label2" name="max1" class="zr-radio" value="1">
+            </div>
+            <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+        </section>
+        <div class="c-block-50"></div>
+        <section class="c-sub-title">
+            <p>禁选样式 <a href="#">#</a></p>
+            <span>单选框不可用状态：不可选、不可更改,标签上加上 <i class="c-block-inline">disabled="disabled"</i> 即为不可用状态</span>
+        </section>
+        <section class="c-code">
+            <!--switch code show or hide-->
+            <div class="c-code-switch">&lt;code&gt;</div>
+            <div class="c-demo">
+                <input type="radio" data-label="label1" name="sex" class="zr-radio" value="0" disabled="disabled"
+                    checked="true">
+                <input type="radio" data-label="label2" name="sex" class="zr-radio" value="1" disabled="disabled">
+            </div>
+            <div class="c-code-inner c-code-hide">
+                <input type="radio" data-label="label1" name="sex1" class="zr-radio" value="0" disabled="disabled"
+                    checked="true">
+                <input type="radio" data-label="label2" name="sex1" class="zr-radio" value="1" disabled="disabled">
+            </div>
+            <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+        </section>
+        <section class="c-sub-title">
+            <p>单选框组合 <a href="#">#</a></p>
+            <span>有多个互斥的RadioGroup</span>
+        </section>
+        <section class="c-code">
+            <!--switch code show or hide-->
+            <div class="c-code-switch">&lt;code&gt;</div>
+            <div class="c-demo">
+                <input type="radio" name="demo" class="zr-radio" value="0" data-label="label1">
+                <input type="radio" name="demo" class="zr-radio" value="1" data-label="label2">
+                <input type="radio" name="demo" class="zr-radio" value="2" data-label="label3">
+                <input type="radio" name="demo" class="zr-radio" value="3" data-label="label4">
+            </div>
+            <div class="c-code-inner c-code-hide">
+                <input type="radio" name="demo1" class="zr-radio" value="0" data-label="label1">
+                <input type="radio" name="demo1" class="zr-radio" value="1" data-label="label2">
+                <input type="radio" name="demo1" class="zr-radio" value="2" data-label="label3">
+                <input type="radio" name="demo1" class="zr-radio" value="3" data-label="label4">
+            </div>
+            <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+        </section>
+        <section class="c-sub-title">
+            <p>禁用样式<a href="#">#</a></p>
+            <span>单选框不可用状态：不可选、不可更改,标签上加上 <i class="c-block-inline">disabled="disabled"</i> 即为不可用状态</span>
+        </section>
+        <section class="c-code">
+            <!--switch code show or hide-->
+            <div class="c-code-switch">&lt;code&gt;</div>
+            <div class="c-demo">
+                <input type="radio" data-label="label1" name="test" class="zr-radio" value="0" disabled="disabled">
+                <input type="radio" data-label="label2" name="test" class="zr-radio" value="1" checked="checked">
+                <input type="radio" data-label="label3" name="test" class="zr-radio" value="2">
+                <input type="radio" data-label="label4" name="test" class="zr-radio" value="3">
+            </div>
+            <div class="c-code-inner c-code-hide">
+                <input type="radio" data-label="label5" name="test1" class="zr-radio" value="0" disabled="disabled">
+                <input type="radio" data-label="label6" name="test1" class="zr-radio" value="1" checked="checked">
+                <input type="radio" data-label="label7" name="test1" class="zr-radio" value="2">
+                <input type="radio" data-label="label8" name="test1" class="zr-radio" value="3">
+            </div>
+            <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+        </section>
+        <div class="c-block-50"></div>
+        <section class="c-sub-title">
+            <p>自定义事件 <a href="#">#</a></p>
+            <span>
+                radio组件只需要调用该事件就可以动态配置radio的选中和禁用状态（主要用于渲染完成之后动态改变radio的选中和禁用状态）
+            </span>
+        </section>
+        <section class="c-code">
+            <!--switch code show or hide-->
+            <div class="c-code-switch">&lt;code&gt;</div>
+            <div class="c-demo">
+                <input type="radio" data-label="label1" name="zr1" class="zr-radio" value="2" id="radio-demo1">
+                <input type="radio" data-label="label2" name="zr1" class="zr-radio" value="3" id="radio-demo2">
+            </div>
+            <div class="c-code-inner c-code-hide">
+                <!--html代码-->
+                <input type="radio" data-label="label1" name="zr2" value="111" class="zr-radio" id="radio-demo3">
+                <!--javascript代码-->
+                <!--checked属性默认为false不选中，当他为true时会选中-->
+                document.getElementById("radio-demo3").onzrchange({
+                    checked: true,
+                    disabled: true,
+                    value: 'xx1',
+                    label: 14,
+                    beforeFn: function (opt) {
+                        // console.log(this);
+                    console.log(this);
+                    },
+                    afterFn: function (opt) {
+                        // console.log(this);
+                    }
+                })
+                <!--html代码-->
+                <input type="radio" data-label="label2" name="zr2" value="111" class="zr-radio" id="radio-demo4">
+                <!--javascript代码-->
+                <!--disabled属性默认为false不选中，当他为true时会选中-->
+                document.getElementById("radio-demo4").onzrchange({
+                    disabled:true
+                })
+            </div>
+            <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+        </section>
+    </article>
+    <!--注意此段js必须第一引入在开发模式下{-->
+    <script type="text/javascript" src="js/radio.js"></script>
+    <script type="text/javascript" src="//storage.jd.com/1.2.2/zr.dev.min.js"></script>
+    <script type="text/javascript">
+        Zr.config({
+            baseUrl: "/js/plugin_modules/",
+            requestTime: true
         })
-    })
-</script>
+        Zr.ready(function () {
+            Zr.use("./js/quickMenu", "./js/code", function (zr) {
+                document.getElementById("radio-demo1").onzrchange({
+                    checked: true,
+                    disabled: true,
+                    value: '55',
+                    label: 'zr-radio-demo',
+                    beforeFn: function (opt) {
+                        // console.log(this);
+                    console.log(this);
+                    },
+                    afterFn: function (opt) {
+                        // console.log(this);
+                    }
+                })
+                document.getElementById("radio-demo2").onzrchange({
+                    disabled: true
+                })
+            })
+        })
+    </script>
 </body>
+
 </html>
