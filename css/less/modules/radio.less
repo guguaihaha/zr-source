@@ -2,13 +2,11 @@
 
 @radio-new-color: #4363f4;
 input[type='radio'][disabled],
-input[type='checkbox'][disabled],
-input[type='radio'].disabled,
-input[type='checkbox'].disabled {
+input[type='radio'].disabled {
     cursor: not-allowed
 }
 
-.zr-radio-wrapper {
+.@{zr-prefix}-radio-wrapper {
     position: relative;
     display: inline-block;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
@@ -24,19 +22,25 @@ input[type='checkbox'].disabled {
     outline: none;
     margin-right: 8px;
     cursor: pointer;
-    &.zr-radio-wrapper-checked {
+    &.@{zr-prefix}-radio-wrapper-checked {
 
     }
+    &.@{zr-prefix}-radio-wrapper-disabled {
+        .@{zr-prefix}-radio-label {
+            color: rgba(0,0,0,0.25);
+            cursor: not-allowed;
+        }
+    }
     &:hover {
-        .zr-radio-clone {
-            .zr-radio-inner {
+        .@{zr-prefix}-radio-clone {
+            .@{zr-prefix}-radio-inner {
                 border-color: @radio-new-color;
             }
         }
     }
-    .zr-radio-clone {
-        &.zr-radio-checked {
-            .zr-radio-inner {
+    .@{zr-prefix}-radio-clone {
+        &.@{zr-prefix}-radio-checked {
+            .@{zr-prefix}-radio-inner {
                 border-color: @radio-new-color;
                 &:after {
                     // transform: scale(1);
@@ -46,8 +50,8 @@ input[type='checkbox'].disabled {
                 }
             }
         }
-        &.zr-radio-disabled {
-            .zr-radio-inner {
+        &.@{zr-prefix}-radio-disabled {
+            .@{zr-prefix}-radio-inner {
                 border-color: #d9d9d9 !important;
                 background-color: #f5f5f5;
                 cursor: not-allowed;
@@ -57,7 +61,7 @@ input[type='checkbox'].disabled {
             }
         }
         &:hover {
-            .zr-radio-inner {
+            .@{zr-prefix}-radio-inner {
                 border-color: @radio-new-color;
             }
         }
@@ -77,7 +81,7 @@ input[type='checkbox'].disabled {
         vertical-align: sub; //sub
         cursor: pointer;
         // 代糖
-        .zr-radio-inner {
+        .@{zr-prefix}-radio-inner {
             position: relative;
             box-sizing: border-box; //ant-no
             top: 0;
@@ -114,7 +118,7 @@ input[type='checkbox'].disabled {
             }
         }
         // 源生
-        .zr-radio-original {
+        .@{zr-prefix}-radio-original {
             position: absolute;
             opacity: 0;
             top: 0;
@@ -127,11 +131,12 @@ input[type='checkbox'].disabled {
             cursor: pointer;
         }
     }
-    .zr-radio-label {
+    .@{zr-prefix}-radio-label {
         font-size: 14px;
         padding-left: 8px;
         padding-right: 8px;
     }
 }
+
 
 

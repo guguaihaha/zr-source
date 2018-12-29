@@ -1,11 +1,8 @@
 @radio-new-color: #4363f4;
-input[type='radio'][disabled],
 input[type='checkbox'][disabled],
-input[type='radio'].disabled,
 input[type='checkbox'].disabled {
     cursor: not-allowed
 }
-
 
 .@{zr-prefix}-checkbox-wrapper {
     position: relative;
@@ -24,7 +21,13 @@ input[type='checkbox'].disabled {
     margin-right: 8px;
     cursor: pointer;
     &.@{zr-prefix}-checkbox-wrapper-checked {
-
+        
+    }
+    &.@{zr-prefix}-checkbox-wrapper-disabled {
+        .@{zr-prefix}-checkbox-label {
+            color: rgba(0,0,0,0.25);
+            cursor: not-allowed;
+        }
     }
     &:hover {
         .@{zr-prefix}-checkbox-style {
@@ -42,6 +45,18 @@ input[type='checkbox'].disabled {
                     transform: rotate(45deg) scale(1);
                     opacity: 1;
                     transition: all .3s cubic-bezier(.78, .14, .15, .86);
+                }
+            }
+        }
+        &.@{zr-prefix}-checkbox-mid-checked {
+            .@{zr-prefix}-checkbox-inner {
+                border-color: @radio-new-color;
+                background-color: @radio-new-color;
+                &:after {
+                    transform: rotate(90deg) scale(1);
+                    opacity: 1;
+                    transition: all .3s cubic-bezier(.78, .14, .15, .86);
+                    border-bottom: 0;
                 }
             }
         }
@@ -82,8 +97,8 @@ input[type='checkbox'].disabled {
             top: 0;
             left: 0;
             display: block;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-width: 1px;
             border-style: solid;
             border-radius: 2px;
@@ -94,12 +109,12 @@ input[type='checkbox'].disabled {
 
             &:after {
                 position: absolute;
-                left: 4.57142857px;
-                top: 1.14285714px;
+                left: 4px;
+                top: 1px;
                 display: table;
-                width: 5.71428571px;
-                height: 9.14285714px;
-                border: 2px solid #fff;
+                width: 4.71428571px;
+                height: 8.14285714px;
+                border: 1px solid #fff;
                 display: table;
                 content: ' '; 
                 transform: rotate(45deg) scale(0);
@@ -129,3 +144,4 @@ input[type='checkbox'].disabled {
         padding-right: 8px;
     }
 }
+

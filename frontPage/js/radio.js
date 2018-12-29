@@ -76,12 +76,14 @@ var _radio = {
         addEvent: function(dom) {
             dom.onzrchange = function (option) {
                 var $input = $(this),
-                    _id = $input.prop('id'),
-                    $label = $input.siblings('[for="' + _id + '"]'),
+                    input = this,
+                    _name = $input.prop('name'),
+                    _id = $input.prop('id');
+                
+                var $label = $input.siblings('[for="' + _id + '"]'),
                     $clone = $label.children('.zr-radio-clone'),
-                    $text = $clone.siblings('.zr-radio-label'),
-                    original = this,
-                    inputName = $input.prop('name');
+                    $text = $clone.siblings('.zr-radio-label');
+    
                 var opt = option || {};
     
                 for (var name in opt) {
@@ -104,9 +106,9 @@ var _radio = {
                     $clone.addClass('zr-radio-checked');
                     $label.addClass('zr-radio-wrapper-checked');
                     //其他项目取消选中
-                    var aInput = $('input[name=' + inputName + ']');
+                    var aInput = $('input[name=' + _name + ']');
                     aInput.each(function (i, element) {
-                        if (original !== element) {
+                        if (input !== element) {
                             element.onzrchange ? element.onzrchange() : '';
                         }
                     })
