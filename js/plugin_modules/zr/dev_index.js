@@ -183,13 +183,14 @@
                 disableClassName:prefix + "-select-disable",//禁用样式
                 smClassName:prefix + "-select-sm",//sm
                 lgClassName:prefix + "-select-lg",//lg
-                titleClassName:"."+prefix + "-select-title",//显示选择项内容
-                contentClassName:"."+prefix + "-select-content",//下拉选择项列表
-                unselectClassName:"."+prefix + "-unselect",  // 模拟出的最外层盒子
-                iconArrowUp: prefix + "icon-arrow-up",    // 箭头向上的图标
-                iconArrowDown: '.' + prefix + "icon-arrow-down",    // 箭头向下的图标
+                menuClassName: '.' + prefix + '-select-menu', // 下拉框列表
+                receptionClassName:"."+prefix + "-select-reception",//显示选择项内容
+                simulationClassName:"."+prefix + "-simulation",  // 模拟出的最外层盒子
+                arrowUpClassName: prefix + "icon-arrow-up",    // 箭头向上的图标
+                arrowDownClassName: prefix + "icon-arrow-down",    // 箭头向下的图标
                 iconClose: prefix + "icon-close",   // 关闭图标
                 selectValues: prefix + "-select-values", // 当模拟框有选中值时带的class
+                multipleClassName: prefix + '-select-multiple', // 多选样式
             }
         },
         // {
