@@ -308,10 +308,11 @@
                 Zr.ready(function () {
                     Zr.use("jquery", function (zr, $) {
                         $("#changeDis").off("click").on("click", function () {
-                            document.getElementById("selectDom1").zrchange({
-                                eventFn: function () {
-                                    $("#selectDom1").attr("disabled", "disabled");
-                                }
+                            document.getElementById("selectDom1").onzrchange({
+                                // eventFn: function () {
+                                //     $("#selectDom1").attr("disabled", "disabled");
+                                // }
+                                disable: true
                             })
                         });
                     })

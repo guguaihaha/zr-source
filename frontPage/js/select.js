@@ -11,6 +11,7 @@ var _select = {
     },
     events: {
         eventList: function (opt) {
+            var options = _select.options._obj.options;
             $.each(opt.array, function (i, n) {
                 // 缓存
                 var $n = $(n),
@@ -30,7 +31,7 @@ var _select = {
 
                     // 统计选中数量
                     if (selected) {
-                        selectedNumber ++;
+                        selectedNumber++;
                     }
 
                     selectedItem.push(
@@ -48,15 +49,22 @@ var _select = {
 
                 if ($n.prop('multiple')) {
                     // 初始化前台展示框
-                    var selectedArr = [];
+                    var selectedArr = [],
+                        valueSelected = [];
 
                     $.each(optArr, function (idx) {
                         if (optArr[idx].selected) {
                             selectedArr.push(
-                                '<span>' + optArr[idx].text + ' <i class="zricon-close"></i></span>'
+                                '<span data-value="' + optArr[idx].val + '">' + optArr[idx].text + ' <i class="zricon-close"></i></span>'
                             );
+                            valueSelected.push(optArr[idx].val);
                         }
                     });
+
+                    // todo 多选的默认选中
+                    // if (selectedArr.length === 0) {
+                    //     selectedArr.push('请选择');
+                    // }
 
                     receptionArr.push(
                         '<div class="zr-select-reception zr-select-multiple">' +
@@ -139,17 +147,21 @@ var _select = {
                 }
 
                 // 初始化lg、sm样式
-                var sizeClass = '';
-                console.log($n);
+                var sizeClass = '',
+                    disabledClass = '';
                 if ($n.hasClass('zr-select-sm')) {
                     sizeClass = 'zr-select-sm'
                 } else if ($n.hasClass('zr-select-lg')) {
                     sizeClass = 'zr-select-lg'
                 }
 
+                if ($n.prop('disabled')) {
+                    disabledClass = options.disableClassName;
+                }
+
                 // 初始化模拟代码
                 htmlArr.push(
-                    '<div class="zr-simulation ' + sizeClass + '">' +
+                    '<div class="zr-simulation ' + sizeClass + ' ' + disabledClass + '">' +
                     receptionArr.join('') +
                     '<dl class="zr-select-menu zr-select-hide">' +
                     optionArr.join('') +
@@ -159,44 +171,59 @@ var _select = {
 
                 $n.after(htmlArr.join(''));
 
-                // 监听DOM元素的插入和移除
-                // $n.on("DOMNodeInserted, DOMNodeRemoved", function () {
-                //     $n.nextAll(".zr-unselect").eq(0).remove();
-                //     _select.eventFn.getValue($n);
-                // });
-                //
-                // //自定义事件监听DOM变化
-                // // 赋值
-                // $n[0]["onzrchange"] = function (opt) {
-                //     var opts = {
-                //         eventFn: "",
-                //         other: "",
-                //         disable: true,
-                //         mutiple: true,
-                //         beforeFn: function () {
-                //
-                //         },
-                //         afterFn: function () {
-                //
-                //         },
-                //         reset: function () {
-                //
-                //         }
-                //         // 添加属性checkbox、
-                //     };
-                //     var option = $.extend(opts, opt || {});
-                //     option.eventFn.call(this, option);  // 执行传进来的函数
-                //
-                //     $n.next(".zr-unselect").remove();
-                //     _select.eventFn.getValue($n);
-                // }
+                // 多选时赋值
+                if ($n.prop('multiple')) {
+                    $n.next(options.simulationClassName).children(options.receptionClassName).data('data-value', valueSelected);
+                }
             });
 
-            // 下拉框切换
-            _select.eventFn.taggleMenu();
+            // onzrchange触发函数
+            ($(options.simulationClassName)[0]['onzrchange'] = function (opt) {
+                var opts = {
+                        disable: false,
+                        // multiple: false,
+                        // reset: false,
+                        selected: -1,
+                        eventFn: function () {
+                        },
+                        beforeFn: function () {
+                        },
+                        afterFn: function () {
+                        },
+                    },
+                    option = $.extend(opts, opt || {}),
+                    $this = $(this);
 
-            // 点击选中操作
-            _select.eventFn.selectOption();
+                // 执行前回调
+                option.beforeFn();
+
+                if (option.disabled) {
+                    $this.addClass(options.disableClassName);
+                }
+
+                if (option.selected !== -1) {
+                    // $this.
+                }
+
+                // 回调函数
+                option.eventFn();
+
+                // 下拉框切换
+                _select.eventFn.taggleMenu();
+
+                // 点击选中操作
+                _select.eventFn.selectOption();
+
+                // 点击展示框删除相应选中项
+                _select.eventFn.delSelected();
+
+                // 执行后回调
+                option.afterFn();
+
+                opts.eventFn.call(this, opts);
+                opts.beforeFn.call(this, opts);
+                opts.afterFn.call(this, opts);
+            }())
         }
     },
     eventFn: {
@@ -215,14 +242,15 @@ var _select = {
                 var $this = $(this),
                     $icon = $this.children('i'),
                     $menu = $this.next(menuClassName);
-
-                // 当前打开
-                if ($menu.hasClass(hideClassName)) {
-                    $icon.addClass(arrowUpClassName);
-                    $menu.removeClass(hideClassName);
-                } else {
-                    $icon.removeClass(arrowUpClassName);
-                    $menu.addClass(hideClassName);
+                if (!$this.closest(opt.simulationClassName).hasClass(opt.disableClassName)) {
+                    // 当前打开
+                    if ($menu.hasClass(hideClassName)) {
+                        $icon.addClass(arrowUpClassName);
+                        $menu.removeClass(hideClassName);
+                    } else {
+                        $icon.removeClass(arrowUpClassName);
+                        $menu.addClass(hideClassName);
+                    }
                 }
             });
 
@@ -235,26 +263,206 @@ var _select = {
 
         // 点击选中操作
         selectOption: function () {
+            var options = _select.options._obj.options;
+
+            // 点击非全选标签
             $('.zr-select-menu dd').on('click', function (e) {
-                var $this = $(this);
+                e.stopPropagation();
+                var $this = $(this),
+                    $simulation = $this.closest(options.simulationClassName),
+                    $reception = $simulation.children(options.receptionClassName),
+                    $menu = $this.closest(options.menuClassName);
 
                 // 多选时
-                if ($this.parent().prev().hasClass(_select.options._obj.options.multipleClassName)) {
-                    var valArr = [];
+                if ($this.parent().prev().hasClass(options.multipleClassName)) {
+                    var val = $this.attr('data-value');
+
+                    // 是否选中切换，删减展示框内容
+                    if ($this.hasClass(options.checkboxChecked)) {
+                        $this.removeClass(options.checkboxChecked);
+
+                        $reception.children('span[data-value=' + val + ']').remove();
+
+                        // 更新value值
+                        $reception.data('data-value', $.grep($reception.data('data-value'), function (n, i) {
+                            return n !== val;
+                        }));
+
+                        // 数据绑定原生select
+                        _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                    } else {
+                        $this.addClass(options.checkboxChecked);
+
+                        $this.closest(options.simulationClassName).children(options.receptionClassName).prepend(
+                            '<span data-value="' + val + '">' + $this.children('span:last-child').text() + ' <i class="zricon-close"></i></span>'
+                        );
+
+                        // 更新value值
+                        var valueSelected = $reception.data('data-value');
+                        valueSelected.push(val);
+                        $reception.data('data-value', valueSelected);
+
+                        // 重新绑定监听
+                        _select.eventFn.delSelected();
+
+                        // 数据绑定原生select
+                        _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                    }
+
+                    // 全选框做相应更新
+                    var $dd = $menu.children('dd'),
+                        ddLength = $dd.length,
+                        selectedNumber = 0;
+                    $dd.each(function (idx) {
+                        var $this = $(this);
+                        if ($this.hasClass(options.checkboxChecked)) {
+                            selectedNumber++;
+                        }
+                    });
+
+                    var $dt = $this.prevAll('dt');
+                    if (selectedNumber === 0) {
+                        $dt.removeClass(options.checkboxChecked).children().children().removeClass(options.checkboxUncheck);
+                    } else if (selectedNumber === ddLength) {
+                        $dt.addClass(options.checkboxChecked).children().children().removeClass(options.checkboxUncheck);
+                    } else {
+                        $dt.addClass(options.checkboxChecked).children().children().addClass(options.checkboxUncheck);
+                    }
+
+                    _select.eventFn.dealMenuTop($menu);
 
                 } else {
                     var obj = {
                         val: $this.attr('data-value'),
                         text: $this.text()
                     };
-                    var $simulation = $this.closest(_select.options._obj.options.simulationClassName),
-                        $reception = $simulation.children(_select.options._obj.options.receptionClassName);
 
-                    $simulation.attr('data-value', obj.val);
-                    $reception.html(obj.text + ' <i class="' + _select.options._obj.options.arrowDownClassName + '"></i>');
-                    $this.parent().addClass(_select.options._obj.options.hideClassName);
+                    // 更新选中数据
+                    $reception.attr('data-value', obj.val);
+                    // 数据绑定原生select
+                    _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+
+                    $reception.html(obj.text + ' <i class="' + options.arrowDownClassName + '"></i>');
+                    $this.parent().addClass(options.hideClassName);
                 }
             });
+
+            // 点击全选标签
+            $('.zr-select-menu dt').on('click', function (e) {
+                e.stopPropagation();
+                var $this = $(this),
+                    $menu = $this.closest(options.menuClassName),
+                    $simulation = $menu.closest(options.simulationClassName);
+
+                if ($this.hasClass(options.checkboxChecked)) {
+                    $this.removeClass(options.checkboxChecked);
+                    $this.nextAll('dd').removeClass(options.checkboxChecked);
+
+                    var $span = $this.children().eq(0).children();
+                    if ($span.hasClass(options.checkboxUncheck)) {
+                        $span.removeClass(options.checkboxUncheck);
+                    }
+                    // 展示框展示和赋值
+                    $this.closest(options.simulationClassName).children(options.receptionClassName).html('<i class="' + options.arrowDownClassName + ' ' + options.arrowUpClassName + '"></i>').data('data-value', []);
+
+                    // 更新下拉框高度Top
+                    _select.eventFn.dealMenuTop($menu);
+
+                    // 数据绑定原生select
+                    _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                } else {
+                    $this.addClass(options.checkboxChecked);
+                    $this.nextAll('dd').addClass(options.checkboxChecked);
+
+                    var receptionChecked = [],
+                        valueChecked = [];
+                    $this.nextAll().each(function () {
+                        var $this = $(this);
+                        receptionChecked.push(
+                            '<span data-value="' + $this.attr('data-value') + '">' + $this.children('span:last-child').text() + ' <i class="zricon-close"></i></span>'
+                        );
+                        valueChecked.push($this.attr('data-value'));
+                    });
+                    // 展示框展示和赋值
+                    $this.closest(options.simulationClassName).children(_select.options._obj.options.receptionClassName).html(receptionChecked.join('')).data('data-value', valueChecked);
+
+                    // 数据绑定原生select
+                    _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+
+                    // 更新下拉框高度Top
+                    _select.eventFn.dealMenuTop($menu);
+
+                    // 重新绑定监听
+                    _select.eventFn.delSelected();
+                }
+            });
+        },
+
+        // 调整下拉框相对位置-top
+        dealMenuTop: function ($menu) {
+            $menu.css('top', $menu.prev(_select.options._obj.options.receptionClassName).height() + 4);
+        },
+
+        delSelected: function () {
+            var options = _select.options._obj.options;
+
+            $(options.receptionClassName).find('.zricon-close').off('click').on('click', function (e) {
+                e.stopPropagation();
+
+                var $this = $(this),
+                    $span = $this.closest('span'),
+                    $reception = $this.closest(options.receptionClassName),
+                    $menu = $reception.next(),
+                    val = $span.attr('data-value'),
+                    valueSelected = $reception.data('data-value'),
+                    selectedNumber = 0,
+                    optionsNumber = 0;
+
+                // 删除当前选中项
+                $span.remove();
+
+                // 更新缓存
+                $.grep(valueSelected, function (n, i) {
+                    return n !== val;
+                });
+                $reception.data('data-value', valueSelected);
+
+                // 更新下拉框
+                $reception.next().children('dd').each(function (i) {
+                    var $this = $(this);
+                    if ($this.attr('data-value') === val) {
+                        $this.removeClass(options.checkboxChecked);
+                    }
+
+                    if ($this.hasClass(options.checkboxChecked)) {
+                        selectedNumber++;
+                    }
+
+                    // option数量
+                    optionsNumber++;
+                });
+
+                // 更新全选
+                var $dt = $menu.children('dt');
+
+                if (selectedNumber === 0) {
+                    $dt.removeClass(options.checkboxChecked).children().children().removeClass(options.checkboxUncheck);
+                } else if (selectedNumber === optionsNumber) {
+                    $dt.addClass(options.checkboxChecked).children().children().removeClass(options.checkboxUncheck);
+                } else {
+                    $dt.addClass(options.checkboxChecked).children().children().addClass(options.checkboxUncheck);
+                }
+
+                // 更新下拉框高度
+                _select.eventFn.dealMenuTop($menu);
+            });
+        },
+
+        bindSelect: function (selectDom) {
+            var valueSelected = selectDom.next().children(_select.options._obj.options.receptionClassName).data('data-value');
+
+            selectDom.val(valueSelected);
+            selectDom.trigger("change");
         }
 
         // /**

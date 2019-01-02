@@ -191,6 +191,8 @@
                 iconClose: prefix + "icon-close",   // 关闭图标
                 selectValues: prefix + "-select-values", // 当模拟框有选中值时带的class
                 multipleClassName: prefix + '-select-multiple', // 多选样式
+                checkboxChecked:prefix + '-select-checkbox-checked', // 是否选中
+                checkboxUncheck:prefix + '-select-checkbox-uncheck',    // 部分选中
             }
         },
         // {
