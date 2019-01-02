@@ -278,7 +278,7 @@
                     </select>
                 </div>
                 <div style="display: inline-block;margin-left: 20px">
-                    <button type="button" class="zr-btn zr-btn-primary" id="changeVal">改变select的value属性</button>
+                    <button type="button" class="zr-btn zr-btn-primary" id="changeVal">模拟点击选中第N项option</button>
                 </div>
             </div>
             <div style="margin-top: 20px">
@@ -291,7 +291,7 @@
                     </select>
                 </div>
                 <div style="display: inline-block;margin-left: 20px">
-                    <button type="button" class="zr-btn zr-btn-primary" id="deleteOpt">删除select的option</button>
+                    <button type="button" class="zr-btn zr-btn-primary" id="deleteOpt">删除select的第N项option</button>
                 </div>
             </div>
         </div>
@@ -309,10 +309,7 @@
                     Zr.use("jquery", function (zr, $) {
                         $("#changeDis").off("click").on("click", function () {
                             document.getElementById("selectDom1").onzrchange({
-                                // eventFn: function () {
-                                //     $("#selectDom1").attr("disabled", "disabled");
-                                // }
-                                disable: true
+                                disabled: true
                             })
                         });
                     })
@@ -325,15 +322,13 @@
                 <option value="021">上海</option>
                 <option value="0571">杭州</option>
             </select>
-            <button type="button" class="zr-btn zr-btn-primary" id="changeVal">改变select的value属性</button>
+            <button type="button" class="zr-btn zr-btn-primary" id="changeVal">模拟点击选中第N项option</button>
             <script type="text/javascript">
                 Zr.ready(function () {
                     Zr.use("jquery", function (zr, $) {
                         $("#changeVal").off("click").on("click", function () {
-                            document.getElementById("selectDom2").zrchange({
-                                eventFn: function () {
-                                    $("#selectDom2").val("010");
-                                }
+                            document.getElementById("selectDom2").onzrchange({
+                                selected: 1 //选中第二项
                             })
                         });
                     })
@@ -346,15 +341,13 @@
                 <option value="021">上海</option>
                 <option value="0571">杭州</option>
             </select>
-            <button type="button" class="zr-btn zr-btn-primary" id="deleteOpt">删除select的option</button>
+            <button type="button" class="zr-btn zr-btn-primary" id="deleteOpt">删除select的第N项option</button>
             <script type="text/javascript">
                 Zr.ready(function () {
                     Zr.use("jquery", function (zr, $) {
                         $("#deleteOpt").off("click").on("click", function () {
-                            document.getElementById("selectDom3").zrchange({
-                                eventFn: function () {
-                                    $("#selectDom3").find("option[value=010]").remove();
-                                }
+                            document.getElementById("selectDom3").onzrchange({
+                                remove: 2
                             })
                         });
                     })
@@ -364,7 +357,7 @@
         <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
     </section>
     <div class="c-block-50"></div>
-    <div class="c-options-title">API</div>
+    <div class="c-options-title">onzrchange</div>
     <section class="c-table">
         <div class="c-table-header">
             <table>
@@ -391,7 +384,7 @@
                 <tbody>
                 <tr>
                     <td>
-                        <div class="c-cell c-table-w-125">zrchange</div>
+                        <div class="c-cell c-table-w-125"></div>
                     </td>
                     <td>
                         <div class="c-cell c-table-w-200">自定义监听DOM变化的事件</div>
@@ -401,6 +394,62 @@
                     </td>
                     <td>
                         <div class="c-cell c-table-w-500">入参需要是一个对象，Key为eventFn，Value为处理DOM变化的函数方法。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125 c-align-right">disabled</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">禁用select元素</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-125">Boolean</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-500">默认为false，入参为true时，禁用select，DOM定位必须为select元素</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125 c-align-right">selected</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">模拟点击选中第N项option</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-125">Number</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-500">默认为-1，第一项为0，依次累加，DOM定位必须为select元素</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125 c-align-right">remove</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">删除select的第N项option</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-125">Number</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-500">默认为-1，第一项为0，依次累加，DOM定位必须为select元素</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125 c-align-right">eventFn</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">自定义回调函数</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-125">Function</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-500"></div>
                     </td>
                 </tr>
                 </tbody>
@@ -427,24 +476,18 @@
         Zr.use("./js/quickMenu", "./js/code")
         Zr.use("jquery", function (zr, $) {
             $("#changeDis").off("click").on("click", function () {
-                document.getElementById("selectDom1").zrchange({
-                    eventFn: function () {
-                        $("#selectDom1").attr("disabled", "disabled");
-                    }
+                document.getElementById("selectDom1").onzrchange({
+                    disabled:true
                 })
             });
             $("#changeVal").off("click").on("click", function () {
-                document.getElementById("selectDom2").zrchange({
-                    eventFn: function () {
-                        $("#selectDom2").val("010");
-                    }
+                document.getElementById("selectDom2").onzrchange({
+                    selected: 1 //选中第二项
                 })
             });
             $("#deleteOpt").off("click").on("click", function () {
-                document.getElementById("selectDom3").zrchange({
-                    eventFn: function () {
-                        $("#selectDom3").find("option[value=010]").remove();
-                    }
+                document.getElementById("selectDom3").onzrchange({
+                    remove: 2
                 })
             })
         })
