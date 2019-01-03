@@ -20,7 +20,8 @@ var _select = {
                     receptionArr = [],
                     optionArr = [],
                     selectedItem = [],
-                    selectedNumber = 0;
+                    selectedNumber = 0,
+                    isHasMultipleClass = '';
 
                 // 获取原生select的value、key、selected
                 $n.children().each(function (idx) {
@@ -35,7 +36,7 @@ var _select = {
                     }
 
                     selectedItem.push(
-                        '<span>' + val + '<i class="zricon-close"></i></span>'
+                        '<span>' + val + '<i class="' + options.iconClose + '"></i></span>'
                     );
 
                     optArr.push({
@@ -45,17 +46,19 @@ var _select = {
                     });
                 });
 
-                $n.addClass(_select.options.hideClassName);
+                $n.addClass(options.hideClassName);
 
                 if ($n.prop('multiple')) {
                     // 初始化前台展示框
                     var selectedArr = [],
                         valueSelected = [];
 
+                    isHasMultipleClass = options.multipleClassName;
+
                     $.each(optArr, function (idx) {
                         if (optArr[idx].selected) {
                             selectedArr.push(
-                                '<span data-value="' + optArr[idx].val + '">' + optArr[idx].text + ' <i class="zricon-close"></i></span>'
+                                '<span data-value="' + optArr[idx].val + '">' + optArr[idx].text + ' <i class="' + options.iconClose + '"></i></span>'
                             );
                             valueSelected.push(optArr[idx].val);
                         }
@@ -67,9 +70,9 @@ var _select = {
                     // }
 
                     receptionArr.push(
-                        '<div class="zr-select-reception zr-select-multiple">' +
+                        '<div class="' + options.receptionClassName + ' ' + options.multipleClassName + '">' +
                         selectedArr.join('') +
-                        '<i class="zricon-arrow-down"></i>' +
+                        '<i class="' + options.arrowDownClassName + '"></i>' +
                         '</div>'
                     );
 
@@ -80,16 +83,16 @@ var _select = {
                         dtClass = '';
                         spanClass = '';
                     } else if (selectedNumber === optArr.length) {
-                        dtClass = 'zr-select-checkbox-checked';
+                        dtClass = options.checkboxChecked;
                         spanClass = '';
                     } else {
-                        dtClass = 'zr-select-checkbox-checked';
-                        spanClass = 'zr-select-checkbox-uncheck';
+                        dtClass = options.checkboxChecked;
+                        spanClass = options.checkboxUncheck;
                     }
 
                     optionArr.push(
                         '<dt class="' + dtClass + '">' +
-                        '<span class="zr-select-checkbox-normal">' +
+                        '<span class="' + options.checkboxNormal + '">' +
                         '<span class="' + spanClass + '"></span>' +
                         '</span>' +
                         '<span>全选</span>' +
@@ -102,12 +105,12 @@ var _select = {
                             item = optArr[idx];
 
                         if (item.selected) {
-                            ddClass = 'zr-select-checkbox-checked';
+                            ddClass = options.checkboxChecked;
                         }
 
                         optionArr.push(
                             '<dd data-value="' + item.val + '" class="' + ddClass + '">' +
-                            '<span class="zr-select-checkbox-normal">' +
+                            '<span class="' + options.checkboxNormal + '">' +
                             '<span></span>' +
                             '</span>' +
                             '<span>' + item.text + '</span>' +
@@ -132,9 +135,9 @@ var _select = {
 
                     // 初始化展示框
                     receptionArr.push(
-                        '<div data-value="' + val + '" class="zr-select-reception">' +
+                        '<div data-value="' + val + '" class="' + options.receptionClassName + '">' +
                         text +
-                        '<i class="zricon-arrow-down"></i>' +
+                        '<i class="' + options.arrowDownClassName + '"></i>' +
                         '</div>'
                     );
 
@@ -149,10 +152,10 @@ var _select = {
                 // 初始化lg、sm样式
                 var sizeClass = '',
                     disabledClass = '';
-                if ($n.hasClass('zr-select-sm')) {
-                    sizeClass = 'zr-select-sm'
-                } else if ($n.hasClass('zr-select-lg')) {
-                    sizeClass = 'zr-select-lg'
+                if ($n.hasClass(options.smClassName)) {
+                    sizeClass = options.smClassName;
+                } else if ($n.hasClass(options.lgClassName)) {
+                    sizeClass = options.lgClassName;
                 }
 
                 if ($n.prop('disabled')) {
@@ -161,9 +164,9 @@ var _select = {
 
                 // 初始化模拟代码
                 htmlArr.push(
-                    '<div class="zr-simulation ' + sizeClass + ' ' + disabledClass + '">' +
+                    '<div class="' + options.simulationClassName + ' ' + sizeClass + ' ' + disabledClass + '">' +
                     receptionArr.join('') +
-                    '<dl class="zr-select-menu zr-select-hide">' +
+                    '<dl class="' + options.menuClassName + ' ' + isHasMultipleClass + ' ' + options.hideClassName + '">' +
                     optionArr.join('') +
                     '</dl>' +
                     '</div>'
@@ -173,7 +176,7 @@ var _select = {
 
                 // 多选时赋值
                 if ($n.prop('multiple')) {
-                    $n.next(options.simulationClassName).children(options.receptionClassName).data('data-value', valueSelected);
+                    $n.next('.' + options.simulationClassName).children('.' + options.receptionClassName).data('data-value', valueSelected);
                 }
 
                 // onzrchange触发函数
@@ -207,7 +210,7 @@ var _select = {
                     option = $.extend(opts, opt || {}),
                     options = _select.options._obj.options,
                     $this = $(this),
-                    $simulation = $this.next(options.simulationClassName);
+                    $simulation = $this.next('.' + options.simulationClassName);
 
                 // 执行前回调
                 option.beforeFn();
@@ -243,15 +246,15 @@ var _select = {
                 arrowUpClassName = opt.arrowUpClassName,
                 hideClassName = opt.hideClassName,
                 menuClassName = opt.menuClassName,
-                receptionClassName = opt.receptionClassName;
+                receptionClassName = '.' + opt.receptionClassName;
 
             $(receptionClassName).off('click').on('click', function (e) {
                 e.stopPropagation();
 
                 var $this = $(this),
                     $icon = $this.children('i'),
-                    $menu = $this.next(menuClassName);
-                if (!$this.closest(opt.simulationClassName).hasClass(opt.disableClassName)) {
+                    $menu = $this.next('.' + menuClassName);
+                if (!$this.closest('.' + opt.simulationClassName).hasClass(opt.disableClassName)) {
                     // 当前打开
                     if ($menu.hasClass(hideClassName)) {
                         $icon.addClass(arrowUpClassName);
@@ -266,7 +269,7 @@ var _select = {
             // 隐藏下拉框
             $(window.document).off('click').on('click', function () {
                 $(receptionClassName).children('i').removeClass(arrowUpClassName);
-                $(menuClassName).addClass(hideClassName);
+                $('.' + menuClassName).addClass(hideClassName);
             });
         },
 
@@ -278,9 +281,9 @@ var _select = {
             $('.zr-select-menu dd').on('click', function (e) {
                 e.stopPropagation();
                 var $this = $(this),
-                    $simulation = $this.closest(options.simulationClassName),
-                    $reception = $simulation.children(options.receptionClassName),
-                    $menu = $this.closest(options.menuClassName);
+                    $simulation = $this.closest('.' + options.simulationClassName),
+                    $reception = $simulation.children('.' + options.receptionClassName),
+                    $menu = $this.closest('.' + options.menuClassName);
 
                 // 多选时
                 if ($this.parent().prev().hasClass(options.multipleClassName)) {
@@ -298,12 +301,12 @@ var _select = {
                         }));
 
                         // 数据绑定原生select
-                        _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                        _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
                     } else {
                         $this.addClass(options.checkboxChecked);
 
-                        $this.closest(options.simulationClassName).children(options.receptionClassName).prepend(
-                            '<span data-value="' + val + '">' + $this.children('span:last-child').text() + ' <i class="zricon-close"></i></span>'
+                        $this.closest('.' + options.simulationClassName).children('.' + options.receptionClassName).prepend(
+                            '<span data-value="' + val + '">' + $this.children('span:last-child').text() + ' <i class="' + options.iconClose + '"></i></span>'
                         );
 
                         // 更新value值
@@ -315,7 +318,7 @@ var _select = {
                         _select.eventFn.delSelected();
 
                         // 数据绑定原生select
-                        _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                        _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
                     }
 
                     // 全选框做相应更新
@@ -349,7 +352,7 @@ var _select = {
                     // 更新选中数据
                     $reception.attr('data-value', obj.val);
                     // 数据绑定原生select
-                    _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
 
                     $reception.html(obj.text + ' <i class="' + options.arrowDownClassName + '"></i>');
                     $this.parent().addClass(options.hideClassName);
@@ -360,8 +363,8 @@ var _select = {
             $('.zr-select-menu dt').on('click', function (e) {
                 e.stopPropagation();
                 var $this = $(this),
-                    $menu = $this.closest(options.menuClassName),
-                    $simulation = $menu.closest(options.simulationClassName);
+                    $menu = $this.closest('.' + options.menuClassName),
+                    $simulation = $menu.closest('.' + options.simulationClassName);
 
                 if ($this.hasClass(options.checkboxChecked)) {
                     $this.removeClass(options.checkboxChecked);
@@ -372,13 +375,13 @@ var _select = {
                         $span.removeClass(options.checkboxUncheck);
                     }
                     // 展示框展示和赋值
-                    $this.closest(options.simulationClassName).children(options.receptionClassName).html('<i class="' + options.arrowDownClassName + ' ' + options.arrowUpClassName + '"></i>').data('data-value', []);
+                    $this.closest('.' + options.simulationClassName).children('.' + options.receptionClassName).html('<i class="' + options.arrowDownClassName + ' ' + options.arrowUpClassName + '"></i>').data('data-value', []);
 
                     // 更新下拉框高度Top
                     _select.eventFn.dealMenuTop($menu);
 
                     // 数据绑定原生select
-                    _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
                 } else {
                     $this.addClass(options.checkboxChecked);
                     $this.nextAll('dd').addClass(options.checkboxChecked);
@@ -388,15 +391,19 @@ var _select = {
                     $this.nextAll().each(function () {
                         var $this = $(this);
                         receptionChecked.push(
-                            '<span data-value="' + $this.attr('data-value') + '">' + $this.children('span:last-child').text() + ' <i class="zricon-close"></i></span>'
+                            '<span data-value="' + $this.attr('data-value') + '">' + $this.children('span:last-child').text() + ' <i class="' + options.iconClose + '"></i></span>'
                         );
                         valueChecked.push($this.attr('data-value'));
                     });
+
+                    // 添加角标
+                    receptionChecked.push('<i class="' + options.arrowUpClassName + '"></i>');
+
                     // 展示框展示和赋值
-                    $this.closest(options.simulationClassName).children(_select.options._obj.options.receptionClassName).html(receptionChecked.join('')).data('data-value', valueChecked);
+                    $this.closest('.' + options.simulationClassName).children('.' + options.receptionClassName).html(receptionChecked.join('')).data('data-value', valueChecked);
 
                     // 数据绑定原生select
-                    _select.eventFn.bindSelect($simulation.prev('.zr-select'));
+                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
 
                     // 更新下拉框高度Top
                     _select.eventFn.dealMenuTop($menu);
@@ -409,18 +416,18 @@ var _select = {
 
         // 调整下拉框相对位置-top
         dealMenuTop: function ($menu) {
-            $menu.css('top', $menu.prev(_select.options._obj.options.receptionClassName).height() + 4);
+            $menu.css('top', $menu.prev('.' + _select.options._obj.options.receptionClassName).height() + 4);
         },
 
         delSelected: function () {
             var options = _select.options._obj.options;
 
-            $(options.receptionClassName).find('.zricon-close').off('click').on('click', function (e) {
+            $('.' + options.receptionClassName).find('.' + options.iconClose).off('click').on('click', function (e) {
                 e.stopPropagation();
 
                 var $this = $(this),
                     $span = $this.closest('span'),
-                    $reception = $this.closest(options.receptionClassName),
+                    $reception = $this.closest('.' + options.receptionClassName),
                     $menu = $reception.next(),
                     val = $span.attr('data-value'),
                     valueSelected = $reception.data('data-value'),
@@ -468,7 +475,7 @@ var _select = {
         },
 
         bindSelect: function (selectDom) {
-            var valueSelected = selectDom.next().children(_select.options._obj.options.receptionClassName).data('data-value');
+            var valueSelected = selectDom.next().children('.' + _select.options._obj.options.receptionClassName).data('data-value');
 
             selectDom.val(valueSelected);
             selectDom.trigger("change");

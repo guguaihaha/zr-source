@@ -171,20 +171,6 @@
                     <option value="021" selected="selected">上海</option>
                     <option value="0571">杭州</option>
                 </select>
-
-                <!--<div class="zr-simulation zr-select-lg">-->
-                    <!--<div data-value="" class="zr-select-reception">-->
-                        <!--请选择一个城市-->
-                        <!--<i class="zricon-arrow-down "></i>-->
-                    <!--</div>-->
-                    <!--<dl class="zr-select-menu zr-select-hide">-->
-                        <!--<dd data-value="0">请选择一个城市</dd>-->
-                        <!--<dd data-value="1">北京</dd>-->
-                        <!--<dd data-value="2">上海</dd>-->
-                        <!--<dd data-value="3">杭州</dd>-->
-                    <!--</dl>-->
-                <!--</div>-->
-
             </div>
             <div style="width: 160px;display: inline-block">
                 <select name="country" multiple="multiple" class="zr-select">
@@ -192,41 +178,6 @@
                     <option value="021" selected="selected">上海</option>
                     <option value="0571" selected="selected">杭州</option>
                 </select>
-
-                <!--<div class="zr-simulation">-->
-                    <!--<div class="zr-select-reception zr-select-multiple">-->
-                        <!--<span>上海 <i class="zricon-close"></i></span>-->
-                        <!--<span>上海 <i class="zricon-close"></i></span>-->
-                        <!--<i class="zricon-arrow-down"></i>-->
-                    <!--</div>-->
-                    <!--<dl class="zr-select-menu zr-select-hide">-->
-                        <!--<dt data-value="" class="zr-select-checkbox-checked">-->
-                            <!--<span class="zr-select-checkbox-normal">-->
-                                <!--<span class="zr-select-checkbox-uncheck"></span>-->
-                            <!--</span>-->
-                            <!--<span>请选择一个城市</span>-->
-                        <!--</dt>-->
-                        <!--<dd data-value="1" class="zr-select-checkbox-checked">-->
-                            <!--<span class="zr-select-checkbox-normal">-->
-                                <!--<span></span>-->
-                            <!--</span>-->
-                            <!--<span>北京</span>-->
-                        <!--</dd>-->
-                        <!--<dd data-value="2">-->
-                            <!--<span class="zr-select-checkbox-normal">-->
-                                <!--<span></span>-->
-                            <!--</span>-->
-                            <!--<span>上海</span>-->
-                        <!--</dd>-->
-                        <!--<dd data-value="3">-->
-                            <!--<span class="zr-select-checkbox-normal">-->
-                                <!--<span></span>-->
-                            <!--</span>-->
-                            <!--<span>杭州</span>-->
-                        <!--</dd>-->
-                    <!--</dl>-->
-                <!--</div>-->
-
             </div>
         </div>
         <div class="c-code-inner c-code-hide">
@@ -249,7 +200,7 @@
     <div class="c-block-50"></div>
     <section class="c-sub-title">
         <p>自定义DOM监听事件 <a href="#">#</a></p>
-        <span>1.3.3版本后组件在原生的DOM对象上挂载了<i class="c-block-inline">zrchange</i>方法，需要改变select后重新渲染页面的话可以使用此方法（需升级为1.3.3及以后的版本）。</span>
+        <span>1.3.3版本后组件在原生的DOM对象上挂载了<i class="c-block-inline">onzrchange</i>方法，需要改变select后重新渲染页面的话可以使用此方法（需升级为1.3.3及以后的版本）。</span>
     </section>
     <section class="c-code">
         <!--switch code show or hide-->
@@ -357,7 +308,7 @@
         <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
     </section>
     <div class="c-block-50"></div>
-    <div class="c-options-title">onzrchange</div>
+    <div class="c-options-title">onzrchange 参数</div>
     <section class="c-table">
         <div class="c-table-header">
             <table>
@@ -382,23 +333,10 @@
         <div class="c-table-body">
             <table>
                 <tbody>
-                <tr>
-                    <td>
-                        <div class="c-cell c-table-w-125"></div>
-                    </td>
-                    <td>
-                        <div class="c-cell c-table-w-200">自定义监听DOM变化的事件</div>
-                    </td>
-                    <td>
-                        <div class="c-cell c-table-w-125">Function</div>
-                    </td>
-                    <td>
-                        <div class="c-cell c-table-w-500">入参需要是一个对象，Key为eventFn，Value为处理DOM变化的函数方法。</div>
-                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <div class="c-cell c-table-w-125 c-align-right">disabled</div>
+                        <div class="c-cell c-table-w-125">disabled</div>
                     </td>
                     <td>
                         <div class="c-cell c-table-w-200">禁用select元素</div>
@@ -412,7 +350,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="c-cell c-table-w-125 c-align-right">selected</div>
+                        <div class="c-cell c-table-w-125">selected</div>
                     </td>
                     <td>
                         <div class="c-cell c-table-w-200">模拟点击选中第N项option</div>
@@ -426,7 +364,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="c-cell c-table-w-125 c-align-right">remove</div>
+                        <div class="c-cell c-table-w-125">remove</div>
                     </td>
                     <td>
                         <div class="c-cell c-table-w-200">删除select的第N项option</div>
@@ -440,7 +378,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="c-cell c-table-w-125 c-align-right">eventFn</div>
+                        <div class="c-cell c-table-w-125">eventFn</div>
                     </td>
                     <td>
                         <div class="c-cell c-table-w-200">自定义回调函数</div>
@@ -450,6 +388,34 @@
                     </td>
                     <td>
                         <div class="c-cell c-table-w-500"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125">beforeFn</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">前置回调函数</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-125">Function</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-500">待完善</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-table-w-125">afterFn</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-200">后置回调函数</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-125">Function</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-table-w-500">待完善</div>
                     </td>
                 </tr>
                 </tbody>

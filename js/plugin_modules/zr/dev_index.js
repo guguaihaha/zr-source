@@ -178,21 +178,22 @@
             selectorName:"."+prefix+"-select",
             moduleName:"_select",
             prefix:prefix,
-            options:{
-                hideClassName:prefix + "-select-hide",//隐藏
-                disableClassName:prefix + "-select-disable",//禁用样式
-                smClassName:prefix + "-select-sm",//sm
-                lgClassName:prefix + "-select-lg",//lg
-                menuClassName: '.' + prefix + '-select-menu', // 下拉框列表
-                receptionClassName:"."+prefix + "-select-reception",//显示选择项内容
-                simulationClassName:"."+prefix + "-simulation",  // 模拟出的最外层盒子
+            options: {
+                hideClassName: prefix + "-select-hide",//隐藏
+                disableClassName: prefix + "-select-disable",//禁用样式
+                smClassName: prefix + "-select-sm",//sm
+                lgClassName: prefix + "-select-lg",//lg
+                menuClassName: prefix + '-select-menu', // 下拉框列表
+                receptionClassName: prefix + "-select-reception",//显示选择项内容
+                simulationClassName: prefix + "-simulation",  // 模拟出的最外层盒子
                 arrowUpClassName: prefix + "icon-arrow-up",    // 箭头向上的图标
                 arrowDownClassName: prefix + "icon-arrow-down",    // 箭头向下的图标
                 iconClose: prefix + "icon-close",   // 关闭图标
                 selectValues: prefix + "-select-values", // 当模拟框有选中值时带的class
                 multipleClassName: prefix + '-select-multiple', // 多选样式
-                checkboxChecked:prefix + '-select-checkbox-checked', // 是否选中
-                checkboxUncheck:prefix + '-select-checkbox-uncheck',    // 部分选中
+                checkboxChecked: prefix + '-select-checkbox-checked', // 是否选中
+                checkboxUncheck: prefix + '-select-checkbox-uncheck',    // 部分选中
+                checkboxNormal: prefix + '-select-checkbox-normal',     // checkbox盒子样式
             }
         },
         // {
