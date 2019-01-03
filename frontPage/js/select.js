@@ -414,11 +414,6 @@ var _select = {
             });
         },
 
-        // 调整下拉框相对位置-top
-        dealMenuTop: function ($menu) {
-            $menu.css('top', $menu.prev('.' + _select.options._obj.options.receptionClassName).height() + 4);
-        },
-
         delSelected: function () {
             var options = _select.options._obj.options;
 
@@ -479,6 +474,11 @@ var _select = {
 
             selectDom.val(valueSelected);
             selectDom.trigger("change");
+        },
+
+        // 调整下拉框相对位置-top
+        dealMenuTop: function ($menu) {
+            $menu.css('top', $menu.prev('.' + _select.options._obj.options.receptionClassName).height() + 4);
         }
     },
     ajax: {}
