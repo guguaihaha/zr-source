@@ -27,7 +27,7 @@ var _input = {
                         '<span>' + n.maxLength || 100 + '</span>' +
                         '</div>'
                     );
-
+                    // todo 赋值 onzrchange
                     // todo BUG：dom插入数据不触发
                     $n.off("input propertychange").on("input propertychange", _input.eventFn.inputNumFn);
                 } else {
@@ -65,7 +65,6 @@ var _input = {
 
         // 显示清空图标
         showIconFn: function () {
-            console.log(111);
             var $this = $(this),
                 _obj = $this.data(_input.options.cacheName),
                 Selector = $this.closest(_obj.options.groupSelector).children('.' + _obj.options.iconCloseCircle);

@@ -198,10 +198,10 @@ var _select = {
             el.onzrchange = function (opt) {
                 var opts = {
                         disabled: false,
-                        selected: -1,   // 0为默认第一个，依次累加
-                        remove: -1,    // 删除第N项
-                        eventFn: function () {
-                        },
+                        selected: false,
+                        remove: false,
+                        // change: function () {
+                        // },
                         beforeFn: function () {
                         },
                         afterFn: function () {
@@ -219,21 +219,31 @@ var _select = {
                     $simulation.addClass(options.disableClassName);
                 }
 
-                if (option.selected !== -1) {
-                    $simulation.find('dd').eq(parseInt(option.selected)).click();
+                if (option.selected) {
+                    let $selector = $simulation.find('dd[data-value=' + option.selected + ']');
+                    if ($selector.length !== 0) {
+                        $selector.click();
+                    } else {
+                        alert('未找到您输入value值的option！');
+                    }
                 }
 
-                if (option.remove !== -1) {
-                    $simulation.find('dd').eq(parseInt(option.remove)).remove();
+                if (option.remove) {
+                    let $selector = $simulation.find('dd[data-value=' + option.remove + ']');
+                    if ($selector.length !== 0) {
+                        $selector.remove();
+                    } else {
+                        alert('未找到您输入value值的option！');
+                    }
                 }
 
                 // 回调函数
-                option.eventFn();
+                // option.change();
 
                 // 执行后回调
                 option.afterFn();
 
-                opts.eventFn.call(this, opts);
+                // opts.eventFn.call(this, opts);
                 opts.beforeFn.call(this, opts);
                 opts.afterFn.call(this, opts);
             }
@@ -295,13 +305,15 @@ var _select = {
 
                         $reception.children('span[data-value=' + val + ']').remove();
 
-                        // 更新value值
-                        $reception.data('data-value', $.grep($reception.data('data-value'), function (n, i) {
+                        var valueSelected = $.grep($reception.data('data-value'), function (n, i) {
                             return n !== val;
-                        }));
+                        });
+
+                        // 更新value值
+                        $reception.data('data-value', valueSelected);
 
                         // 数据绑定原生select
-                        _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
+                        _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector), valueSelected);
                     } else {
                         $this.addClass(options.checkboxChecked);
 
@@ -318,7 +330,7 @@ var _select = {
                         _select.eventFn.delSelected();
 
                         // 数据绑定原生select
-                        _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
+                        _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector), valueSelected);
                     }
 
                     // 全选框做相应更新
@@ -352,7 +364,7 @@ var _select = {
                     // 更新选中数据
                     $reception.attr('data-value', obj.val);
                     // 数据绑定原生select
-                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
+                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector), obj.val);
 
                     $reception.html(obj.text + ' <i class="' + options.arrowDownClassName + '"></i>');
                     $this.parent().addClass(options.hideClassName);
@@ -381,7 +393,7 @@ var _select = {
                     _select.eventFn.dealMenuTop($menu);
 
                     // 数据绑定原生select
-                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
+                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector), []);
                 } else {
                     $this.addClass(options.checkboxChecked);
                     $this.nextAll('dd').addClass(options.checkboxChecked);
@@ -403,7 +415,7 @@ var _select = {
                     $this.closest('.' + options.simulationClassName).children('.' + options.receptionClassName).html(receptionChecked.join('')).data('data-value', valueChecked);
 
                     // 数据绑定原生select
-                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector));
+                    _select.eventFn.bindSelect($simulation.prev(_select.options._obj.selector), valueChecked);
 
                     // 更新下拉框高度Top
                     _select.eventFn.dealMenuTop($menu);
@@ -469,9 +481,8 @@ var _select = {
             });
         },
 
-        bindSelect: function (selectDom) {
-            var valueSelected = selectDom.next().children('.' + _select.options._obj.options.receptionClassName).data('data-value');
-
+        bindSelect: function (selectDom, valueSelected) {
+            console.log(valueSelected);
             selectDom.val(valueSelected);
             selectDom.trigger("change");
         },
