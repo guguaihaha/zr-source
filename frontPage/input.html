@@ -173,7 +173,7 @@
     <div class="c-block-50"></div>
     <section class="c-sub-title">
         <p>组合输入框 <a href="#">#</a></p>
-        <span>可前置或后置元素，一般为标签或按钮；默认状态为标签，按钮需额外增加样式  <i class="c-block-inline">zr-input-btn</i></span>
+        <span>可前置或后置元素，一般为下拉标签或按钮；默认状态为标签，按钮需额外增加样式  <i class="c-block-inline">zr-input-btn</i>，input默认在右侧，如果在左侧需额外增加样式  <i class="c-block-inline">zr-input-wapper-left</i></span>
     </section>
     <section class="c-code">
         <!--switch code show or hide-->
@@ -240,6 +240,103 @@
         </div>
         <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
     </section>
+    <div class="c-block-50"></div>
+    <section class="c-sub-title">
+        <p>自定义DOM监听事件 <a href="#">#</a></p>
+        <span>1.3.3版本后组件在原生的DOM对象上挂载了<i class="c-block-inline">onzrchange</i>方法，需要改变textarea后重新渲染页面的话可以使用此方法（需升级为1.3.3及以后的版本）。</span>
+    </section>
+    <section class="c-code">
+        <!--switch code show or hide-->
+        <div class="c-code-switch">&lt;code&gt;</div>
+        <div class="c-demo">
+            <div style="margin-top: 20px">
+                <div style="width: 480px; height:64px;display: inline-block;vertical-align: top;">
+                    <textarea id="textarea" class="zr-textarea" maxlength="100" placeholder="Textarea"></textarea>
+                </div>
+                <div style="display: inline-block;margin-left: 20px; vertical-align: top;">
+                    <button type="button" class="zr-btn zr-btn-primary" id="changeInner">动态改变输入框的值</button>
+                </div>
+            </div>
+        </div>
+        <div class="c-code-inner c-code-hide">
+            <!--动态改变输入框的值-->
+            <textarea id="textarea" class="zr-textarea" maxlength="100" placeholder="Textarea"></textarea>
+            <button type="button" class="zr-btn zr-btn-primary" id="changeInner">动态改变输入框的值</button>
+            <script type="text/javascript">
+                Zr.ready(function () {
+                    Zr.use('jquery', function (zr, $) {
+                        $("#changeInner").off("click").on("click", function () {
+                            document.getElementById("textarea").onzrchange({
+                                inserted: '我是新添加的内容'
+                            });
+                        });
+                    });
+                })
+            </script>
+        </div>
+        <a href="javascript:void(0);" class="c-toggle"><span>显示代码</span><i class="zricon-arrow-down"></i></a>
+    </section>
+    <div class="c-block-50"></div>
+    <div class="c-options-title">onzrchange 参数</div>
+    <section class="c-table">
+        <div class="c-table-header">
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        <div class="c-cell c-table-w-125">属性</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-125">类型</div>
+                    </th>
+                    <th>
+                        <div class="c-cell c-table-w-500">描述</div>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="c-table-body">
+            <table>
+                <tbody>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-125">inserted</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-125">String</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">默认为false，动态改变输入框的值。eg：{inserted：'我是新添加的内容'}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-125">beforeFn</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-125">Function</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">前置回调函数，在onzrchange最开始执行。eg: {beforeFn: function(){}}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-125">afterFn</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-125">Function</div>
+                    </td>
+                    <td>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">后置回调函数，在onzrchange最后执行。eg: {afterFn: function(){}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </article>
 <!--注意此段js必须第一引入在开发模式下{-->
 <script type="text/javascript" src="js/input.js"></script>
@@ -257,7 +354,14 @@
     Zr.ready(function () {
         Zr.use("./js/quickMenu", "./js/code", function (zr) {
             zr.dom.dispatch();
-        })
+        });
+        Zr.use('jquery', function (zr, $) {
+            $("#changeInner").off("click").on("click", function () {
+                document.getElementById("textarea").onzrchange({
+                    inserted: '我是新添加的内容'
+                });
+            });
+        });
     })
 </script>
 </body>

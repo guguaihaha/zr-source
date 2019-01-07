@@ -2,7 +2,6 @@ var _select = {
     uid: 30500000,
     version: "1.0.0",
     init: function (domObject) {
-        console.log(domObject);
         this.options._obj = domObject;
         this.events.eventList(domObject);
     },
@@ -277,7 +276,7 @@ var _select = {
             });
 
             // 隐藏下拉框
-            $(window.document).off('click').on('click', function () {
+            Zr.dom.clickQueen.push(function(){
                 $(receptionClassName).children('i').removeClass(arrowUpClassName);
                 $('.' + menuClassName).addClass(hideClassName);
             });
@@ -482,7 +481,6 @@ var _select = {
         },
 
         bindSelect: function (selectDom, valueSelected) {
-            console.log(valueSelected);
             selectDom.val(valueSelected);
             selectDom.trigger("change");
         },

@@ -2,7 +2,6 @@ var _input = {
     uid: 30100000,
     version: "1.0.0",
     init: function (domObject) {
-        console.log(domObject);
         this.options._obj = domObject;
         this.events.bindEvent(domObject);
     },
@@ -27,7 +26,6 @@ var _input = {
                         '<span>' + n.maxLength || 100 + '</span>' +
                         '</div>'
                     );
-                    // todo 赋值 onzrchange
                     // todo BUG：dom插入数据不触发
                     $n.off("input propertychange").on("input propertychange", _input.eventFn.inputNumFn);
                 } else {
@@ -51,10 +49,52 @@ var _input = {
                         selscter.off("click").on("click", _input.eventFn.clearFn);
                     }
                 }
+
+                // 去除inline-block时，空格造成的间距
+                if ($n.parent().hasClass(opt.options.wapperClassName)) {
+                    $n.parent().addClass('removeTextNodes');
+                    _input.eventFn.removeTextNodes();
+                }
+
+                // onzrchange触发函数
+                _input.eventFn.addEvent(n);
             });
         }
     },
     eventFn: {
+        addEvent: function (el) {
+            el.onzrchange = function (opt) {
+                var opts = {
+                        inserted: false,
+                        beforeFn: function () {
+                        },
+                        afterFn: function () {
+                        },
+                    },
+                    option = $.extend(opts, opt || {}),
+                    $this = $(this);
+
+                // 执行前回调
+                option.beforeFn();
+
+                if (option.inserted) {
+                    let defaultStr = $this.val(),
+                        maxLength = parseInt($this.attr('maxLength'));
+
+                    if (defaultStr.length < maxLength + 1) {
+                        $this.val(`${defaultStr}${option.inserted}`);
+                        // 改变字数，绑定this
+                        _input.eventFn.inputNumFn.call(this);
+                    }
+                }
+
+                // 执行后回调
+                option.afterFn();
+
+                opts.beforeFn.call(this, opts);
+                opts.afterFn.call(this, opts);
+            }
+        },
         // 点击清理图标
         clearFn: function () {
             var $this = $(this),
@@ -81,7 +121,6 @@ var _input = {
                 txtLength = $.trim($(this).val()).length,
                 maxLength = $(this).attr('maxLength'),
                 Selector = $(this).next(_obj.options.txtNumSelector).children('span').eq(0);
-
             Selector.text(txtLength);
 
             if (txtLength === 0) {
@@ -91,6 +130,11 @@ var _input = {
             } else {
                 Selector.css("color", "red");
             }
+        },
+        removeTextNodes: function () {
+            $('.removeTextNodes').contents().filter(function() {
+                return this.nodeType === 3;
+            }).remove();
         }
     },
     ajax: {}

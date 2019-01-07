@@ -339,7 +339,7 @@
                         <div class="c-cell c-cell-height-auto c-table-w-125">Boolean</div>
                     </td>
                     <td>
-                        <div class="c-cell c-cell-height-auto c-table-w-500">禁用select元素,eg:{disabled: false}，默认为false，入参为true时，禁用select，DOM定位必须为select元素，详见上文demo。</div>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">禁用select元素，默认值false，入参为true时，禁用select。eg:{disabled: false}</div>
                     </td>
                 </tr>
                 <tr>
@@ -350,7 +350,7 @@
                         <div class="c-cell c-cell-height-auto c-table-w-125">Number</div>
                     </td>
                     <td>
-                        <div class="c-cell c-cell-height-auto c-table-w-500">模拟点击选中第N项option，eg：{selected: -1}，默认为-1，第一项为0，依次累加，DOM定位必须为select元素，详见上文demo。</div>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">选中value值为输入值的option，默认为false，入参为option的value值。eg：{selected: '010'}</div>
                     </td>
                 </tr>
                 <tr>
@@ -361,7 +361,7 @@
                         <div class="c-cell c-cell-height-auto c-table-w-125">Number</div>
                     </td>
                     <td>
-                        <div class="c-cell c-cell-height-auto c-table-w-500">删除select的第N项option，eg：{remove: -1}，默认为-1，第一项为0，依次累加，DOM定位必须为select元素，详见上文demo。</div>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">删除value值为输入值的option，默认为false，入参为option的value值。eg：{remove: '010'}</div>
                     </td>
                 </tr>
                 <tr>
@@ -372,7 +372,7 @@
                         <div class="c-cell c-cell-height-auto c-table-w-125">Function</div>
                     </td>
                     <td>
-                        <div class="c-cell c-cell-height-auto c-table-w-500">前置回调函数</div>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">前置回调函数，在onzrchange最开始执行。eg: {beforeFn: function(){}}</div>
                     </td>
                 </tr>
                 <tr>
@@ -383,7 +383,7 @@
                         <div class="c-cell c-cell-height-auto c-table-w-125">Function</div>
                     </td>
                     <td>
-                        <div class="c-cell c-cell-height-auto c-table-w-500">后置回调函数</div>
+                        <div class="c-cell c-cell-height-auto c-table-w-500">后置回调函数，在onzrchange最后执行。eg: {afterFn: function(){}}</div>
                     </td>
                 </tr>
                 </tbody>
@@ -418,7 +418,6 @@
                 document.getElementById("selectDom2").onzrchange({
                     selected: '010'
                 });
-                console.log($('#changeVal').val());
             });
             $("#deleteOpt").off("click").on("click", function () {
                 document.getElementById("selectDom3").onzrchange({

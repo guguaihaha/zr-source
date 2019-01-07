@@ -136,6 +136,7 @@
                 groupSelector:"."+prefix+"-input-group",
                 groupClassName: prefix + '-input-group', // 多个组件外层盒子
                 iconCloseCircle: prefix + 'icon-close-circle', // 关闭图标
+                wapperClassName: prefix + '-input-wapper', // 组合时外包盒子
             }
         },
         {
